@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="google" content="notranslate">
+<title>外刊精读 · 原声跟读 · 人工智能</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body { background:#e9edf2; font-family:'Noto Sans SC',sans-serif; color:#1c2430; }
+  .wrap { max-width:640px; margin:0 auto; min-height:100vh; background:#fff; }
+  .header { background:#163a5c; padding:18px 22px; display:flex; align-items:center; gap:14px; }
+  .logo { background:#fff; color:#163a5c; font-family:'Noto Serif SC',serif; font-weight:700; font-size:26px; letter-spacing:2px; padding:6px 12px; border-radius:6px; line-height:1; }
+  .htxt .t { color:#fff; font-family:'Noto Serif SC',serif; font-weight:700; font-size:19px; }
+  .htxt .s { color:#cdd9e6; font-size:12px; letter-spacing:2px; margin-top:4px; }
+  .vsec { background:#0d1b29; }
+  .vsec video { width:100%; height:auto; display:block; background:#000; }
+  .vcap { background:#0d1b29; color:#cdd9e6; font-size:13px; text-align:center; padding:10px 12px; letter-spacing:1px; }
+  .player { position:sticky; top:0; z-index:9; background:#eef3f8; border-bottom:2px solid #163a5c; padding:14px 22px 16px; }
+  .ptitle { font-family:'Noto Serif SC',serif; font-weight:700; font-size:18px; color:#10212f; line-height:1.3; margin-bottom:11px; }
+  .controls { display:flex; align-items:center; gap:13px; }
+  .playbtn { width:52px; height:52px; border-radius:50%; background:#163a5c; border:none; flex-shrink:0; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 3px 9px rgba(22,58,92,.3); transition:transform .1s; }
+  .playbtn:active { transform:scale(.93); }
+  .playbtn svg { width:22px; height:22px; fill:#fff; }
+  .pmeta { flex:1; }
+  .pmeta .pb { height:6px; background:#d3dee9; border-radius:3px; overflow:hidden; }
+  .pmeta .pb i { display:block; height:100%; width:0; background:#163a5c; border-radius:3px; transition:width .12s linear; }
+  .pmeta .pt { display:flex; justify-content:space-between; font-size:12px; color:#6a7886; margin-top:5px; }
+  .speeds { display:flex; gap:8px; margin-top:12px; align-items:center; }
+  .speeds button { font-size:13px; color:#46566a; background:#fff; border:1px solid #cdd9e6; border-radius:14px; padding:4px 12px; cursor:pointer; }
+  .speeds button.on { background:#163a5c; color:#fff; border-color:#163a5c; }
+  .speeds .hint { font-size:11px; color:#8a97a6; margin-left:auto; }
+  .section { padding:18px 22px; }
+  .lbl { font-family:'Noto Serif SC',serif; font-weight:700; color:#163a5c; font-size:15px; letter-spacing:2px; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid #e1e9f1; }
+  .eng { font-family:Georgia,'Times New Roman','Noto Serif SC',serif; font-size:19px; line-height:2.6; color:#14202c; }
+  .sent { transition:background .2s; border-radius:5px; padding:1px 2px; cursor:pointer; }
+  .sent.active { background:#fff4d6; box-shadow:0 0 0 4px #fff4d6; }
+  ruby { ruby-position:under; ruby-align:center; margin:0 2px; }
+  ruby rt { font-family:'Noto Sans SC',sans-serif; font-size:11px; font-weight:500; padding-top:2px; }
+  ruby .b { padding-bottom:2px; }
+  .c1 .b{ border-bottom:2.5px solid #1f9d6b; } .c1 rt{ color:#1f9d6b; }
+  .c2 .b{ border-bottom:2.5px solid #2f6fdb; } .c2 rt{ color:#2f6fdb; }
+  .c3 .b{ border-bottom:2.5px solid #e0567a; } .c3 rt{ color:#c43e62; }
+  .c4 .b{ border-bottom:2.5px solid #e8893a; } .c4 rt{ color:#cf7522; }
+  .zh { font-family:'Noto Serif SC',serif; font-size:15.5px; line-height:1.95; color:#5a6675; text-align:justify; }
+  .vgrid { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+  .vcard { background:#f4f7fa; border:1px solid #e1e9f1; border-radius:9px; padding:9px 12px; }
+  .vcard .w { font-family:Georgia,serif; font-weight:700; font-size:17px; color:#14202c; }
+  .vcard .ipa { font-family:Georgia,serif; font-size:12px; color:#8a97a6; margin-left:4px; }
+  .vcard .m { font-size:13px; color:#46566a; margin-top:2px; }
+  .vcard .m b{ color:#c0392b; font-weight:700; font-style:normal; margin-right:3px; }
+  .vcard.hot { background:#163a5c; border-color:#163a5c; }
+  .vcard.hot .w,.vcard.hot .m{ color:#fff; } .vcard.hot .ipa{ color:#aebfd0; } .vcard.hot .m b{ color:#ffd479; }
+  .footer { text-align:center; padding:22px; color:#8a97a6; font-size:13px; border-top:1px solid #eef0f3; }
+  .footer .brand { font-family:'Noto Serif SC',serif; font-weight:700; color:#163a5c; font-size:15px; margin-bottom:4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="logo">外刊</div>
+    <div class="htxt"><div class="t">高考外刊精读 · 人工智能</div><div class="s">ENLIGHTENMENT EDUCATION · 原声跟读</div></div>
+  </div>
+
+  <div class="player">
+    <div class="ptitle">AI Brings Ancient Scrolls Back to Life</div>
+    <div class="controls">
+      <button class="playbtn" id="pb" aria-label="play"><svg id="ic" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+      <div class="pmeta">
+        <div class="pb"><i id="bar"></i></div>
+        <div class="pt"><span id="cur">0:00</span><span id="dur">0:43</span></div>
+      </div>
+    </div>
+    <div class="speeds" id="sp">
+      <button data-r="0.75">0.75×</button>
+      <button data-r="1" class="on">1.0×</button>
+      <button data-r="1.25">1.25×</button>
+      <span class="hint">▶ 念到哪句，哪句高亮</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="lbl">英 文 原 文 · 听 读</div>
+    <div class="eng" id="eng">
+      <span class="sent" data-s="0.1" data-e="5.91">Nearly 2,000 years ago, a volcanic eruption <ruby class="c1"><span class="b">buried</span><rt>掩埋</rt></ruby> the Roman town of Herculaneum. </span>
+      <span class="sent" data-s="5.91" data-e="13.76">Hundreds of scrolls were charred by the <ruby class="c2"><span class="b">intense</span><rt>强烈的</rt></ruby> heat, turning into fragile lumps of carbon that crumbled the moment anyone tried to open them. </span>
+      <span class="sent" data-s="13.76" data-e="17.07">For centuries the scrolls guarded their secrets. </span>
+      <span class="sent" data-s="17.07" data-e="24.3">Now, with the help of artificial intelligence, <ruby class="c3"><span class="b">researchers</span><rt>研究人员</rt></ruby> have begun to read them — without unrolling a single page. </span>
+      <span class="sent" data-s="24.3" data-e="32.6">The team first scanned each scroll with powerful X-rays, then trained AI to <ruby class="c3"><span class="b">detect</span><rt>察觉</rt></ruby> the faint <ruby class="c4"><span class="b">traces</span><rt>痕迹</rt></ruby> of <ruby class="c4"><span class="b">ancient</span><rt>古代的</rt></ruby> ink and to virtually unwrap the layers. </span>
+      <span class="sent" data-s="32.6" data-e="37.26">In 2024, a student decoded the first word: &quot;purple. </span>
+      <span class="sent" data-s="37.26" data-e="43.99">Experts say the <ruby class="c2"><span class="b">breakthrough</span><rt>突破</rt></ruby> may <ruby class="c1"><span class="b">recover</span><rt>重新找回</rt></ruby> thousands of lost texts, reshaping what we know about the ancient world. </span>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <div class="lbl">参 考 译 文</div>
+    <div class="zh">近 2000 年前，一场火山喷发掩埋了罗马古城赫库兰尼姆。数百卷书卷被高温烤焦，变成脆弱的碳块——谁一碰想打开，它就碎成齑粉。几个世纪以来，这些书卷始终守着自己的秘密。如今，借助人工智能，研究者无需展开任何一页，就开始读懂它们。团队先用强力 X 射线扫描每一卷，再训练 AI 去探测古代墨迹的微弱痕迹，"虚拟地"逐层展开。2024 年，一名学生破译出第一个词：紫色。专家说，这一突破或许能找回数千份失传的文本，重塑我们对古代世界的认知。</div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <div class="lbl">核 心 词 汇</div>
+    <div class="vgrid">
+      <div class="vcard"><div class="w">bury<span class="ipa">/ˈberi/</span></div><div class="m"><b>v.</b>掩埋；埋葬</div></div>
+      <div class="vcard"><div class="w">intense<span class="ipa">/ɪnˈtens/</span></div><div class="m"><b>adj.</b>强烈的；剧烈的</div></div>
+      <div class="vcard"><div class="w">detect<span class="ipa">/dɪˈtekt/</span></div><div class="m"><b>v.</b>察觉；探测</div></div>
+      <div class="vcard"><div class="w">ancient<span class="ipa">/ˈeɪnʃənt/</span></div><div class="m"><b>adj.</b>古代的；古老的</div></div>
+      <div class="vcard"><div class="w">recover<span class="ipa">/rɪˈkʌvə(r)/</span></div><div class="m"><b>v.</b>重新找回；恢复</div></div>
+      <div class="vcard"><div class="w">breakthrough<span class="ipa">/ˈbreɪkθruː/</span></div><div class="m"><b>n.</b>突破；重大进展</div></div>
+      <div class="vcard"><div class="w">researcher<span class="ipa">/rɪˈsɜːtʃə(r)/</span></div><div class="m"><b>n.</b>研究人员</div></div>
+      <div class="vcard"><div class="w">trace<span class="ipa">/treɪs/</span></div><div class="m"><b>n.</b>痕迹；踪迹</div></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="brand">Enlightenment Education · 高考外刊精读</div>
+    扫码即听 · 每日一篇 · 听读积累
+  </div>
+</div>
+
+<audio id="au" preload="metadata" src="waikan-scrolls.mp3"></audio>
+<script>
+  const au=document.getElementById('au'), pb=document.getElementById('pb'), ic=document.getElementById('ic');
+  const bar=document.getElementById('bar'), cur=document.getElementById('cur'), durEl=document.getElementById('dur');
+  const sents=[...document.querySelectorAll('.sent')];
+  const PLAY='M8 5v14l11-7z', PAUSE='M6 5h4v14H6zm8 0h4v14h-4z';
+  const fmt=s=>{s=Math.max(0,s|0);return (s/60|0)+':'+String(s%60).padStart(2,'0');};
+  let active=-1;
+  pb.onclick=()=>{ au.paused?au.play():au.pause(); };
+  au.onplay=()=>ic.querySelector('path').setAttribute('d',PAUSE);
+  au.onpause=()=>ic.querySelector('path').setAttribute('d',PLAY);
+  au.onloadedmetadata=()=>{ if(isFinite(au.duration)) durEl.textContent=fmt(au.duration); };
+  au.ontimeupdate=()=>{
+    if(au.duration){ bar.style.width=(au.currentTime/au.duration*100)+'%'; cur.textContent=fmt(au.currentTime); }
+    const t=au.currentTime;
+    let idx=sents.findIndex(s=>t>=parseFloat(s.dataset.s)&&t<parseFloat(s.dataset.e));
+    if(idx!==active){
+      if(active>=0) sents[active].classList.remove('active');
+      active=idx;
+      if(idx>=0){ const el=sents[idx]; el.classList.add('active');
+        const r=el.getBoundingClientRect();
+        if(r.top<140||r.bottom>window.innerHeight-40) el.scrollIntoView({behavior:'smooth',block:'center'});
+      }
+    }
+  };
+  au.onended=()=>{ ic.querySelector('path').setAttribute('d',PLAY); bar.style.width='0%'; cur.textContent='0:00';
+    if(active>=0){sents[active].classList.remove('active');active=-1;} };
+  sents.forEach(s=>s.onclick=()=>{ au.currentTime=parseFloat(s.dataset.s)+0.02; if(au.paused)au.play(); });
+  document.getElementById('sp').onclick=e=>{ const b=e.target.closest('button'); if(!b)return;
+    au.playbackRate=parseFloat(b.dataset.r);
+    [...document.querySelectorAll('#sp button')].forEach(x=>x.classList.toggle('on',x===b)); };
+</script>
+</body>
+</html>

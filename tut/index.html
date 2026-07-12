@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="google" content="notranslate">
+<title>外刊精读 · 原声跟读 · 图坦卡蒙</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body { background:#e9edf2; font-family:'Noto Sans SC',sans-serif; color:#1c2430; }
+  .wrap { max-width:640px; margin:0 auto; min-height:100vh; background:#fff; }
+  .header { background:#163a5c; padding:18px 22px; display:flex; align-items:center; gap:14px; }
+  .logo { background:#fff; color:#163a5c; font-family:'Noto Serif SC',serif; font-weight:700; font-size:26px; letter-spacing:2px; padding:6px 12px; border-radius:6px; line-height:1; }
+  .htxt .t { color:#fff; font-family:'Noto Serif SC',serif; font-weight:700; font-size:19px; }
+  .htxt .s { color:#cdd9e6; font-size:12px; letter-spacing:2px; margin-top:4px; }
+  .vsec { background:#0d1b29; }
+  .vsec video { width:100%; height:auto; display:block; background:#000; }
+  .vcap { background:#0d1b29; color:#cdd9e6; font-size:13px; text-align:center; padding:10px 12px; letter-spacing:1px; }
+  .player { position:sticky; top:0; z-index:9; background:#eef3f8; border-bottom:2px solid #163a5c; padding:14px 22px 16px; }
+  .ptitle { font-family:'Noto Serif SC',serif; font-weight:700; font-size:18px; color:#10212f; line-height:1.3; margin-bottom:11px; }
+  .controls { display:flex; align-items:center; gap:13px; }
+  .playbtn { width:52px; height:52px; border-radius:50%; background:#163a5c; border:none; flex-shrink:0; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 3px 9px rgba(22,58,92,.3); transition:transform .1s; }
+  .playbtn:active { transform:scale(.93); }
+  .playbtn svg { width:22px; height:22px; fill:#fff; }
+  .pmeta { flex:1; }
+  .pmeta .pb { height:6px; background:#d3dee9; border-radius:3px; overflow:hidden; }
+  .pmeta .pb i { display:block; height:100%; width:0; background:#163a5c; border-radius:3px; transition:width .12s linear; }
+  .pmeta .pt { display:flex; justify-content:space-between; font-size:12px; color:#6a7886; margin-top:5px; }
+  .speeds { display:flex; gap:8px; margin-top:12px; align-items:center; }
+  .speeds button { font-size:13px; color:#46566a; background:#fff; border:1px solid #cdd9e6; border-radius:14px; padding:4px 12px; cursor:pointer; }
+  .speeds button.on { background:#163a5c; color:#fff; border-color:#163a5c; }
+  .speeds .hint { font-size:11px; color:#8a97a6; margin-left:auto; }
+  .section { padding:18px 22px; }
+  .lbl { font-family:'Noto Serif SC',serif; font-weight:700; color:#163a5c; font-size:15px; letter-spacing:2px; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid #e1e9f1; }
+  .eng { font-family:Georgia,'Times New Roman','Noto Serif SC',serif; font-size:19px; line-height:2.6; color:#14202c; }
+  .sent { transition:background .2s; border-radius:5px; padding:1px 2px; cursor:pointer; }
+  .sent.active { background:#fff4d6; box-shadow:0 0 0 4px #fff4d6; }
+  ruby { ruby-position:under; ruby-align:center; margin:0 2px; }
+  ruby rt { font-family:'Noto Sans SC',sans-serif; font-size:11px; font-weight:500; padding-top:2px; }
+  ruby .b { padding-bottom:2px; }
+  .c1 .b{ border-bottom:2.5px solid #1f9d6b; } .c1 rt{ color:#1f9d6b; }
+  .c2 .b{ border-bottom:2.5px solid #2f6fdb; } .c2 rt{ color:#2f6fdb; }
+  .c3 .b{ border-bottom:2.5px solid #e0567a; } .c3 rt{ color:#c43e62; }
+  .c4 .b{ border-bottom:2.5px solid #e8893a; } .c4 rt{ color:#cf7522; }
+  .zh { font-family:'Noto Serif SC',serif; font-size:15.5px; line-height:1.95; color:#5a6675; text-align:justify; }
+  .vgrid { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+  .vcard { background:#f4f7fa; border:1px solid #e1e9f1; border-radius:9px; padding:9px 12px; }
+  .vcard .w { font-family:Georgia,serif; font-weight:700; font-size:17px; color:#14202c; }
+  .vcard .ipa { font-family:Georgia,serif; font-size:12px; color:#8a97a6; margin-left:4px; }
+  .vcard .m { font-size:13px; color:#46566a; margin-top:2px; }
+  .vcard .m b{ color:#c0392b; font-weight:700; font-style:normal; margin-right:3px; }
+  .vcard.hot { background:#163a5c; border-color:#163a5c; }
+  .vcard.hot .w,.vcard.hot .m{ color:#fff; } .vcard.hot .ipa{ color:#aebfd0; } .vcard.hot .m b{ color:#ffd479; }
+  .footer { text-align:center; padding:22px; color:#8a97a6; font-size:13px; border-top:1px solid #eef0f3; }
+  .footer .brand { font-family:'Noto Serif SC',serif; font-weight:700; color:#163a5c; font-size:15px; margin-bottom:4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="logo">外刊</div>
+    <div class="htxt"><div class="t">高考外刊精读 · 图坦卡蒙</div><div class="s">ENLIGHTENMENT EDUCATION · 原声跟读</div></div>
+  </div>
+
+  <div class="vsec">
+    <video controls playsinline preload="metadata" poster="video-poster.jpg">
+      <source src="waikan-video-tut.mp4" type="video/mp4">
+    </video>
+    <div class="vcap">▶ 跟读视频 · 逐句字幕 + 核心词高亮（点击播放）</div>
+  </div>
+
+  <div class="player">
+    <div class="ptitle">The Boy King's Golden Tomb</div>
+    <div class="controls">
+      <button class="playbtn" id="pb" aria-label="play"><svg id="ic" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+      <div class="pmeta">
+        <div class="pb"><i id="bar"></i></div>
+        <div class="pt"><span id="cur">0:00</span><span id="dur">1:09</span></div>
+      </div>
+    </div>
+    <div class="speeds" id="sp">
+      <button data-r="0.75">0.75×</button>
+      <button data-r="1" class="on">1.0×</button>
+      <button data-r="1.25">1.25×</button>
+      <span class="hint">▶ 念到哪句，哪句高亮</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="lbl">英 文 原 文 · 听 读</div>
+    <div class="eng" id="eng">
+      <span class="sent" data-s="0.1" data-e="9.29">For years, the British <ruby class="c1"><span class="b">archaeologist</span><rt>考古学家</rt></ruby> Howard Carter had searched the Valley of the Kings in Egypt, convinced that one royal tomb still lay hidden beneath the sand. </span>
+      <span class="sent" data-s="9.29" data-e="16.56">By 1922 his patron, Lord Carnarvon, was ready to stop paying, and Carter was almost forced to give up. </span>
+      <span class="sent" data-s="16.56" data-e="21.23">Then, in November, his workers uncovered a step cut into the rock. </span>
+      <span class="sent" data-s="21.23" data-e="26.82">It led to a doorway still <ruby class="c2"><span class="b">sealed</span><rt>密封</rt></ruby> with the <ruby class="c3"><span class="b">ancient</span><rt>古代的</rt></ruby> plaster of more than three thousand years before. </span>
+      <span class="sent" data-s="26.82" data-e="32.31">On it was a royal name: Tutankhamun, a boy king who had died at about eighteen. </span>
+      <span class="sent" data-s="32.31" data-e="35.62">Carter made a small hole and held up a candle. </span>
+      <span class="sent" data-s="35.62" data-e="38.62">What the candlelight <ruby class="c4"><span class="b">revealed</span><rt>揭示</rt></ruby> was astonishing. </span>
+      <span class="sent" data-s="38.62" data-e="45.4">Unlike almost every other royal tomb, which robbers had emptied long ago, this one was very nearly <ruby class="c1"><span class="b">intact</span><rt>完好无损的</rt></ruby>. </span>
+      <span class="sent" data-s="45.4" data-e="56.8">Inside lay a <ruby class="c2"><span class="b">remarkable</span><rt>非凡的</rt></ruby> collection of <ruby class="c3"><span class="b">treasures</span><rt>珍宝</rt></ruby>: a golden throne, chariots, jewellery, and, at its heart, the solid-gold burial mask that would become the most <ruby class="c4"><span class="b">precious</span><rt>珍贵的</rt></ruby> face of ancient Egypt. </span>
+      <span class="sent" data-s="56.8" data-e="62.61">The discovery gave the world its clearest window yet into how the pharaohs had lived — and died. </span>
+      <span class="sent" data-s="62.61" data-e="69.36">A boy who ruled for only a few years had, in the end, told us far more than many kings who reigned for decades. </span>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <div class="lbl">参 考 译 文</div>
+    <div class="zh">多年来，英国考古学家霍华德·卡特一直在埃及的帝王谷里搜寻，他坚信仍有一座王室陵墓藏在黄沙之下。到 1922 年，资助他的卡纳冯勋爵已准备停止出钱，卡特几乎被迫放弃。然后，在那年十一月，工人们清出了一级凿进岩石里的台阶。它通向一扇门——门上仍密封着三千多年前的古代灰泥。门上刻着一个王室名字：图坦卡蒙，一位约十八岁便离世的少年法老。卡特凿开一个小孔，举起蜡烛。烛光所揭示的一切令人震惊。几乎所有其他王室陵墓早已被盗墓者洗劫一空，唯独这一座几乎完好无损。里面是一批非凡的珍宝：金制王座、战车、珠宝，而在最深处，是那具纯金葬仪面具——它后来成了古埃及最珍贵的一张面孔。这一发现，为世人打开了迄今最清晰的一扇窗，让我们看见法老们如何生、如何死。</div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <div class="lbl">核 心 词 汇</div>
+    <div class="vgrid">
+      <div class="vcard"><div class="w">archaeologist<span class="ipa">/ˌɑːkiˈɒlədʒɪst/</span></div><div class="m"><b>n.</b>考古学家</div></div>
+      <div class="vcard"><div class="w">seal<span class="ipa">/siːl/</span></div><div class="m"><b>v.</b>密封；封闭</div></div>
+      <div class="vcard"><div class="w">ancient<span class="ipa">/ˈeɪnʃənt/</span></div><div class="m"><b>adj.</b>古代的；古老的</div></div>
+      <div class="vcard"><div class="w">reveal<span class="ipa">/rɪˈviːl/</span></div><div class="m"><b>v.</b>揭示；显露</div></div>
+      <div class="vcard"><div class="w">intact<span class="ipa">/ɪnˈtækt/</span></div><div class="m"><b>adj.</b>完好无损的；未受损的</div></div>
+      <div class="vcard"><div class="w">remarkable<span class="ipa">/rɪˈmɑːkəbl/</span></div><div class="m"><b>adj.</b>非凡的；显著的</div></div>
+      <div class="vcard"><div class="w">treasure<span class="ipa">/ˈtreʒə(r)/</span></div><div class="m"><b>n.</b>珍宝；财富</div></div>
+      <div class="vcard"><div class="w">precious<span class="ipa">/ˈpreʃəs/</span></div><div class="m"><b>adj.</b>珍贵的；宝贵的</div></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="brand">Enlightenment Education · 高考外刊精读</div>
+    扫码即听 · 每日一篇 · 听读积累
+  </div>
+</div>
+
+<audio id="au" preload="metadata" src="waikan-tut.mp3"></audio>
+<script>
+  const au=document.getElementById('au'), pb=document.getElementById('pb'), ic=document.getElementById('ic');
+  const bar=document.getElementById('bar'), cur=document.getElementById('cur'), durEl=document.getElementById('dur');
+  const sents=[...document.querySelectorAll('.sent')];
+  const PLAY='M8 5v14l11-7z', PAUSE='M6 5h4v14H6zm8 0h4v14h-4z';
+  const fmt=s=>{s=Math.max(0,s|0);return (s/60|0)+':'+String(s%60).padStart(2,'0');};
+  let active=-1;
+  pb.onclick=()=>{ au.paused?au.play():au.pause(); };
+  au.onplay=()=>ic.querySelector('path').setAttribute('d',PAUSE);
+  au.onpause=()=>ic.querySelector('path').setAttribute('d',PLAY);
+  au.onloadedmetadata=()=>{ if(isFinite(au.duration)) durEl.textContent=fmt(au.duration); };
+  au.ontimeupdate=()=>{
+    if(au.duration){ bar.style.width=(au.currentTime/au.duration*100)+'%'; cur.textContent=fmt(au.currentTime); }
+    const t=au.currentTime;
+    let idx=sents.findIndex(s=>t>=parseFloat(s.dataset.s)&&t<parseFloat(s.dataset.e));
+    if(idx!==active){
+      if(active>=0) sents[active].classList.remove('active');
+      active=idx;
+      if(idx>=0){ const el=sents[idx]; el.classList.add('active');
+        const r=el.getBoundingClientRect();
+        if(r.top<140||r.bottom>window.innerHeight-40) el.scrollIntoView({behavior:'smooth',block:'center'});
+      }
+    }
+  };
+  au.onended=()=>{ ic.querySelector('path').setAttribute('d',PLAY); bar.style.width='0%'; cur.textContent='0:00';
+    if(active>=0){sents[active].classList.remove('active');active=-1;} };
+  sents.forEach(s=>s.onclick=()=>{ au.currentTime=parseFloat(s.dataset.s)+0.02; if(au.paused)au.play(); });
+  document.getElementById('sp').onclick=e=>{ const b=e.target.closest('button'); if(!b)return;
+    au.playbackRate=parseFloat(b.dataset.r);
+    [...document.querySelectorAll('#sp button')].forEach(x=>x.classList.toggle('on',x===b)); };
+</script>
+</body>
+</html>

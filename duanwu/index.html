@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="google" content="notranslate">
+<title>外刊精读 · 原声跟读 · 端午</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body { background:#e9edf2; font-family:'Noto Sans SC',sans-serif; color:#1c2430; }
+  .wrap { max-width:640px; margin:0 auto; min-height:100vh; background:#fff; }
+  .header { background:#163a5c; padding:18px 22px; display:flex; align-items:center; gap:14px; }
+  .logo { background:#fff; color:#163a5c; font-family:'Noto Serif SC',serif; font-weight:700; font-size:26px; letter-spacing:2px; padding:6px 12px; border-radius:6px; line-height:1; }
+  .htxt .t { color:#fff; font-family:'Noto Serif SC',serif; font-weight:700; font-size:19px; }
+  .htxt .s { color:#cdd9e6; font-size:12px; letter-spacing:2px; margin-top:4px; }
+  .vsec { background:#0d1b29; }
+  .vsec video { width:100%; height:auto; display:block; background:#000; }
+  .vcap { background:#0d1b29; color:#cdd9e6; font-size:13px; text-align:center; padding:10px 12px; letter-spacing:1px; }
+  .player { position:sticky; top:0; z-index:9; background:#eef3f8; border-bottom:2px solid #163a5c; padding:14px 22px 16px; }
+  .ptitle { font-family:'Noto Serif SC',serif; font-weight:700; font-size:18px; color:#10212f; line-height:1.3; margin-bottom:11px; }
+  .controls { display:flex; align-items:center; gap:13px; }
+  .playbtn { width:52px; height:52px; border-radius:50%; background:#163a5c; border:none; flex-shrink:0; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 3px 9px rgba(22,58,92,.3); transition:transform .1s; }
+  .playbtn:active { transform:scale(.93); }
+  .playbtn svg { width:22px; height:22px; fill:#fff; }
+  .pmeta { flex:1; }
+  .pmeta .pb { height:6px; background:#d3dee9; border-radius:3px; overflow:hidden; }
+  .pmeta .pb i { display:block; height:100%; width:0; background:#163a5c; border-radius:3px; transition:width .12s linear; }
+  .pmeta .pt { display:flex; justify-content:space-between; font-size:12px; color:#6a7886; margin-top:5px; }
+  .speeds { display:flex; gap:8px; margin-top:12px; align-items:center; }
+  .speeds button { font-size:13px; color:#46566a; background:#fff; border:1px solid #cdd9e6; border-radius:14px; padding:4px 12px; cursor:pointer; }
+  .speeds button.on { background:#163a5c; color:#fff; border-color:#163a5c; }
+  .speeds .hint { font-size:11px; color:#8a97a6; margin-left:auto; }
+  .section { padding:18px 22px; }
+  .lbl { font-family:'Noto Serif SC',serif; font-weight:700; color:#163a5c; font-size:15px; letter-spacing:2px; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid #e1e9f1; }
+  .eng { font-family:Georgia,'Times New Roman','Noto Serif SC',serif; font-size:19px; line-height:2.6; color:#14202c; }
+  .sent { transition:background .2s; border-radius:5px; padding:1px 2px; cursor:pointer; }
+  .sent.active { background:#fff4d6; box-shadow:0 0 0 4px #fff4d6; }
+  ruby { ruby-position:under; ruby-align:center; margin:0 2px; }
+  ruby rt { font-family:'Noto Sans SC',sans-serif; font-size:11px; font-weight:500; padding-top:2px; }
+  ruby .b { padding-bottom:2px; }
+  .c1 .b{ border-bottom:2.5px solid #1f9d6b; } .c1 rt{ color:#1f9d6b; }
+  .c2 .b{ border-bottom:2.5px solid #2f6fdb; } .c2 rt{ color:#2f6fdb; }
+  .c3 .b{ border-bottom:2.5px solid #e0567a; } .c3 rt{ color:#c43e62; }
+  .c4 .b{ border-bottom:2.5px solid #e8893a; } .c4 rt{ color:#cf7522; }
+  .zh { font-family:'Noto Serif SC',serif; font-size:15.5px; line-height:1.95; color:#5a6675; text-align:justify; }
+  .vgrid { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+  .vcard { background:#f4f7fa; border:1px solid #e1e9f1; border-radius:9px; padding:9px 12px; }
+  .vcard .w { font-family:Georgia,serif; font-weight:700; font-size:17px; color:#14202c; }
+  .vcard .ipa { font-family:Georgia,serif; font-size:12px; color:#8a97a6; margin-left:4px; }
+  .vcard .m { font-size:13px; color:#46566a; margin-top:2px; }
+  .vcard .m b{ color:#c0392b; font-weight:700; font-style:normal; margin-right:3px; }
+  .vcard.hot { background:#163a5c; border-color:#163a5c; }
+  .vcard.hot .w,.vcard.hot .m{ color:#fff; } .vcard.hot .ipa{ color:#aebfd0; } .vcard.hot .m b{ color:#ffd479; }
+  .footer { text-align:center; padding:22px; color:#8a97a6; font-size:13px; border-top:1px solid #eef0f3; }
+  .footer .brand { font-family:'Noto Serif SC',serif; font-weight:700; color:#163a5c; font-size:15px; margin-bottom:4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="logo">外刊</div>
+    <div class="htxt"><div class="t">高考外刊精读 · 端午</div><div class="s">ENLIGHTENMENT EDUCATION · 原声跟读</div></div>
+  </div>
+
+  <div class="player">
+    <div class="ptitle">Dragon Boat Festival</div>
+    <div class="controls">
+      <button class="playbtn" id="pb" aria-label="play"><svg id="ic" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+      <div class="pmeta">
+        <div class="pb"><i id="bar"></i></div>
+        <div class="pt"><span id="cur">0:00</span><span id="dur">1:06</span></div>
+      </div>
+    </div>
+    <div class="speeds" id="sp">
+      <button data-r="0.75">0.75×</button>
+      <button data-r="1" class="on">1.0×</button>
+      <button data-r="1.25">1.25×</button>
+      <span class="hint">▶ 念到哪句，哪句高亮</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="lbl">英 文 原 文 · 听 读</div>
+    <div class="eng" id="eng">
+      <span class="sent" data-s="0.1" data-e="7.78">Every year, on the fifth day of the fifth lunar month, rivers across China come alive with the beat of drums and the splash of paddles. </span>
+      <span class="sent" data-s="7.78" data-e="12.89">This is the Dragon Boat Festival, a celebration more than two thousand years old. </span>
+      <span class="sent" data-s="12.89" data-e="18.91">Its story begins with Qu Yuan, a poet and <ruby class="c1"><span class="b">loyal</span><rt>忠诚的</rt></ruby> minister of the ancient state of Chu. </span>
+      <span class="sent" data-s="18.91" data-e="25.6">When his kingdom fell to <ruby class="c2"><span class="b">invaders</span><rt>入侵者</rt></ruby>, Qu Yuan was overcome with <ruby class="c3"><span class="b">grief</span><rt>（尤指因死亡引起的）悲痛</rt></ruby> and <ruby class="c4"><span class="b">drowned</span><rt>溺水</rt></ruby> himself in the Miluo River. </span>
+      <span class="sent" data-s="25.6" data-e="31.09">The local people, who deeply <ruby class="c1"><span class="b">admired</span><rt>敬仰</rt></ruby> him, rushed out in their boats to search for his body. </span>
+      <span class="sent" data-s="31.09" data-e="37.34">To keep the fish from harming him, they threw lumps of sticky rice into the water — the origin of zongzi. </span>
+      <span class="sent" data-s="37.34" data-e="41.75">Centuries later, these acts have grown into beloved <ruby class="c2"><span class="b">customs</span><rt>习俗</rt></ruby>. </span>
+      <span class="sent" data-s="41.75" data-e="48.45">Dragon boat races, with their long, narrow vessels and pounding drums, recall that desperate search. </span>
+      <span class="sent" data-s="48.45" data-e="55.42">Families wrap zongzi in bamboo leaves and hang fragrant herbs above their doors to drive away bad luck and disease. </span>
+      <span class="sent" data-s="55.42" data-e="66.14">Behind the festivities lies a deeper meaning: Qu Yuan is remembered not only for his poetry but for his <ruby class="c3"><span class="b">devotion</span><rt>忠诚</rt></ruby> to his country and his <ruby class="c4"><span class="b">principles</span><rt>原则</rt></ruby>, even in the darkest of times. </span>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <div class="lbl">参 考 译 文</div>
+    <div class="zh">每年农历五月初五，中国各地的江河在鼓声与桨声中沸腾——这就是端午节，一个两千多年历史的节日。它的故事始于屈原：楚国的诗人、忠诚的大臣。当祖国沦于入侵者之手，他悲痛欲绝，投汨罗江自尽。百姓深深敬仰他，划船出江寻找他的身躯；为不让鱼群伤他，把糯米投入水中——这便是粽子的由来。数百年后，这些举动化为习俗：龙舟竞渡重演那场焦急的追寻，家家用箬叶包粽、门上挂艾草驱邪避疫。热闹背后藏着更深的意味——人们记住屈原，不只因他的诗篇，更因他对家国的赤诚：哪怕至暗时刻，也坚守对国家、对气节的忠诚。</div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <div class="lbl">核 心 词 汇</div>
+    <div class="vgrid">
+      <div class="vcard"><div class="w">loyal<span class="ipa">/ˈlɔɪəl/</span></div><div class="m"><b>adj.</b>忠诚的</div></div>
+      <div class="vcard"><div class="w">invader<span class="ipa">/ɪnˈveɪdə(r)/</span></div><div class="m"><b>n.</b>入侵者</div></div>
+      <div class="vcard"><div class="w">grief<span class="ipa">/ɡriːf/</span></div><div class="m"><b>n.</b>（尤指因死亡引起的）悲痛</div></div>
+      <div class="vcard"><div class="w">drown<span class="ipa">/draʊn/</span></div><div class="m"><b>v.</b>溺水；淹死</div></div>
+      <div class="vcard"><div class="w">admire<span class="ipa">/ədˈmaɪə(r)/</span></div><div class="m"><b>v.</b>敬仰；钦佩</div></div>
+      <div class="vcard"><div class="w">custom<span class="ipa">/ˈkʌstəm/</span></div><div class="m"><b>n.</b>习俗；风俗</div></div>
+      <div class="vcard"><div class="w">devotion<span class="ipa">/dɪˈvəʊʃn/</span></div><div class="m"><b>n.</b>忠诚；挚爱；奉献</div></div>
+      <div class="vcard"><div class="w">principle<span class="ipa">/ˈprɪnsəpl/</span></div><div class="m"><b>n.</b>原则；准则；气节</div></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="brand">Enlightenment Education · 高考外刊精读</div>
+    扫码即听 · 每日一篇 · 听读积累
+  </div>
+</div>
+
+<audio id="au" preload="metadata" src="waikan-duanwu.mp3"></audio>
+<script>
+  const au=document.getElementById('au'), pb=document.getElementById('pb'), ic=document.getElementById('ic');
+  const bar=document.getElementById('bar'), cur=document.getElementById('cur'), durEl=document.getElementById('dur');
+  const sents=[...document.querySelectorAll('.sent')];
+  const PLAY='M8 5v14l11-7z', PAUSE='M6 5h4v14H6zm8 0h4v14h-4z';
+  const fmt=s=>{s=Math.max(0,s|0);return (s/60|0)+':'+String(s%60).padStart(2,'0');};
+  let active=-1;
+  pb.onclick=()=>{ au.paused?au.play():au.pause(); };
+  au.onplay=()=>ic.querySelector('path').setAttribute('d',PAUSE);
+  au.onpause=()=>ic.querySelector('path').setAttribute('d',PLAY);
+  au.onloadedmetadata=()=>{ if(isFinite(au.duration)) durEl.textContent=fmt(au.duration); };
+  au.ontimeupdate=()=>{
+    if(au.duration){ bar.style.width=(au.currentTime/au.duration*100)+'%'; cur.textContent=fmt(au.currentTime); }
+    const t=au.currentTime;
+    let idx=sents.findIndex(s=>t>=parseFloat(s.dataset.s)&&t<parseFloat(s.dataset.e));
+    if(idx!==active){
+      if(active>=0) sents[active].classList.remove('active');
+      active=idx;
+      if(idx>=0){ const el=sents[idx]; el.classList.add('active');
+        const r=el.getBoundingClientRect();
+        if(r.top<140||r.bottom>window.innerHeight-40) el.scrollIntoView({behavior:'smooth',block:'center'});
+      }
+    }
+  };
+  au.onended=()=>{ ic.querySelector('path').setAttribute('d',PLAY); bar.style.width='0%'; cur.textContent='0:00';
+    if(active>=0){sents[active].classList.remove('active');active=-1;} };
+  sents.forEach(s=>s.onclick=()=>{ au.currentTime=parseFloat(s.dataset.s)+0.02; if(au.paused)au.play(); });
+  document.getElementById('sp').onclick=e=>{ const b=e.target.closest('button'); if(!b)return;
+    au.playbackRate=parseFloat(b.dataset.r);
+    [...document.querySelectorAll('#sp button')].forEach(x=>x.classList.toggle('on',x===b)); };
+</script>
+</body>
+</html>
