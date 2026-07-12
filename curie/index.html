@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="google" content="notranslate">
+<title>外刊精读 · 原声跟读 · 居里夫人</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body { background:#e9edf2; font-family:'Noto Sans SC',sans-serif; color:#1c2430; }
+  .wrap { max-width:640px; margin:0 auto; min-height:100vh; background:#fff; }
+  .header { background:#163a5c; padding:18px 22px; display:flex; align-items:center; gap:14px; }
+  .logo { background:#fff; color:#163a5c; font-family:'Noto Serif SC',serif; font-weight:700; font-size:26px; letter-spacing:2px; padding:6px 12px; border-radius:6px; line-height:1; }
+  .htxt .t { color:#fff; font-family:'Noto Serif SC',serif; font-weight:700; font-size:19px; }
+  .htxt .s { color:#cdd9e6; font-size:12px; letter-spacing:2px; margin-top:4px; }
+  .vsec { background:#0d1b29; }
+  .vsec video { width:100%; height:auto; display:block; background:#000; }
+  .vcap { background:#0d1b29; color:#cdd9e6; font-size:13px; text-align:center; padding:10px 12px; letter-spacing:1px; }
+  .player { position:sticky; top:0; z-index:9; background:#eef3f8; border-bottom:2px solid #163a5c; padding:14px 22px 16px; }
+  .ptitle { font-family:'Noto Serif SC',serif; font-weight:700; font-size:18px; color:#10212f; line-height:1.3; margin-bottom:11px; }
+  .controls { display:flex; align-items:center; gap:13px; }
+  .playbtn { width:52px; height:52px; border-radius:50%; background:#163a5c; border:none; flex-shrink:0; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 3px 9px rgba(22,58,92,.3); transition:transform .1s; }
+  .playbtn:active { transform:scale(.93); }
+  .playbtn svg { width:22px; height:22px; fill:#fff; }
+  .pmeta { flex:1; }
+  .pmeta .pb { height:6px; background:#d3dee9; border-radius:3px; overflow:hidden; }
+  .pmeta .pb i { display:block; height:100%; width:0; background:#163a5c; border-radius:3px; transition:width .12s linear; }
+  .pmeta .pt { display:flex; justify-content:space-between; font-size:12px; color:#6a7886; margin-top:5px; }
+  .speeds { display:flex; gap:8px; margin-top:12px; align-items:center; }
+  .speeds button { font-size:13px; color:#46566a; background:#fff; border:1px solid #cdd9e6; border-radius:14px; padding:4px 12px; cursor:pointer; }
+  .speeds button.on { background:#163a5c; color:#fff; border-color:#163a5c; }
+  .speeds .hint { font-size:11px; color:#8a97a6; margin-left:auto; }
+  .section { padding:18px 22px; }
+  .lbl { font-family:'Noto Serif SC',serif; font-weight:700; color:#163a5c; font-size:15px; letter-spacing:2px; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid #e1e9f1; }
+  .eng { font-family:Georgia,'Times New Roman','Noto Serif SC',serif; font-size:19px; line-height:2.6; color:#14202c; }
+  .sent { transition:background .2s; border-radius:5px; padding:1px 2px; cursor:pointer; }
+  .sent.active { background:#fff4d6; box-shadow:0 0 0 4px #fff4d6; }
+  ruby { ruby-position:under; ruby-align:center; margin:0 2px; }
+  ruby rt { font-family:'Noto Sans SC',sans-serif; font-size:11px; font-weight:500; padding-top:2px; }
+  ruby .b { padding-bottom:2px; }
+  .c1 .b{ border-bottom:2.5px solid #1f9d6b; } .c1 rt{ color:#1f9d6b; }
+  .c2 .b{ border-bottom:2.5px solid #2f6fdb; } .c2 rt{ color:#2f6fdb; }
+  .c3 .b{ border-bottom:2.5px solid #e0567a; } .c3 rt{ color:#c43e62; }
+  .c4 .b{ border-bottom:2.5px solid #e8893a; } .c4 rt{ color:#cf7522; }
+  .zh { font-family:'Noto Serif SC',serif; font-size:15.5px; line-height:1.95; color:#5a6675; text-align:justify; }
+  .vgrid { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+  .vcard { background:#f4f7fa; border:1px solid #e1e9f1; border-radius:9px; padding:9px 12px; }
+  .vcard .w { font-family:Georgia,serif; font-weight:700; font-size:17px; color:#14202c; }
+  .vcard .ipa { font-family:Georgia,serif; font-size:12px; color:#8a97a6; margin-left:4px; }
+  .vcard .m { font-size:13px; color:#46566a; margin-top:2px; }
+  .vcard .m b{ color:#c0392b; font-weight:700; font-style:normal; margin-right:3px; }
+  .vcard.hot { background:#163a5c; border-color:#163a5c; }
+  .vcard.hot .w,.vcard.hot .m{ color:#fff; } .vcard.hot .ipa{ color:#aebfd0; } .vcard.hot .m b{ color:#ffd479; }
+  .footer { text-align:center; padding:22px; color:#8a97a6; font-size:13px; border-top:1px solid #eef0f3; }
+  .footer .brand { font-family:'Noto Serif SC',serif; font-weight:700; color:#163a5c; font-size:15px; margin-bottom:4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="logo">外刊</div>
+    <div class="htxt"><div class="t">高考外刊精读 · 居里夫人</div><div class="s">ENLIGHTENMENT EDUCATION · 原声跟读</div></div>
+  </div>
+
+  <div class="vsec">
+    <video controls playsinline preload="metadata" poster="video-poster.jpg">
+      <source src="waikan-video-curie.mp4" type="video/mp4">
+    </video>
+    <div class="vcap">▶ 精讲视频 · 逐句翻译 + 词汇精讲（点击播放）</div>
+  </div>
+
+  <div class="player">
+    <div class="ptitle">Marie Curie and the Shed That Changed Science</div>
+    <div class="controls">
+      <button class="playbtn" id="pb" aria-label="play"><svg id="ic" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+      <div class="pmeta">
+        <div class="pb"><i id="bar"></i></div>
+        <div class="pt"><span id="cur">0:00</span><span id="dur">1:21</span></div>
+      </div>
+    </div>
+    <div class="speeds" id="sp">
+      <button data-r="0.75">0.75×</button>
+      <button data-r="1" class="on">1.0×</button>
+      <button data-r="1.25">1.25×</button>
+      <span class="hint">▶ 念到哪句，哪句高亮</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="lbl">英 文 原 文 · 听 读</div>
+    <div class="eng" id="eng">
+      <span class="sent" data-s="0.1" data-e="8.38">In 1898, a young scientist named Marie Curie set out to explain a strange energy that certain rocks seemed to <ruby class="c2"><span class="b">give off</span><rt>散发</rt></ruby>. </span>
+      <span class="sent" data-s="8.38" data-e="18.36">Working beside her husband Pierre, she grew convinced that a mineral called pitchblende held an unknown <ruby class="c1"><span class="b">element</span><rt>元素</rt></ruby>, one far more <ruby class="c4"><span class="b">radioactive</span><rt>有放射性的</rt></ruby> than anything known before. </span>
+      <span class="sent" data-s="18.36" data-e="25.64">To prove it, the Curies had to <ruby class="c2"><span class="b">isolate</span><rt>分离</rt></ruby> this hidden substance, and that meant breaking down tons of pitchblende by hand. </span>
+      <span class="sent" data-s="25.64" data-e="32.88">For nearly four years they laboured in a cold, leaking shed, stirring boiling mixtures with heavy iron rods. </span>
+      <span class="sent" data-s="32.88" data-e="38.29">Marie later admitted the work was exhausting, yet her <ruby class="c1"><span class="b">determination</span><rt>决心</rt></ruby> never wavered. </span>
+      <span class="sent" data-s="38.29" data-e="45.99">In 1902 her <ruby class="c3"><span class="b">perseverance</span><rt>坚持不懈</rt></ruby> was finally rewarded: she obtained a tiny, faintly glowing speck of pure <ruby class="c4"><span class="b">radium</span><rt>镭</rt></ruby>. </span>
+      <span class="sent" data-s="45.99" data-e="53.19">The <ruby class="c2"><span class="b">discovery</span><rt>发现</rt></ruby> amazed the scientific world and brought her two Nobel Prizes, the first ever awarded to a woman. </span>
+      <span class="sent" data-s="53.19" data-e="59.34">Marie chose not to patent her method, <ruby class="c1"><span class="b">dedicating</span><rt>致力于</rt></ruby> her findings freely to science and medicine. </span>
+      <span class="sent" data-s="59.34" data-e="64.16">Radium would later be used to treat cancer, saving countless lives. </span>
+      <span class="sent" data-s="64.16" data-e="69.74">She paid a heavy price: years of exposure to radiation slowly ruined her health. </span>
+      <span class="sent" data-s="69.74" data-e="72.41">But her <ruby class="c3"><span class="b">contribution</span><rt>贡献</rt></ruby> outlived her. </span>
+      <span class="sent" data-s="72.41" data-e="81.38">More than a century on, she is remembered not only for what she found, but for the quiet courage with which she chased the truth, whatever it cost. </span>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <div class="lbl">参 考 译 文</div>
+    <div class="zh">1898 年，一位名叫玛丽·居里的年轻科学家，决心去解释某些矿石似乎会散发出的一种奇异能量。在丈夫皮埃尔身旁工作时，她越来越确信：一种叫沥青铀矿的矿物里，藏着一种前所未见的元素——它的放射性远超此前已知的任何物质。为了证明这一点，居里夫妇必须把这种隐藏的物质分离出来——这意味着要用双手处理数吨沥青铀矿。将近四年里，他们在一间阴冷、漏雨的棚屋中劳作，用沉重的铁棒搅动沸腾的混合液。玛丽后来坦言，这份工作累极了，但她的决心从未动摇。1902 年，她的坚持不懈终于得到回报：她提炼出了一小粒微微发光的纯镭。这一发现震惊了科学界，也为她带来两座诺贝尔奖——史上第一位获此殊荣的女性。玛丽选择不为自己的方法申请专利，而是把研究成果无偿贡献给科学与医学。镭后来被用于治疗癌症，挽救了无数生命。她为此付出了沉重的代价：长年暴露在辐射中，健康被一点点摧毁。但她的贡献比她活得更久。一个多世纪后，人们记住她，不只因为她发现了什么，更因为她追寻真理时那份安静的勇气——无论代价几何。</div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <div class="lbl">核 心 词 汇</div>
+    <div class="vgrid">
+      <div class="vcard"><div class="w">element<span class="ipa">/ˈelɪmənt/</span></div><div class="m"><b>n.</b>元素；要素</div></div>
+      <div class="vcard"><div class="w">radioactive<span class="ipa">/ˌreɪdiəʊˈæktɪv/</span></div><div class="m"><b>adj.</b>有放射性的</div></div>
+      <div class="vcard"><div class="w">isolate<span class="ipa">/ˈaɪsəleɪt/</span></div><div class="m"><b>v.</b>分离；使孤立</div></div>
+      <div class="vcard"><div class="w">determination<span class="ipa">/dɪˌtɜːmɪˈneɪʃn/</span></div><div class="m"><b>n.</b>决心；果断</div></div>
+      <div class="vcard hot"><div class="w">perseverance<span class="ipa">/ˌpɜːsɪˈvɪərəns/</span></div><div class="m"><b>n.</b>坚持不懈；毅力</div></div>
+      <div class="vcard"><div class="w">discovery<span class="ipa">/dɪˈskʌvəri/</span></div><div class="m"><b>n.</b>发现</div></div>
+      <div class="vcard"><div class="w">dedicate<span class="ipa">/ˈdedɪkeɪt/</span></div><div class="m"><b>v.</b>致力于；献身于</div></div>
+      <div class="vcard"><div class="w">contribution<span class="ipa">/ˌkɒntrɪˈbjuːʃn/</span></div><div class="m"><b>n.</b>贡献</div></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="brand">Enlightenment Education · 高考外刊精读</div>
+    扫码即听 · 每日一篇 · 听读积累
+  </div>
+</div>
+
+<audio id="au" preload="metadata" src="waikan-curie.mp3"></audio>
+<script>
+  const au=document.getElementById('au'), pb=document.getElementById('pb'), ic=document.getElementById('ic');
+  const bar=document.getElementById('bar'), cur=document.getElementById('cur'), durEl=document.getElementById('dur');
+  const sents=[...document.querySelectorAll('.sent')];
+  const PLAY='M8 5v14l11-7z', PAUSE='M6 5h4v14H6zm8 0h4v14h-4z';
+  const fmt=s=>{s=Math.max(0,s|0);return (s/60|0)+':'+String(s%60).padStart(2,'0');};
+  let active=-1;
+  pb.onclick=()=>{ au.paused?au.play():au.pause(); };
+  au.onplay=()=>ic.querySelector('path').setAttribute('d',PAUSE);
+  au.onpause=()=>ic.querySelector('path').setAttribute('d',PLAY);
+  au.onloadedmetadata=()=>{ if(isFinite(au.duration)) durEl.textContent=fmt(au.duration); };
+  au.ontimeupdate=()=>{
+    if(au.duration){ bar.style.width=(au.currentTime/au.duration*100)+'%'; cur.textContent=fmt(au.currentTime); }
+    const t=au.currentTime;
+    let idx=sents.findIndex(s=>t>=parseFloat(s.dataset.s)&&t<parseFloat(s.dataset.e));
+    if(idx!==active){
+      if(active>=0) sents[active].classList.remove('active');
+      active=idx;
+      if(idx>=0){ const el=sents[idx]; el.classList.add('active');
+        const r=el.getBoundingClientRect();
+        if(r.top<140||r.bottom>window.innerHeight-40) el.scrollIntoView({behavior:'smooth',block:'center'});
+      }
+    }
+  };
+  au.onended=()=>{ ic.querySelector('path').setAttribute('d',PLAY); bar.style.width='0%'; cur.textContent='0:00';
+    if(active>=0){sents[active].classList.remove('active');active=-1;} };
+  sents.forEach(s=>s.onclick=()=>{ au.currentTime=parseFloat(s.dataset.s)+0.02; if(au.paused)au.play(); });
+  document.getElementById('sp').onclick=e=>{ const b=e.target.closest('button'); if(!b)return;
+    au.playbackRate=parseFloat(b.dataset.r);
+    [...document.querySelectorAll('#sp button')].forEach(x=>x.classList.toggle('on',x===b)); };
+</script>
+</body>
+</html>
