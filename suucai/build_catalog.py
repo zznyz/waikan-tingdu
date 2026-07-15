@@ -20,10 +20,10 @@ CHUZHONG = f"{WS}/chuzhong-waikan-staging"
 
 # --- posted status (flip when Elaine confirms 发了X) ---
 POSTED = {
-    # 听力 — Elaine: "凡我出过的都发过了"（changdh-04 正在发 / changdh-05 全新 → 未发）
+    # 听力 — Elaine 07-15 确认 changdh-04 已发（changdh-05 未发）
     "听力|mokao-01","听力|mokao-02","听力|mokao-03","听力|mokao-04","听力|mokao-05",
     "听力|mokao-06","听力|mokao-07","听力|mokao-08","听力|changdh-01","听力|changdh-02",
-    "听力|changdh-03","听力|chuzhong-01","听力|zhenti-01","听力|jinjie-01",
+    "听力|changdh-03","听力|changdh-04","听力|chuzhong-01","听力|zhenti-01","听力|jinjie-01",
     "听力|gaokao-d1","听力|gaokao-d2",
     # 高考外刊 — Elaine 07-14 确认发到 No.07（No.08 威尼斯 07-14 刚交付, 未发）
     "高考外刊|1","高考外刊|2","高考外刊|3","高考外刊|4","高考外刊|5","高考外刊|6","高考外刊|7",
