@@ -23,10 +23,10 @@ POSTED = {
     # 听力 — Elaine 07-15 确认 changdh-04 已发（changdh-05 未发）
     "听力|mokao-01","听力|mokao-02","听力|mokao-03","听力|mokao-04","听力|mokao-05",
     "听力|mokao-06","听力|mokao-07","听力|mokao-08","听力|changdh-01","听力|changdh-02",
-    "听力|changdh-03","听力|changdh-04","听力|chuzhong-01","听力|zhenti-01","听力|jinjie-01",
+    "听力|changdh-03","听力|changdh-04","听力|changdh-08","听力|chuzhong-01","听力|zhenti-01","听力|jinjie-01",
     "听力|gaokao-d1","听力|gaokao-d2",
-    # 高考外刊 — Elaine 07-15 确认 No.08 威尼斯已在两个平台发送
-    "高考外刊|1","高考外刊|2","高考外刊|3","高考外刊|4","高考外刊|5","高考外刊|6","高考外刊|7","高考外刊|8",
+    # 高考外刊 — No.08 威尼斯 07-15 已发；No.09 睡眠 07-17 Elaine 确认已发
+    "高考外刊|1","高考外刊|2","高考外刊|3","高考外刊|4","高考外刊|5","高考外刊|6","高考外刊|7","高考外刊|8","高考外刊|9",
     # 初中外刊 — 发到 No.08（No.09 韦布 / No.10 二十四节气 07-14 刚补发, 未发）
     "初中外刊|1","初中外刊|2","初中外刊|3","初中外刊|4","初中外刊|5","初中外刊|6","初中外刊|7","初中外刊|8",
 }
@@ -87,6 +87,7 @@ for name in sorted(os.listdir(TINGLI)):
         "id": name, "no": name, "topic": label, "dur": dur,
         "cover": None, "xhs": xhs, "sph": sph,
         "posted": f"听力|{name}" in POSTED,
+        "ready": True,  # listed only if FINAL.mp4 exists → video always ready
     })
 
 # --- 外刊 (高考 + 初中) ---
@@ -107,10 +108,13 @@ def scan_waikan(root, line):
             wtext = read(wf); break
         xhs, sph = split_wenan(wtext)
         topic = derive_topic(wtext, slug)
+        # "ready" = 跟读视频已渲 (video-assets/*.mp4 存在) → 贴图+文案+视频三件套齐
+        vid = glob.glob(os.path.join(d, "video-assets", "*.mp4"))
         items[line].append({
             "id": base, "no": f"No.{int(no):02d}", "topic": topic,
             "cover": cover_rel, "xhs": xhs, "sph": sph, "dur": "",
             "posted": f"{line}|{int(no)}" in POSTED,
+            "ready": bool(vid),
         })
     items[line].sort(key=lambda x: int(re.search(r'\d+', x["no"]).group()))
 
@@ -121,8 +125,12 @@ scan_waikan(CHUZHONG, "初中外刊")
 def esc(s): return html.escape(s or "")
 
 def card(it):
-    badge = ('<span class="b posted">✅ 已发</span>' if it["posted"]
-             else '<span class="b todo">⬜ 未发</span>')
+    if it["posted"]:
+        badge = '<span class="b posted">🟢 已发</span>'
+    elif it.get("ready"):
+        badge = '<span class="b ready">🟡 已做好·未发</span>'
+    else:
+        badge = '<span class="b todo">⬜ 待渲</span>'
     cov = (f'<img loading="lazy" src="{it["cover"]}" alt="">' if it["cover"]
            else f'<div class="noimg">🎧<br>{esc(it["dur"])}</div>')
     def cp(label, txt):
@@ -130,7 +138,8 @@ def card(it):
         return (f'<div class="wblk"><div class="wh">{label}'
                 f'<button class="cp" onclick="cp(this)">复制</button></div>'
                 f'<pre>{esc(txt)}</pre></div>')
-    return (f'<div class="card {"done" if it["posted"] else ""}">'
+    cls = "done" if it["posted"] else ("rdy" if it.get("ready") else "")
+    return (f'<div class="card {cls}">'
             f'<div class="top">{cov}<div class="meta"><div class="no">{esc(it["no"])} {badge}</div>'
             f'<div class="tp">{esc(it["topic"])}</div></div></div>'
             f'<div class="wraps">{cp("小红书", it["xhs"])}{cp("视频号", it["sph"])}</div>'
@@ -139,8 +148,10 @@ def card(it):
 def section(title, key, emoji):
     lst = items[key]
     done = sum(1 for x in lst if x["posted"])
+    rdy = sum(1 for x in lst if x.get("ready") and not x["posted"])
     cards = "".join(card(x) for x in lst)
-    return (f'<section><h2>{emoji} {title} <span class="cnt">{done}/{len(lst)} 已发</span></h2>'
+    return (f'<section><h2>{emoji} {title} '
+            f'<span class="cnt">🟢{done} 已发 · 🟡{rdy} 待发 · 共{len(lst)}</span></h2>'
             f'<div class="grid">{cards}</div></section>')
 
 HTML = f"""<!doctype html><html lang="zh"><head><meta charset="utf-8">
@@ -160,7 +171,8 @@ section{{margin:22px 0}}h2{{font-size:17px;border-left:4px solid var(--gold);pad
 .noimg{{width:72px;height:96px;border-radius:8px;background:#eef1f5;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--navy);font-size:12px;flex:none}}
 .meta{{min-width:0}}.no{{font-size:12px;color:var(--mut);display:flex;align-items:center;gap:6px;flex-wrap:wrap}}
 .tp{{font-size:15px;font-weight:600;margin-top:3px}}
-.b{{font-size:11px;padding:1px 7px;border-radius:20px;font-weight:600}}.posted{{background:#e8f5e9;color:#2e7d32}}.todo{{background:#fff3e0;color:#e65100}}
+.b{{font-size:11px;padding:1px 7px;border-radius:20px;font-weight:600}}.posted{{background:#e8f5e9;color:#2e7d32}}.ready{{background:#fff8e1;color:#f9a825}}.todo{{background:#f0f0ee;color:#8a8a8a}}
+.card.rdy{{border-color:#f9d777;box-shadow:0 1px 6px rgba(249,168,37,.15)}}
 .wraps{{margin-top:10px;display:flex;flex-direction:column;gap:8px}}
 .wblk{{background:#faf9f6;border:1px solid var(--line);border-radius:8px;overflow:hidden}}
 .wh{{display:flex;justify-content:space-between;align-items:center;background:#f0ede6;padding:5px 10px;font-size:12px;font-weight:600;color:var(--navy)}}
@@ -168,7 +180,7 @@ section{{margin:22px 0}}h2{{font-size:17px;border-left:4px solid var(--gold);pad
 pre{{margin:0;padding:9px 10px;white-space:pre-wrap;word-break:break-word;font:13px/1.55 -apple-system,"PingFang SC",sans-serif;max-height:180px;overflow:auto}}
 footer{{text-align:center;color:var(--mut);font-size:12px;padding:24px}}
 </style></head><body>
-<header><h1>📚 素材总览 · 每日英语</h1><p>挑未发的发 · 文案点「复制」直接用 · 发完告诉 CC 标 ✅ · 页面随时更新</p></header>
+<header><h1>📚 素材总览 · 每日英语</h1><p>🟡 已做好·未发 = 随时能发｜挑一条跟 CC 说「推 No.X」拿整套 · 文案点「复制」直接用 · 发完标 🟢 · 页面随时更新</p></header>
 <main>
 {section("听力（中考/高考）","听力","🎧")}
 {section("高考外刊精读","高考外刊","📖")}
