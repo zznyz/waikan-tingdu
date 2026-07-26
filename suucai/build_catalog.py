@@ -21,11 +21,11 @@ CHUZHONG = f"{WS}/chuzhong-waikan-staging"
 # --- posted status (flip when Elaine confirms 发了X) ---
 POSTED = {
     # 听力 — Elaine 07-15 确认 changdh-04 已发；changdh-06 07-19 两平台已发；
-    #        07-26 Elaine 逐条确认：changdh-07 已发、changdh-10 已发；
-    #                              changdh-05 未发、changdh-11 未发。
-    #        ⚠️ 她并不严格按期号顺序发（05 未发但 06/07/08/10 已发）——
+    #        07-26 Elaine 逐条确认完毕，changdh 全线状态已对齐：
+    #          已发 = 01 02 03 04 06 07 08 10
+    #          未发 = 05 09 11（三期成品都齐，她随时能发）
+    #        ⚠️ 她并不严格按期号顺序发（05、09 未发但 06/07/08/10 已发）——
     #           **绝不能从"发到第几期"推断中间某期的状态，只认她逐条确认。**
-    #        ⏳ changdh-09 仍未确认，保持 ⬜（已跟她说不用专门回，别再追问）。
     "听力|mokao-01","听力|mokao-02","听力|mokao-03","听力|mokao-04","听力|mokao-05",
     "听力|mokao-06","听力|mokao-07","听力|mokao-08","听力|changdh-01","听力|changdh-02",
     "听力|changdh-03","听力|changdh-04","听力|changdh-06","听力|changdh-07","听力|changdh-08","听力|changdh-10","听力|chuzhong-01","听力|zhenti-01","听力|jinjie-01",
