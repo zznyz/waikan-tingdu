@@ -21,11 +21,14 @@ CHUZHONG = f"{WS}/chuzhong-waikan-staging"
 # --- posted status (flip when Elaine confirms 发了X) ---
 POSTED = {
     # 听力 — Elaine 07-15 确认 changdh-04 已发；changdh-06 07-19 两平台已发；
-    #        changdh-10 07-26 Elaine 确认已发。
-    #        ⏳ changdh-05 / 07 / 09 / 11 仍未拿到她的确认，故保持 ⬜ — 不替她推断。
+    #        07-26 Elaine 逐条确认：changdh-07 已发、changdh-10 已发；
+    #                              changdh-05 未发、changdh-11 未发。
+    #        ⚠️ 她并不严格按期号顺序发（05 未发但 06/07/08/10 已发）——
+    #           **绝不能从"发到第几期"推断中间某期的状态，只认她逐条确认。**
+    #        ⏳ changdh-09 仍未确认，保持 ⬜（已跟她说不用专门回，别再追问）。
     "听力|mokao-01","听力|mokao-02","听力|mokao-03","听力|mokao-04","听力|mokao-05",
     "听力|mokao-06","听力|mokao-07","听力|mokao-08","听力|changdh-01","听力|changdh-02",
-    "听力|changdh-03","听力|changdh-04","听力|changdh-06","听力|changdh-08","听力|changdh-10","听力|chuzhong-01","听力|zhenti-01","听力|jinjie-01",
+    "听力|changdh-03","听力|changdh-04","听力|changdh-06","听力|changdh-07","听力|changdh-08","听力|changdh-10","听力|chuzhong-01","听力|zhenti-01","听力|jinjie-01",
     "听力|gaokao-d1","听力|gaokao-d2",
     # 高考外刊 — No.08 威尼斯 07-15 已发；No.09 睡眠 07-17 Elaine 确认已发；No.10 一人一药/基因编辑 07-20 两平台视频已发
     "高考外刊|1","高考外刊|2","高考外刊|3","高考外刊|4","高考外刊|5","高考外刊|6","高考外刊|7","高考外刊|8","高考外刊|9","高考外刊|10",
