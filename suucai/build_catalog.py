@@ -28,7 +28,7 @@ POSTED = {
     #           **绝不能从"发到第几期"推断中间某期的状态，只认她逐条确认。**
     "听力|mokao-01","听力|mokao-02","听力|mokao-03","听力|mokao-04","听力|mokao-05",
     "听力|mokao-06","听力|mokao-07","听力|mokao-08","听力|changdh-01","听力|changdh-02",
-    "听力|changdh-03","听力|changdh-04","听力|changdh-06","听力|changdh-07","听力|changdh-08","听力|changdh-09","听力|changdh-10","听力|chuzhong-01","听力|zhenti-01","听力|jinjie-01",
+    "听力|changdh-03","听力|changdh-04","听力|changdh-05","听力|changdh-06","听力|changdh-07","听力|changdh-08","听力|changdh-09","听力|changdh-10","听力|chuzhong-01","听力|zhenti-01","听力|jinjie-01",
     "听力|gaokao-d1","听力|gaokao-d2",
     # 高考外刊 — No.08 威尼斯 07-15 已发；No.09 睡眠 07-17 Elaine 确认已发；No.10 一人一药/基因编辑 07-20 两平台视频已发
     "高考外刊|1","高考外刊|2","高考外刊|3","高考外刊|4","高考外刊|5","高考外刊|6","高考外刊|7","高考外刊|8","高考外刊|9","高考外刊|10",
