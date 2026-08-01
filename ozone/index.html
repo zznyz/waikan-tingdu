@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="google" content="notranslate">
+<title>外刊精读 · 原声跟读 · 臭氧层</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body { background:#e9edf2; font-family:'Noto Sans SC',sans-serif; color:#1c2430; }
+  .wrap { max-width:640px; margin:0 auto; min-height:100vh; background:#fff; }
+  .header { background:#163a5c; padding:18px 22px; display:flex; align-items:center; gap:14px; }
+  .logo { background:#fff; color:#163a5c; font-family:'Noto Serif SC',serif; font-weight:700; font-size:26px; letter-spacing:2px; padding:6px 12px; border-radius:6px; line-height:1; }
+  .htxt .t { color:#fff; font-family:'Noto Serif SC',serif; font-weight:700; font-size:19px; }
+  .htxt .s { color:#cdd9e6; font-size:12px; letter-spacing:2px; margin-top:4px; }
+  .vsec { background:#0d1b29; }
+  .vsec video { width:100%; height:auto; display:block; background:#000; }
+  .vcap { background:#0d1b29; color:#cdd9e6; font-size:13px; text-align:center; padding:10px 12px; letter-spacing:1px; }
+  .player { position:sticky; top:0; z-index:9; background:#eef3f8; border-bottom:2px solid #163a5c; padding:14px 22px 16px; }
+  .ptitle { font-family:'Noto Serif SC',serif; font-weight:700; font-size:18px; color:#10212f; line-height:1.3; margin-bottom:11px; }
+  .controls { display:flex; align-items:center; gap:13px; }
+  .playbtn { width:52px; height:52px; border-radius:50%; background:#163a5c; border:none; flex-shrink:0; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 3px 9px rgba(22,58,92,.3); transition:transform .1s; }
+  .playbtn:active { transform:scale(.93); }
+  .playbtn svg { width:22px; height:22px; fill:#fff; }
+  .pmeta { flex:1; }
+  .pmeta .pb { height:6px; background:#d3dee9; border-radius:3px; overflow:hidden; }
+  .pmeta .pb i { display:block; height:100%; width:0; background:#163a5c; border-radius:3px; transition:width .12s linear; }
+  .pmeta .pt { display:flex; justify-content:space-between; font-size:12px; color:#6a7886; margin-top:5px; }
+  .speeds { display:flex; gap:8px; margin-top:12px; align-items:center; }
+  .speeds button { font-size:13px; color:#46566a; background:#fff; border:1px solid #cdd9e6; border-radius:14px; padding:4px 12px; cursor:pointer; }
+  .speeds button.on { background:#163a5c; color:#fff; border-color:#163a5c; }
+  .speeds .hint { font-size:11px; color:#8a97a6; margin-left:auto; }
+  .section { padding:18px 22px; }
+  .lbl { font-family:'Noto Serif SC',serif; font-weight:700; color:#163a5c; font-size:15px; letter-spacing:2px; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid #e1e9f1; }
+  .eng { font-family:Georgia,'Times New Roman','Noto Serif SC',serif; font-size:19px; line-height:2.6; color:#14202c; }
+  .sent { transition:background .2s; border-radius:5px; padding:1px 2px; cursor:pointer; }
+  .sent.active { background:#fff4d6; box-shadow:0 0 0 4px #fff4d6; }
+  ruby { ruby-position:under; ruby-align:center; margin:0 2px; }
+  ruby rt { font-family:'Noto Sans SC',sans-serif; font-size:11px; font-weight:500; padding-top:2px; }
+  ruby .b { padding-bottom:2px; }
+  .c1 .b{ border-bottom:2.5px solid #1f9d6b; } .c1 rt{ color:#1f9d6b; }
+  .c2 .b{ border-bottom:2.5px solid #2f6fdb; } .c2 rt{ color:#2f6fdb; }
+  .c3 .b{ border-bottom:2.5px solid #e0567a; } .c3 rt{ color:#c43e62; }
+  .c4 .b{ border-bottom:2.5px solid #e8893a; } .c4 rt{ color:#cf7522; }
+  .zh { font-family:'Noto Serif SC',serif; font-size:15.5px; line-height:1.95; color:#5a6675; text-align:justify; }
+  .vgrid { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+  .vcard { background:#f4f7fa; border:1px solid #e1e9f1; border-radius:9px; padding:9px 12px; }
+  .vcard .w { font-family:Georgia,serif; font-weight:700; font-size:17px; color:#14202c; }
+  .vcard .ipa { font-family:Georgia,serif; font-size:12px; color:#8a97a6; margin-left:4px; }
+  .vcard .m { font-size:13px; color:#46566a; margin-top:2px; }
+  .vcard .m b{ color:#c0392b; font-weight:700; font-style:normal; margin-right:3px; }
+  .vcard.hot { background:#163a5c; border-color:#163a5c; }
+  .vcard.hot .w,.vcard.hot .m{ color:#fff; } .vcard.hot .ipa{ color:#aebfd0; } .vcard.hot .m b{ color:#ffd479; }
+  .footer { text-align:center; padding:22px; color:#8a97a6; font-size:13px; border-top:1px solid #eef0f3; }
+  .footer .brand { font-family:'Noto Serif SC',serif; font-weight:700; color:#163a5c; font-size:15px; margin-bottom:4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="logo">外刊</div>
+    <div class="htxt"><div class="t">高考外刊精读 · 臭氧层</div><div class="s">ENLIGHTENMENT EDUCATION · 原声跟读</div></div>
+  </div>
+
+  <div class="player">
+    <div class="ptitle">The Hole We Healed</div>
+    <div class="controls">
+      <button class="playbtn" id="pb" aria-label="play"><svg id="ic" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+      <div class="pmeta">
+        <div class="pb"><i id="bar"></i></div>
+        <div class="pt"><span id="cur">0:00</span><span id="dur">1:31</span></div>
+      </div>
+    </div>
+    <div class="speeds" id="sp">
+      <button data-r="0.75">0.75×</button>
+      <button data-r="1" class="on">1.0×</button>
+      <button data-r="1.25">1.25×</button>
+      <span class="hint">▶ 念到哪句，哪句高亮</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="lbl">英 文 原 文 · 听 读</div>
+    <div class="eng" id="eng">
+      <span class="sent" data-s="0.1" data-e="7.39">In 1985 three British scientists working in Antarctica published a measurement they had at first <ruby class="c1"><span class="b">refused</span><rt>拒绝</rt></ruby> to believe. </span>
+      <span class="sent" data-s="7.39" data-e="11.66">Each spring the ozone above their station fell by about a third. </span>
+      <span class="sent" data-s="11.66" data-e="19.94">They had checked the instrument twice; satellites had recorded the same low figures for years, but the numbers had been set aside as probable errors. </span>
+      <span class="sent" data-s="19.94" data-e="25.32">Ozone is a thin layer of gas that <ruby class="c2"><span class="b">absorbs</span><rt>吸收</rt></ruby> most of the ultraviolet light reaching the earth. </span>
+      <span class="sent" data-s="25.32" data-e="33.98">The gases eating it away were CFCs, used in fridges and spray cans and prized for being harmless: they do not burn and they do not <ruby class="c3"><span class="b">react</span><rt>起化学反应</rt></ruby>. </span>
+      <span class="sent" data-s="33.98" data-e="35.88">That was the problem. </span>
+      <span class="sent" data-s="35.88" data-e="47.05">Nothing broke them down at ground level, so they drifted slowly upwards until sunlight tore them apart, <ruby class="c4"><span class="b">releasing</span><rt>释放</rt></ruby> chlorine, and one chlorine atom can <ruby class="c1"><span class="b">destroy</span><rt>摧毁</rt></ruby> thousands of ozone molecules. </span>
+      <span class="sent" data-s="47.05" data-e="49.86">The response was unusually fast. </span>
+      <span class="sent" data-s="49.86" data-e="57.58">The Montreal Protocol was agreed in 1987, two years after the discovery, and every country has since joined it. </span>
+      <span class="sent" data-s="57.58" data-e="59.91">The ending is not tidy. </span>
+      <span class="sent" data-s="59.91" data-e="68.49">The old gas lingers for decades, the hole still opens every southern spring, and the layer is not expected to <ruby class="c2"><span class="b">recover</span><rt>恢复</rt></ruby> fully until about mid-century. </span>
+      <span class="sent" data-s="68.49" data-e="75.05">Worse, the first substitutes turned out to be powerful greenhouse gases, so the treaty had to be rewritten. </span>
+      <span class="sent" data-s="75.05" data-e="80.81">Still, it is the one global environmental problem on which the world clearly acted in time. </span>
+      <span class="sent" data-s="80.81" data-e="87.29">It worked because the evidence was plain, a <ruby class="c3"><span class="b">substitute</span><rt>替代品</rt></ruby> existed, and the bill was one that countries could pay. </span>
+      <span class="sent" data-s="87.29" data-e="91.54">Those three <ruby class="c4"><span class="b">conditions</span><rt>条件</rt></ruby>, not the happy ending, are the lesson. </span>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <div class="lbl">参 考 译 文</div>
+    <div class="zh">1985 年，三位在南极工作的英国科学家发表了一个他们起初根本不敢相信的测量结果：每年春天，他们观测站上空的臭氧会下降约三分之一。他们把仪器检查了两遍；卫星其实多年来一直记录到同样的低值，只是那些数字被当作可能的误差搁在了一边。
+
+臭氧是一层很薄的气体，它吸收掉大部分到达地球的紫外线。而在啃食它的，是一类叫氟氯烃（CFC）的气体——用在冰箱和喷雾罐里，并且正因为「无害」而受到青睐：它们不燃烧，也不与任何东西反应。问题恰恰就出在这里。地面上没有任何东西能分解它们，于是它们缓缓向上飘，直到被阳光撕开，释放出氯；而一个氯原子可以摧毁成千上万个臭氧分子。
+
+这一次的反应快得反常。《蒙特利尔议定书》在 1987 年达成，距离那次发现只有两年，此后世界上每一个国家都加入了它。
+
+但结局并不干净利落。旧的气体会在大气里滞留几十年，南半球每年春天臭氧洞照旧张开，而臭氧层预计要到本世纪中叶前后才能完全恢复。更糟的是，第一批替代品后来被发现是强效温室气体，条约因此不得不重写。
+
+即便如此，这仍是全球环境问题里唯一一个人类明确出手、而且出手还来得及的。它之所以奏效，是因为证据清楚、替代品已经存在、而那张账单是各国付得起的。真正的启示是这三个条件，不是那个圆满结局。</div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <div class="lbl">核 心 词 汇</div>
+    <div class="vgrid">
+      <div class="vcard"><div class="w">refuse<span class="ipa">/rɪˈfjuːz/</span></div><div class="m"><b>v.</b>拒绝；不肯（refuse to do sth）</div></div>
+      <div class="vcard"><div class="w">absorb<span class="ipa">/əbˈzɔːb/</span></div><div class="m"><b>v.</b>吸收；吸引（注意力）</div></div>
+      <div class="vcard"><div class="w">react<span class="ipa">/riˈækt/</span></div><div class="m"><b>v.</b>起化学反应；作出反应</div></div>
+      <div class="vcard"><div class="w">release<span class="ipa">/rɪˈliːs/</span></div><div class="m"><b>v./n.</b>释放；发布；排放</div></div>
+      <div class="vcard"><div class="w">destroy<span class="ipa">/dɪˈstrɔɪ/</span></div><div class="m"><b>v.</b>摧毁；破坏</div></div>
+      <div class="vcard"><div class="w">recover<span class="ipa">/rɪˈkʌvə(r)/</span></div><div class="m"><b>v.</b>恢复；康复；找回</div></div>
+      <div class="vcard"><div class="w">substitute<span class="ipa">/ˈsʌbstɪtjuːt/</span></div><div class="m"><b>n./v.</b>替代品；代替（substitute for）</div></div>
+      <div class="vcard"><div class="w">condition<span class="ipa">/kənˈdɪʃn/</span></div><div class="m"><b>n.</b>条件；状况；（复数）环境</div></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="brand">Enlightenment Education · 高考外刊精读</div>
+    扫码即听 · 每日一篇 · 听读积累
+  </div>
+</div>
+
+<audio id="au" preload="metadata" src="waikan-ozone.mp3"></audio>
+<script>
+  const au=document.getElementById('au'), pb=document.getElementById('pb'), ic=document.getElementById('ic');
+  const bar=document.getElementById('bar'), cur=document.getElementById('cur'), durEl=document.getElementById('dur');
+  const sents=[...document.querySelectorAll('.sent')];
+  const PLAY='M8 5v14l11-7z', PAUSE='M6 5h4v14H6zm8 0h4v14h-4z';
+  const fmt=s=>{s=Math.max(0,s|0);return (s/60|0)+':'+String(s%60).padStart(2,'0');};
+  let active=-1;
+  pb.onclick=()=>{ au.paused?au.play():au.pause(); };
+  au.onplay=()=>ic.querySelector('path').setAttribute('d',PAUSE);
+  au.onpause=()=>ic.querySelector('path').setAttribute('d',PLAY);
+  au.onloadedmetadata=()=>{ if(isFinite(au.duration)) durEl.textContent=fmt(au.duration); };
+  au.ontimeupdate=()=>{
+    if(au.duration){ bar.style.width=(au.currentTime/au.duration*100)+'%'; cur.textContent=fmt(au.currentTime); }
+    const t=au.currentTime;
+    let idx=sents.findIndex(s=>t>=parseFloat(s.dataset.s)&&t<parseFloat(s.dataset.e));
+    if(idx!==active){
+      if(active>=0) sents[active].classList.remove('active');
+      active=idx;
+      if(idx>=0){ const el=sents[idx]; el.classList.add('active');
+        const r=el.getBoundingClientRect();
+        if(r.top<140||r.bottom>window.innerHeight-40) el.scrollIntoView({behavior:'smooth',block:'center'});
+      }
+    }
+  };
+  au.onended=()=>{ ic.querySelector('path').setAttribute('d',PLAY); bar.style.width='0%'; cur.textContent='0:00';
+    if(active>=0){sents[active].classList.remove('active');active=-1;} };
+  sents.forEach(s=>s.onclick=()=>{ au.currentTime=parseFloat(s.dataset.s)+0.02; if(au.paused)au.play(); });
+  document.getElementById('sp').onclick=e=>{ const b=e.target.closest('button'); if(!b)return;
+    au.playbackRate=parseFloat(b.dataset.r);
+    [...document.querySelectorAll('#sp button')].forEach(x=>x.classList.toggle('on',x===b)); };
+</script>
+</body>
+</html>

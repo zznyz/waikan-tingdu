@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="google" content="notranslate">
+<title>外刊精读 · 原声跟读 · 魏格纳</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body { background:#e9edf2; font-family:'Noto Sans SC',sans-serif; color:#1c2430; }
+  .wrap { max-width:640px; margin:0 auto; min-height:100vh; background:#fff; }
+  .header { background:#163a5c; padding:18px 22px; display:flex; align-items:center; gap:14px; }
+  .logo { background:#fff; color:#163a5c; font-family:'Noto Serif SC',serif; font-weight:700; font-size:26px; letter-spacing:2px; padding:6px 12px; border-radius:6px; line-height:1; }
+  .htxt .t { color:#fff; font-family:'Noto Serif SC',serif; font-weight:700; font-size:19px; }
+  .htxt .s { color:#cdd9e6; font-size:12px; letter-spacing:2px; margin-top:4px; }
+  .vsec { background:#0d1b29; }
+  .vsec video { width:100%; height:auto; display:block; background:#000; }
+  .vcap { background:#0d1b29; color:#cdd9e6; font-size:13px; text-align:center; padding:10px 12px; letter-spacing:1px; }
+  .player { position:sticky; top:0; z-index:9; background:#eef3f8; border-bottom:2px solid #163a5c; padding:14px 22px 16px; }
+  .ptitle { font-family:'Noto Serif SC',serif; font-weight:700; font-size:18px; color:#10212f; line-height:1.3; margin-bottom:11px; }
+  .controls { display:flex; align-items:center; gap:13px; }
+  .playbtn { width:52px; height:52px; border-radius:50%; background:#163a5c; border:none; flex-shrink:0; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 3px 9px rgba(22,58,92,.3); transition:transform .1s; }
+  .playbtn:active { transform:scale(.93); }
+  .playbtn svg { width:22px; height:22px; fill:#fff; }
+  .pmeta { flex:1; }
+  .pmeta .pb { height:6px; background:#d3dee9; border-radius:3px; overflow:hidden; }
+  .pmeta .pb i { display:block; height:100%; width:0; background:#163a5c; border-radius:3px; transition:width .12s linear; }
+  .pmeta .pt { display:flex; justify-content:space-between; font-size:12px; color:#6a7886; margin-top:5px; }
+  .speeds { display:flex; gap:8px; margin-top:12px; align-items:center; }
+  .speeds button { font-size:13px; color:#46566a; background:#fff; border:1px solid #cdd9e6; border-radius:14px; padding:4px 12px; cursor:pointer; }
+  .speeds button.on { background:#163a5c; color:#fff; border-color:#163a5c; }
+  .speeds .hint { font-size:11px; color:#8a97a6; margin-left:auto; }
+  .section { padding:18px 22px; }
+  .lbl { font-family:'Noto Serif SC',serif; font-weight:700; color:#163a5c; font-size:15px; letter-spacing:2px; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid #e1e9f1; }
+  .eng { font-family:Georgia,'Times New Roman','Noto Serif SC',serif; font-size:19px; line-height:2.6; color:#14202c; }
+  .sent { transition:background .2s; border-radius:5px; padding:1px 2px; cursor:pointer; }
+  .sent.active { background:#fff4d6; box-shadow:0 0 0 4px #fff4d6; }
+  ruby { ruby-position:under; ruby-align:center; margin:0 2px; }
+  ruby rt { font-family:'Noto Sans SC',sans-serif; font-size:11px; font-weight:500; padding-top:2px; }
+  ruby .b { padding-bottom:2px; }
+  .c1 .b{ border-bottom:2.5px solid #1f9d6b; } .c1 rt{ color:#1f9d6b; }
+  .c2 .b{ border-bottom:2.5px solid #2f6fdb; } .c2 rt{ color:#2f6fdb; }
+  .c3 .b{ border-bottom:2.5px solid #e0567a; } .c3 rt{ color:#c43e62; }
+  .c4 .b{ border-bottom:2.5px solid #e8893a; } .c4 rt{ color:#cf7522; }
+  .zh { font-family:'Noto Serif SC',serif; font-size:15.5px; line-height:1.95; color:#5a6675; text-align:justify; }
+  .vgrid { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+  .vcard { background:#f4f7fa; border:1px solid #e1e9f1; border-radius:9px; padding:9px 12px; }
+  .vcard .w { font-family:Georgia,serif; font-weight:700; font-size:17px; color:#14202c; }
+  .vcard .ipa { font-family:Georgia,serif; font-size:12px; color:#8a97a6; margin-left:4px; }
+  .vcard .m { font-size:13px; color:#46566a; margin-top:2px; }
+  .vcard .m b{ color:#c0392b; font-weight:700; font-style:normal; margin-right:3px; }
+  .vcard.hot { background:#163a5c; border-color:#163a5c; }
+  .vcard.hot .w,.vcard.hot .m{ color:#fff; } .vcard.hot .ipa{ color:#aebfd0; } .vcard.hot .m b{ color:#ffd479; }
+  .footer { text-align:center; padding:22px; color:#8a97a6; font-size:13px; border-top:1px solid #eef0f3; }
+  .footer .brand { font-family:'Noto Serif SC',serif; font-weight:700; color:#163a5c; font-size:15px; margin-bottom:4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="logo">外刊</div>
+    <div class="htxt"><div class="t">高考外刊精读 · 魏格纳</div><div class="s">ENLIGHTENMENT EDUCATION · 原声跟读</div></div>
+  </div>
+
+  <div class="player">
+    <div class="ptitle">The Man Who Moved Continents</div>
+    <div class="controls">
+      <button class="playbtn" id="pb" aria-label="play"><svg id="ic" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+      <div class="pmeta">
+        <div class="pb"><i id="bar"></i></div>
+        <div class="pt"><span id="cur">0:00</span><span id="dur">1:28</span></div>
+      </div>
+    </div>
+    <div class="speeds" id="sp">
+      <button data-r="0.75">0.75×</button>
+      <button data-r="1" class="on">1.0×</button>
+      <button data-r="1.25">1.25×</button>
+      <span class="hint">▶ 念到哪句，哪句高亮</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="lbl">英 文 原 文 · 听 读</div>
+    <div class="eng" id="eng">
+      <span class="sent" data-s="0.1" data-e="8.07">In 1912 a German meteorologist named Alfred Wegener <ruby class="c1"><span class="b">suggested</span><rt>提出（观点）</rt></ruby> that the continents had once been joined and had since moved apart. </span>
+      <span class="sent" data-s="8.07" data-e="11.51">He was not a geologist, which did not help. </span>
+      <span class="sent" data-s="11.51" data-e="13.61">His evidence was good. </span>
+      <span class="sent" data-s="13.61" data-e="18.75">The coast of Brazil matched the coast of Africa the way two halves of a torn page <ruby class="c2"><span class="b">match</span><rt>吻合</rt></ruby>. </span>
+      <span class="sent" data-s="18.75" data-e="25.36">The same fossil reptile, a freshwater animal that could not have swum an ocean, turned up on both sides. </span>
+      <span class="sent" data-s="25.36" data-e="30.21">Rock layers and mountain chains ran off one continent and continued on another. </span>
+      <span class="sent" data-s="30.21" data-e="34.42">Ancient glaciers had left their scratches in places that are now hot. </span>
+      <span class="sent" data-s="34.42" data-e="37.2">What he could not supply was a <ruby class="c3"><span class="b">force</span><rt>力</rt></ruby>. </span>
+      <span class="sent" data-s="37.2" data-e="44.77">He imagined the continents ploughing through the ocean floor, and physicists <ruby class="c4"><span class="b">proved</span><rt>证明</rt></ruby> that nothing available was strong enough to push them. </span>
+      <span class="sent" data-s="44.77" data-e="50.95">Geologists rejected the whole idea, and for forty years the word drift was a joke in the field. </span>
+      <span class="sent" data-s="50.95" data-e="55.73">Here is the part usually left out: they were right to <ruby class="c1"><span class="b">reject</span><rt>否定</rt></ruby> his mechanism. </span>
+      <span class="sent" data-s="55.73" data-e="57.95">It really was <ruby class="c4"><span class="b">impossible</span><rt>不可能的</rt></ruby>. </span>
+      <span class="sent" data-s="57.95" data-e="65.15">Wegener was right about what had happened and wrong about how it happened, and neither side could <ruby class="c2"><span class="b">accept</span><rt>接受</rt></ruby> that both could be true at once. </span>
+      <span class="sent" data-s="65.15" data-e="74.99">The answer came after his death — he died on the Greenland ice in 1930 — when the sea floor itself turned out to be spreading, carrying the continents along on top of it. </span>
+      <span class="sent" data-s="74.99" data-e="78.08">He had never needed to push them through anything. </span>
+      <span class="sent" data-s="78.08" data-e="84.62">His facts had not been enough to <ruby class="c3"><span class="b">convince</span><rt>说服</rt></ruby> anyone, because a fact with no mechanism behind it is not yet science. </span>
+      <span class="sent" data-s="84.62" data-e="88.61">That rule cost him his career, and it is still a good rule. </span>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <div class="lbl">参 考 译 文</div>
+    <div class="zh">1912 年，一位名叫阿尔弗雷德·魏格纳的德国气象学家提出：各大陆曾经连在一起，后来才彼此分开。他不是地质学家——这一点对他没什么帮助。
+
+他的证据是好的。巴西的海岸与非洲的海岸吻合，就像一页纸被撕成两半那样吻合。同一种化石爬行动物——一种淡水动物，根本不可能游过一片大洋——在大洋两岸都出现了。岩层和山脉从一块大陆延伸出去，又在另一块大陆上接着往下走。古代冰川把擦痕留在了如今炎热的地方。
+
+他拿不出来的，是一个力。他设想大陆是「犁」过洋底的，而物理学家证明：当时能想到的任何力都不足以推动它们。地质学家否定了整套说法，此后四十年里，「漂移」这个词在这一行里就是个笑话。
+
+下面这一层通常被略去不提：他们拒绝他的机制是对的。 那个机制确实不可能成立。魏格纳对的是「发生了什么」，错的是「怎么发生的」；而两边都没能接受——这两件事可以同时成立。
+
+答案是在他死后才到来的——1930 年他死在格陵兰的冰上——人们发现，是洋底本身在扩张，驮着大陆一起走。他从来就不需要推着大陆穿过任何东西。他的事实没能说服任何人，因为背后没有机制的事实，还算不上科学。这条规矩让他搭上了一生，而它仍然是条好规矩。</div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <div class="lbl">核 心 词 汇</div>
+    <div class="vgrid">
+      <div class="vcard"><div class="w">suggest<span class="ipa">/səˈdʒest/</span></div><div class="m"><b>v.</b>提出（观点）；建议；暗示</div></div>
+      <div class="vcard"><div class="w">match<span class="ipa">/mætʃ/</span></div><div class="m"><b>v./n.</b>吻合；相配；比赛</div></div>
+      <div class="vcard"><div class="w">force<span class="ipa">/fɔːs/</span></div><div class="m"><b>n./v.</b>力；力量；强迫</div></div>
+      <div class="vcard"><div class="w">prove<span class="ipa">/pruːv/</span></div><div class="m"><b>v.</b>证明；证实</div></div>
+      <div class="vcard"><div class="w">reject<span class="ipa">/rɪˈdʒekt/</span></div><div class="m"><b>v.</b>否定；拒绝接受</div></div>
+      <div class="vcard"><div class="w">accept<span class="ipa">/əkˈsept/</span></div><div class="m"><b>v.</b>接受；认可</div></div>
+      <div class="vcard"><div class="w">convince<span class="ipa">/kənˈvɪns/</span></div><div class="m"><b>v.</b>说服；使信服</div></div>
+      <div class="vcard"><div class="w">impossible<span class="ipa">/ɪmˈpɒsəbl/</span></div><div class="m"><b>adj.</b>不可能的</div></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="brand">Enlightenment Education · 高考外刊精读</div>
+    扫码即听 · 每日一篇 · 听读积累
+  </div>
+</div>
+
+<audio id="au" preload="metadata" src="waikan-wegener.mp3"></audio>
+<script>
+  const au=document.getElementById('au'), pb=document.getElementById('pb'), ic=document.getElementById('ic');
+  const bar=document.getElementById('bar'), cur=document.getElementById('cur'), durEl=document.getElementById('dur');
+  const sents=[...document.querySelectorAll('.sent')];
+  const PLAY='M8 5v14l11-7z', PAUSE='M6 5h4v14H6zm8 0h4v14h-4z';
+  const fmt=s=>{s=Math.max(0,s|0);return (s/60|0)+':'+String(s%60).padStart(2,'0');};
+  let active=-1;
+  pb.onclick=()=>{ au.paused?au.play():au.pause(); };
+  au.onplay=()=>ic.querySelector('path').setAttribute('d',PAUSE);
+  au.onpause=()=>ic.querySelector('path').setAttribute('d',PLAY);
+  au.onloadedmetadata=()=>{ if(isFinite(au.duration)) durEl.textContent=fmt(au.duration); };
+  au.ontimeupdate=()=>{
+    if(au.duration){ bar.style.width=(au.currentTime/au.duration*100)+'%'; cur.textContent=fmt(au.currentTime); }
+    const t=au.currentTime;
+    let idx=sents.findIndex(s=>t>=parseFloat(s.dataset.s)&&t<parseFloat(s.dataset.e));
+    if(idx!==active){
+      if(active>=0) sents[active].classList.remove('active');
+      active=idx;
+      if(idx>=0){ const el=sents[idx]; el.classList.add('active');
+        const r=el.getBoundingClientRect();
+        if(r.top<140||r.bottom>window.innerHeight-40) el.scrollIntoView({behavior:'smooth',block:'center'});
+      }
+    }
+  };
+  au.onended=()=>{ ic.querySelector('path').setAttribute('d',PLAY); bar.style.width='0%'; cur.textContent='0:00';
+    if(active>=0){sents[active].classList.remove('active');active=-1;} };
+  sents.forEach(s=>s.onclick=()=>{ au.currentTime=parseFloat(s.dataset.s)+0.02; if(au.paused)au.play(); });
+  document.getElementById('sp').onclick=e=>{ const b=e.target.closest('button'); if(!b)return;
+    au.playbackRate=parseFloat(b.dataset.r);
+    [...document.querySelectorAll('#sp button')].forEach(x=>x.classList.toggle('on',x===b)); };
+</script>
+</body>
+</html>

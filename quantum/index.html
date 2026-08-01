@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="google" content="notranslate">
+<title>外刊精读 · 原声跟读 · 量子计算</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body { background:#e9edf2; font-family:'Noto Sans SC',sans-serif; color:#1c2430; }
+  .wrap { max-width:640px; margin:0 auto; min-height:100vh; background:#fff; }
+  .header { background:#163a5c; padding:18px 22px; display:flex; align-items:center; gap:14px; }
+  .logo { background:#fff; color:#163a5c; font-family:'Noto Serif SC',serif; font-weight:700; font-size:26px; letter-spacing:2px; padding:6px 12px; border-radius:6px; line-height:1; }
+  .htxt .t { color:#fff; font-family:'Noto Serif SC',serif; font-weight:700; font-size:19px; }
+  .htxt .s { color:#cdd9e6; font-size:12px; letter-spacing:2px; margin-top:4px; }
+  .vsec { background:#0d1b29; }
+  .vsec video { width:100%; height:auto; display:block; background:#000; }
+  .vcap { background:#0d1b29; color:#cdd9e6; font-size:13px; text-align:center; padding:10px 12px; letter-spacing:1px; }
+  .player { position:sticky; top:0; z-index:9; background:#eef3f8; border-bottom:2px solid #163a5c; padding:14px 22px 16px; }
+  .ptitle { font-family:'Noto Serif SC',serif; font-weight:700; font-size:18px; color:#10212f; line-height:1.3; margin-bottom:11px; }
+  .controls { display:flex; align-items:center; gap:13px; }
+  .playbtn { width:52px; height:52px; border-radius:50%; background:#163a5c; border:none; flex-shrink:0; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 3px 9px rgba(22,58,92,.3); transition:transform .1s; }
+  .playbtn:active { transform:scale(.93); }
+  .playbtn svg { width:22px; height:22px; fill:#fff; }
+  .pmeta { flex:1; }
+  .pmeta .pb { height:6px; background:#d3dee9; border-radius:3px; overflow:hidden; }
+  .pmeta .pb i { display:block; height:100%; width:0; background:#163a5c; border-radius:3px; transition:width .12s linear; }
+  .pmeta .pt { display:flex; justify-content:space-between; font-size:12px; color:#6a7886; margin-top:5px; }
+  .speeds { display:flex; gap:8px; margin-top:12px; align-items:center; }
+  .speeds button { font-size:13px; color:#46566a; background:#fff; border:1px solid #cdd9e6; border-radius:14px; padding:4px 12px; cursor:pointer; }
+  .speeds button.on { background:#163a5c; color:#fff; border-color:#163a5c; }
+  .speeds .hint { font-size:11px; color:#8a97a6; margin-left:auto; }
+  .section { padding:18px 22px; }
+  .lbl { font-family:'Noto Serif SC',serif; font-weight:700; color:#163a5c; font-size:15px; letter-spacing:2px; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid #e1e9f1; }
+  .eng { font-family:Georgia,'Times New Roman','Noto Serif SC',serif; font-size:19px; line-height:2.6; color:#14202c; }
+  .sent { transition:background .2s; border-radius:5px; padding:1px 2px; cursor:pointer; }
+  .sent.active { background:#fff4d6; box-shadow:0 0 0 4px #fff4d6; }
+  ruby { ruby-position:under; ruby-align:center; margin:0 2px; }
+  ruby rt { font-family:'Noto Sans SC',sans-serif; font-size:11px; font-weight:500; padding-top:2px; }
+  ruby .b { padding-bottom:2px; }
+  .c1 .b{ border-bottom:2.5px solid #1f9d6b; } .c1 rt{ color:#1f9d6b; }
+  .c2 .b{ border-bottom:2.5px solid #2f6fdb; } .c2 rt{ color:#2f6fdb; }
+  .c3 .b{ border-bottom:2.5px solid #e0567a; } .c3 rt{ color:#c43e62; }
+  .c4 .b{ border-bottom:2.5px solid #e8893a; } .c4 rt{ color:#cf7522; }
+  .zh { font-family:'Noto Serif SC',serif; font-size:15.5px; line-height:1.95; color:#5a6675; text-align:justify; }
+  .vgrid { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+  .vcard { background:#f4f7fa; border:1px solid #e1e9f1; border-radius:9px; padding:9px 12px; }
+  .vcard .w { font-family:Georgia,serif; font-weight:700; font-size:17px; color:#14202c; }
+  .vcard .ipa { font-family:Georgia,serif; font-size:12px; color:#8a97a6; margin-left:4px; }
+  .vcard .m { font-size:13px; color:#46566a; margin-top:2px; }
+  .vcard .m b{ color:#c0392b; font-weight:700; font-style:normal; margin-right:3px; }
+  .vcard.hot { background:#163a5c; border-color:#163a5c; }
+  .vcard.hot .w,.vcard.hot .m{ color:#fff; } .vcard.hot .ipa{ color:#aebfd0; } .vcard.hot .m b{ color:#ffd479; }
+  .footer { text-align:center; padding:22px; color:#8a97a6; font-size:13px; border-top:1px solid #eef0f3; }
+  .footer .brand { font-family:'Noto Serif SC',serif; font-weight:700; color:#163a5c; font-size:15px; margin-bottom:4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="logo">外刊</div>
+    <div class="htxt"><div class="t">高考外刊精读 · 量子计算</div><div class="s">ENLIGHTENMENT EDUCATION · 原声跟读</div></div>
+  </div>
+
+  <div class="player">
+    <div class="ptitle">Beyond Bits</div>
+    <div class="controls">
+      <button class="playbtn" id="pb" aria-label="play"><svg id="ic" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+      <div class="pmeta">
+        <div class="pb"><i id="bar"></i></div>
+        <div class="pt"><span id="cur">0:00</span><span id="dur">1:27</span></div>
+      </div>
+    </div>
+    <div class="speeds" id="sp">
+      <button data-r="0.75">0.75×</button>
+      <button data-r="1" class="on">1.0×</button>
+      <button data-r="1.25">1.25×</button>
+      <span class="hint">▶ 念到哪句，哪句高亮</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="lbl">英 文 原 文 · 听 读</div>
+    <div class="eng" id="eng">
+      <span class="sent" data-s="0.1" data-e="6.55">Every computer you have ever used <ruby class="c1"><span class="b">stores</span><rt>储存</rt></ruby> information as bits, each of which must be either a 0 or a 1. </span>
+      <span class="sent" data-s="6.55" data-e="13.91">A quantum computer uses qubits, and a qubit can hold both values at once, in what physicists call superposition. </span>
+      <span class="sent" data-s="13.91" data-e="21.07">Qubits can also be linked, so that measuring one immediately tells you something about the other, however far apart they are. </span>
+      <span class="sent" data-s="21.07" data-e="26.21">Einstein disliked this idea, but experiments have <ruby class="c3"><span class="b">confirmed</span><rt>证实</rt></ruby> it many times. </span>
+      <span class="sent" data-s="26.21" data-e="35.11">From these two facts people draw a wrong <ruby class="c4"><span class="b">conclusion</span><rt>结论</rt></ruby>: that a quantum computer simply tries every possible answer at the same time and then reports the right one. </span>
+      <span class="sent" data-s="35.11" data-e="36.74">It cannot. </span>
+      <span class="sent" data-s="36.74" data-e="43.41">The moment you <ruby class="c2"><span class="b">measure</span><rt>测量</rt></ruby> a qubit it settles on a single value, and which value you get is partly a matter of <ruby class="c1"><span class="b">chance</span><rt>偶然性</rt></ruby>. </span>
+      <span class="sent" data-s="43.41" data-e="50.95">The real skill lies in designing the calculation so that the wrong answers <ruby class="c2"><span class="b">cancel</span><rt>抵消</rt></ruby> one another out and the correct one is left standing. </span>
+      <span class="sent" data-s="50.95" data-e="62.5">In 1994 Peter Shor showed that such a machine could break the codes that <ruby class="c3"><span class="b">protect</span><rt>保护</rt></ruby> almost everything sent over the internet — a task that would keep an ordinary computer busy for longer than the universe has existed. </span>
+      <span class="sent" data-s="62.5" data-e="65.05">That is why the money arrived. </span>
+      <span class="sent" data-s="65.05" data-e="68.8">The machines themselves are still small and fragile. </span>
+      <span class="sent" data-s="68.8" data-e="79.34">A qubit loses its state if it is disturbed by the faintest heat or vibration, so most are kept colder than deep space, and thousands of them may be needed to make one <ruby class="c4"><span class="b">reliable</span><rt>可靠的</rt></ruby> working unit. </span>
+      <span class="sent" data-s="79.34" data-e="82.21">Nobody is going to have one at home. </span>
+      <span class="sent" data-s="82.21" data-e="87.74">The sensible response is not to wait, but to change the codes before the machines arrive. </span>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <div class="lbl">参 考 译 文</div>
+    <div class="zh">你用过的每一台计算机，都把信息存成比特，而每一个比特要么是 0，要么是 1。量子计算机用的是量子比特；一个量子比特可以同时持有两个值——物理学家把这叫做「叠加」。
+
+量子比特之间还可以被关联起来：测量其中一个，立刻就能知道另一个的一些情况，无论它们相距多远。爱因斯坦不喜欢这个想法，但实验已经反复证实了它。
+
+人们从这两件事里推出了一个错误的结论：以为量子计算机不过是同时把所有可能的答案都试一遍，然后报出正确的那个。它做不到。你一测量量子比特，它就落定成一个单一的值，而你得到哪个值，一部分是概率的事。真正的本事在于把计算设计成这样：让错误的答案彼此抵消，只剩正确的那个还立着。
+
+1994 年，彼得·肖尔证明了这样一台机器能够破解那些保护着互联网上几乎一切传输内容的密码——而同一件事会让一台普通计算机忙上比宇宙存在至今还长的时间。钱就是这么来的。
+
+但机器本身仍然又小又脆弱。哪怕最微弱的热或震动打扰到它，量子比特就会丢掉自己的状态；所以大多数被保存在比深空还冷的环境里，而且可能需要成千上万个，才凑得出一个可靠的工作单元。没有人会在家里放一台。明智的做法不是等，而是在这些机器到来之前，先把密码换掉。</div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <div class="lbl">核 心 词 汇</div>
+    <div class="vgrid">
+      <div class="vcard"><div class="w">store<span class="ipa">/stɔː(r)/</span></div><div class="m"><b>v./n.</b>储存；存放；商店</div></div>
+      <div class="vcard"><div class="w">measure<span class="ipa">/ˈmeʒə(r)/</span></div><div class="m"><b>v./n.</b>测量；衡量；措施</div></div>
+      <div class="vcard"><div class="w">confirm<span class="ipa">/kənˈfɜːm/</span></div><div class="m"><b>v.</b>证实；确认</div></div>
+      <div class="vcard"><div class="w">conclusion<span class="ipa">/kənˈkluːʒn/</span></div><div class="m"><b>n.</b>结论；结束（draw a conclusion）</div></div>
+      <div class="vcard"><div class="w">chance<span class="ipa">/tʃɑːns/</span></div><div class="m"><b>n.</b>偶然性；机会；可能性</div></div>
+      <div class="vcard"><div class="w">cancel<span class="ipa">/ˈkænsl/</span></div><div class="m"><b>v.</b>抵消；取消（cancel out）</div></div>
+      <div class="vcard"><div class="w">protect<span class="ipa">/prəˈtekt/</span></div><div class="m"><b>v.</b>保护；防护（protect … from/against）</div></div>
+      <div class="vcard"><div class="w">reliable<span class="ipa">/rɪˈlaɪəbl/</span></div><div class="m"><b>adj.</b>可靠的；靠得住的</div></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="brand">Enlightenment Education · 高考外刊精读</div>
+    扫码即听 · 每日一篇 · 听读积累
+  </div>
+</div>
+
+<audio id="au" preload="metadata" src="waikan-quantum.mp3"></audio>
+<script>
+  const au=document.getElementById('au'), pb=document.getElementById('pb'), ic=document.getElementById('ic');
+  const bar=document.getElementById('bar'), cur=document.getElementById('cur'), durEl=document.getElementById('dur');
+  const sents=[...document.querySelectorAll('.sent')];
+  const PLAY='M8 5v14l11-7z', PAUSE='M6 5h4v14H6zm8 0h4v14h-4z';
+  const fmt=s=>{s=Math.max(0,s|0);return (s/60|0)+':'+String(s%60).padStart(2,'0');};
+  let active=-1;
+  pb.onclick=()=>{ au.paused?au.play():au.pause(); };
+  au.onplay=()=>ic.querySelector('path').setAttribute('d',PAUSE);
+  au.onpause=()=>ic.querySelector('path').setAttribute('d',PLAY);
+  au.onloadedmetadata=()=>{ if(isFinite(au.duration)) durEl.textContent=fmt(au.duration); };
+  au.ontimeupdate=()=>{
+    if(au.duration){ bar.style.width=(au.currentTime/au.duration*100)+'%'; cur.textContent=fmt(au.currentTime); }
+    const t=au.currentTime;
+    let idx=sents.findIndex(s=>t>=parseFloat(s.dataset.s)&&t<parseFloat(s.dataset.e));
+    if(idx!==active){
+      if(active>=0) sents[active].classList.remove('active');
+      active=idx;
+      if(idx>=0){ const el=sents[idx]; el.classList.add('active');
+        const r=el.getBoundingClientRect();
+        if(r.top<140||r.bottom>window.innerHeight-40) el.scrollIntoView({behavior:'smooth',block:'center'});
+      }
+    }
+  };
+  au.onended=()=>{ ic.querySelector('path').setAttribute('d',PLAY); bar.style.width='0%'; cur.textContent='0:00';
+    if(active>=0){sents[active].classList.remove('active');active=-1;} };
+  sents.forEach(s=>s.onclick=()=>{ au.currentTime=parseFloat(s.dataset.s)+0.02; if(au.paused)au.play(); });
+  document.getElementById('sp').onclick=e=>{ const b=e.target.closest('button'); if(!b)return;
+    au.playbackRate=parseFloat(b.dataset.r);
+    [...document.querySelectorAll('#sp button')].forEach(x=>x.classList.toggle('on',x===b)); };
+</script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="google" content="notranslate">
+<title>外刊精读 · 原声跟读 · 来自另一颗恒星的访客</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body { background:#e9edf2; font-family:'Noto Sans SC',sans-serif; color:#1c2430; }
+  .wrap { max-width:640px; margin:0 auto; min-height:100vh; background:#fff; }
+  .header { background:#163a5c; padding:18px 22px; display:flex; align-items:center; gap:14px; }
+  .logo { background:#fff; color:#163a5c; font-family:'Noto Serif SC',serif; font-weight:700; font-size:26px; letter-spacing:2px; padding:6px 12px; border-radius:6px; line-height:1; }
+  .htxt .t { color:#fff; font-family:'Noto Serif SC',serif; font-weight:700; font-size:19px; }
+  .htxt .s { color:#cdd9e6; font-size:12px; letter-spacing:2px; margin-top:4px; }
+  .vsec { background:#0d1b29; }
+  .vsec video { width:100%; height:auto; display:block; background:#000; }
+  .vcap { background:#0d1b29; color:#cdd9e6; font-size:13px; text-align:center; padding:10px 12px; letter-spacing:1px; }
+  .player { position:sticky; top:0; z-index:9; background:#eef3f8; border-bottom:2px solid #163a5c; padding:14px 22px 16px; }
+  .ptitle { font-family:'Noto Serif SC',serif; font-weight:700; font-size:18px; color:#10212f; line-height:1.3; margin-bottom:11px; }
+  .controls { display:flex; align-items:center; gap:13px; }
+  .playbtn { width:52px; height:52px; border-radius:50%; background:#163a5c; border:none; flex-shrink:0; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 3px 9px rgba(22,58,92,.3); transition:transform .1s; }
+  .playbtn:active { transform:scale(.93); }
+  .playbtn svg { width:22px; height:22px; fill:#fff; }
+  .pmeta { flex:1; }
+  .pmeta .pb { height:6px; background:#d3dee9; border-radius:3px; overflow:hidden; }
+  .pmeta .pb i { display:block; height:100%; width:0; background:#163a5c; border-radius:3px; transition:width .12s linear; }
+  .pmeta .pt { display:flex; justify-content:space-between; font-size:12px; color:#6a7886; margin-top:5px; }
+  .speeds { display:flex; gap:8px; margin-top:12px; align-items:center; }
+  .speeds button { font-size:13px; color:#46566a; background:#fff; border:1px solid #cdd9e6; border-radius:14px; padding:4px 12px; cursor:pointer; }
+  .speeds button.on { background:#163a5c; color:#fff; border-color:#163a5c; }
+  .speeds .hint { font-size:11px; color:#8a97a6; margin-left:auto; }
+  .section { padding:18px 22px; }
+  .lbl { font-family:'Noto Serif SC',serif; font-weight:700; color:#163a5c; font-size:15px; letter-spacing:2px; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid #e1e9f1; }
+  .eng { font-family:Georgia,'Times New Roman','Noto Serif SC',serif; font-size:19px; line-height:2.6; color:#14202c; }
+  .sent { transition:background .2s; border-radius:5px; padding:1px 2px; cursor:pointer; }
+  .sent.active { background:#fff4d6; box-shadow:0 0 0 4px #fff4d6; }
+  ruby { ruby-position:under; ruby-align:center; margin:0 2px; }
+  ruby rt { font-family:'Noto Sans SC',sans-serif; font-size:11px; font-weight:500; padding-top:2px; }
+  ruby .b { padding-bottom:2px; }
+  .c1 .b{ border-bottom:2.5px solid #1f9d6b; } .c1 rt{ color:#1f9d6b; }
+  .c2 .b{ border-bottom:2.5px solid #2f6fdb; } .c2 rt{ color:#2f6fdb; }
+  .c3 .b{ border-bottom:2.5px solid #e0567a; } .c3 rt{ color:#c43e62; }
+  .c4 .b{ border-bottom:2.5px solid #e8893a; } .c4 rt{ color:#cf7522; }
+  .zh { font-family:'Noto Serif SC',serif; font-size:15.5px; line-height:1.95; color:#5a6675; text-align:justify; }
+  .vgrid { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+  .vcard { background:#f4f7fa; border:1px solid #e1e9f1; border-radius:9px; padding:9px 12px; }
+  .vcard .w { font-family:Georgia,serif; font-weight:700; font-size:17px; color:#14202c; }
+  .vcard .ipa { font-family:Georgia,serif; font-size:12px; color:#8a97a6; margin-left:4px; }
+  .vcard .m { font-size:13px; color:#46566a; margin-top:2px; }
+  .vcard .m b{ color:#c0392b; font-weight:700; font-style:normal; margin-right:3px; }
+  .vcard.hot { background:#163a5c; border-color:#163a5c; }
+  .vcard.hot .w,.vcard.hot .m{ color:#fff; } .vcard.hot .ipa{ color:#aebfd0; } .vcard.hot .m b{ color:#ffd479; }
+  .footer { text-align:center; padding:22px; color:#8a97a6; font-size:13px; border-top:1px solid #eef0f3; }
+  .footer .brand { font-family:'Noto Serif SC',serif; font-weight:700; color:#163a5c; font-size:15px; margin-bottom:4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="logo">外刊</div>
+    <div class="htxt"><div class="t">高考外刊精读 · 来自另一颗恒星的访客</div><div class="s">ENLIGHTENMENT EDUCATION · 原声跟读</div></div>
+  </div>
+
+  <div class="player">
+    <div class="ptitle">Interstellar Visitor</div>
+    <div class="controls">
+      <button class="playbtn" id="pb" aria-label="play"><svg id="ic" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+      <div class="pmeta">
+        <div class="pb"><i id="bar"></i></div>
+        <div class="pt"><span id="cur">0:00</span><span id="dur">1:22</span></div>
+      </div>
+    </div>
+    <div class="speeds" id="sp">
+      <button data-r="0.75">0.75×</button>
+      <button data-r="1" class="on">1.0×</button>
+      <button data-r="1.25">1.25×</button>
+      <span class="hint">▶ 念到哪句，哪句高亮</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="lbl">英 文 原 文 · 听 读</div>
+    <div class="eng" id="eng">
+      <span class="sent" data-s="0.1" data-e="7.25">In July 2025, astronomers <ruby class="c1"><span class="b">detected</span><rt>探测</rt></ruby> a faint, fast-moving point of light near the plane of our galaxy. </span>
+      <span class="sent" data-s="7.25" data-e="16.49">Within days, careful measurements <ruby class="c2"><span class="b">confirmed</span><rt>证实</rt></ruby> something extraordinary: the object, later named 3I/ATLAS, was not born around our Sun. </span>
+      <span class="sent" data-s="16.49" data-e="18.85">It had come from another star. </span>
+      <span class="sent" data-s="18.85" data-e="27.4">3I/ATLAS is only the third interstellar visitor ever recorded, following &#x27;Oumuamua in 2017 and Borisov in 2019. </span>
+      <span class="sent" data-s="27.4" data-e="31.76">Its <ruby class="c3"><span class="b">origin</span><rt>起源</rt></ruby> beyond our solar system was betrayed by its path. </span>
+      <span class="sent" data-s="31.76" data-e="39.31">Unlike the closed orbits of local comets, it races along a hyperbolic curve, too fast for the Sun&#x27;s gravity to hold. </span>
+      <span class="sent" data-s="39.31" data-e="43.98">Trace that path backward, and it points to the depths of interstellar space. </span>
+      <span class="sent" data-s="43.98" data-e="51.98">The comet was first spotted by ATLAS, a network of robotic telescopes that scans the whole sky to warn us of dangerous asteroids. </span>
+      <span class="sent" data-s="51.98" data-e="58.74">Follow-up <ruby class="c4"><span class="b">observations</span><rt>观测</rt></ruby> soon <ruby class="c1"><span class="b">revealed</span><rt>揭示</rt></ruby> a glowing coma — dust and gas released as sunlight warms its ancient ice. </span>
+      <span class="sent" data-s="58.74" data-e="65.49">Because such <ruby class="c2"><span class="b">rare</span><rt>罕见的</rt></ruby> messengers pass only once, never to return, observatories worldwide joined a relay. </span>
+      <span class="sent" data-s="65.49" data-e="75.29">As the comet <ruby class="c3"><span class="b">approached</span><rt>接近</rt></ruby> the Sun in late October, slipping just inside the orbit of Mars, telescopes on Earth and spacecraft across the solar system took turns watching. </span>
+      <span class="sent" data-s="75.29" data-e="82.06">This global <ruby class="c4"><span class="b">cooperation</span><rt>合作</rt></ruby> turned a fleeting visitor into a shared window onto how other planetary systems are built. </span>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <div class="lbl">参 考 译 文</div>
+    <div class="zh">2025 年 7 月，天文学家探测到一个微弱、快速移动的光点。几天内，精密测量便证实了一件非同寻常的事：这个后来被命名为 3I/ATLAS 的天体并非诞生于太阳周围，而是来自另一颗恒星。它是人类记录到的第三个星际访客，此前只有 2017 年的「奥陌陌」和 2019 年的鲍里索夫彗星。它的起源被运行轨迹「出卖」：不同于本地彗星的封闭轨道，它沿双曲线飞驰，快到太阳引力无法束缚，回溯路径直指星际深处。彗星最初由机器人望远镜网络 ATLAS 发现，随后的观测很快揭示出一团发光的彗发。因为这样罕见的信使只路过一次、一去不返，全世界的天文台加入接力：当它接近太阳、掠过火星轨道内侧时，地球望远镜与各处航天器轮流守望。这场全球合作，把一位匆匆过客变成了共享之窗。</div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <div class="lbl">核 心 词 汇</div>
+    <div class="vgrid">
+      <div class="vcard"><div class="w">detect<span class="ipa">/dɪˈtekt/</span></div><div class="m"><b>v.</b>探测；察觉，发现</div></div>
+      <div class="vcard"><div class="w">confirm<span class="ipa">/kənˈfɜːm/</span></div><div class="m"><b>v.</b>证实；确认</div></div>
+      <div class="vcard"><div class="w">origin<span class="ipa">/ˈɒrɪdʒɪn/</span></div><div class="m"><b>n.</b>起源；由来，出身</div></div>
+      <div class="vcard"><div class="w">observation<span class="ipa">/ˌɒbzəˈveɪʃn/</span></div><div class="m"><b>n.</b>观测；观察（observe v.）</div></div>
+      <div class="vcard"><div class="w">reveal<span class="ipa">/rɪˈviːl/</span></div><div class="m"><b>v.</b>揭示；显露，透露</div></div>
+      <div class="vcard"><div class="w">rare<span class="ipa">/reə(r)/</span></div><div class="m"><b>adj.</b>罕见的；稀有的</div></div>
+      <div class="vcard"><div class="w">approach<span class="ipa">/əˈprəʊtʃ/</span></div><div class="m"><b>v./n.</b>接近，靠近；方法，途径</div></div>
+      <div class="vcard"><div class="w">cooperation<span class="ipa">/kəʊˌɒpəˈreɪʃn/</span></div><div class="m"><b>n.</b>合作；协作</div></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="brand">Enlightenment Education · 高考外刊精读</div>
+    扫码即听 · 每日一篇 · 听读积累
+  </div>
+</div>
+
+<audio id="au" preload="metadata" src="waikan-comet3i.mp3"></audio>
+<script>
+  const au=document.getElementById('au'), pb=document.getElementById('pb'), ic=document.getElementById('ic');
+  const bar=document.getElementById('bar'), cur=document.getElementById('cur'), durEl=document.getElementById('dur');
+  const sents=[...document.querySelectorAll('.sent')];
+  const PLAY='M8 5v14l11-7z', PAUSE='M6 5h4v14H6zm8 0h4v14h-4z';
+  const fmt=s=>{s=Math.max(0,s|0);return (s/60|0)+':'+String(s%60).padStart(2,'0');};
+  let active=-1;
+  pb.onclick=()=>{ au.paused?au.play():au.pause(); };
+  au.onplay=()=>ic.querySelector('path').setAttribute('d',PAUSE);
+  au.onpause=()=>ic.querySelector('path').setAttribute('d',PLAY);
+  au.onloadedmetadata=()=>{ if(isFinite(au.duration)) durEl.textContent=fmt(au.duration); };
+  au.ontimeupdate=()=>{
+    if(au.duration){ bar.style.width=(au.currentTime/au.duration*100)+'%'; cur.textContent=fmt(au.currentTime); }
+    const t=au.currentTime;
+    let idx=sents.findIndex(s=>t>=parseFloat(s.dataset.s)&&t<parseFloat(s.dataset.e));
+    if(idx!==active){
+      if(active>=0) sents[active].classList.remove('active');
+      active=idx;
+      if(idx>=0){ const el=sents[idx]; el.classList.add('active');
+        const r=el.getBoundingClientRect();
+        if(r.top<140||r.bottom>window.innerHeight-40) el.scrollIntoView({behavior:'smooth',block:'center'});
+      }
+    }
+  };
+  au.onended=()=>{ ic.querySelector('path').setAttribute('d',PLAY); bar.style.width='0%'; cur.textContent='0:00';
+    if(active>=0){sents[active].classList.remove('active');active=-1;} };
+  sents.forEach(s=>s.onclick=()=>{ au.currentTime=parseFloat(s.dataset.s)+0.02; if(au.paused)au.play(); });
+  document.getElementById('sp').onclick=e=>{ const b=e.target.closest('button'); if(!b)return;
+    au.playbackRate=parseFloat(b.dataset.r);
+    [...document.querySelectorAll('#sp button')].forEach(x=>x.classList.toggle('on',x===b)); };
+</script>
+</body>
+</html>

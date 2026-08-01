@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="google" content="notranslate">
+<title>外刊精读 · 原声跟读 · 抗生素耐药</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body { background:#e9edf2; font-family:'Noto Sans SC',sans-serif; color:#1c2430; }
+  .wrap { max-width:640px; margin:0 auto; min-height:100vh; background:#fff; }
+  .header { background:#163a5c; padding:18px 22px; display:flex; align-items:center; gap:14px; }
+  .logo { background:#fff; color:#163a5c; font-family:'Noto Serif SC',serif; font-weight:700; font-size:26px; letter-spacing:2px; padding:6px 12px; border-radius:6px; line-height:1; }
+  .htxt .t { color:#fff; font-family:'Noto Serif SC',serif; font-weight:700; font-size:19px; }
+  .htxt .s { color:#cdd9e6; font-size:12px; letter-spacing:2px; margin-top:4px; }
+  .vsec { background:#0d1b29; }
+  .vsec video { width:100%; height:auto; display:block; background:#000; }
+  .vcap { background:#0d1b29; color:#cdd9e6; font-size:13px; text-align:center; padding:10px 12px; letter-spacing:1px; }
+  .player { position:sticky; top:0; z-index:9; background:#eef3f8; border-bottom:2px solid #163a5c; padding:14px 22px 16px; }
+  .ptitle { font-family:'Noto Serif SC',serif; font-weight:700; font-size:18px; color:#10212f; line-height:1.3; margin-bottom:11px; }
+  .controls { display:flex; align-items:center; gap:13px; }
+  .playbtn { width:52px; height:52px; border-radius:50%; background:#163a5c; border:none; flex-shrink:0; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 3px 9px rgba(22,58,92,.3); transition:transform .1s; }
+  .playbtn:active { transform:scale(.93); }
+  .playbtn svg { width:22px; height:22px; fill:#fff; }
+  .pmeta { flex:1; }
+  .pmeta .pb { height:6px; background:#d3dee9; border-radius:3px; overflow:hidden; }
+  .pmeta .pb i { display:block; height:100%; width:0; background:#163a5c; border-radius:3px; transition:width .12s linear; }
+  .pmeta .pt { display:flex; justify-content:space-between; font-size:12px; color:#6a7886; margin-top:5px; }
+  .speeds { display:flex; gap:8px; margin-top:12px; align-items:center; }
+  .speeds button { font-size:13px; color:#46566a; background:#fff; border:1px solid #cdd9e6; border-radius:14px; padding:4px 12px; cursor:pointer; }
+  .speeds button.on { background:#163a5c; color:#fff; border-color:#163a5c; }
+  .speeds .hint { font-size:11px; color:#8a97a6; margin-left:auto; }
+  .section { padding:18px 22px; }
+  .lbl { font-family:'Noto Serif SC',serif; font-weight:700; color:#163a5c; font-size:15px; letter-spacing:2px; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid #e1e9f1; }
+  .eng { font-family:Georgia,'Times New Roman','Noto Serif SC',serif; font-size:19px; line-height:2.6; color:#14202c; }
+  .sent { transition:background .2s; border-radius:5px; padding:1px 2px; cursor:pointer; }
+  .sent.active { background:#fff4d6; box-shadow:0 0 0 4px #fff4d6; }
+  ruby { ruby-position:under; ruby-align:center; margin:0 2px; }
+  ruby rt { font-family:'Noto Sans SC',sans-serif; font-size:11px; font-weight:500; padding-top:2px; }
+  ruby .b { padding-bottom:2px; }
+  .c1 .b{ border-bottom:2.5px solid #1f9d6b; } .c1 rt{ color:#1f9d6b; }
+  .c2 .b{ border-bottom:2.5px solid #2f6fdb; } .c2 rt{ color:#2f6fdb; }
+  .c3 .b{ border-bottom:2.5px solid #e0567a; } .c3 rt{ color:#c43e62; }
+  .c4 .b{ border-bottom:2.5px solid #e8893a; } .c4 rt{ color:#cf7522; }
+  .zh { font-family:'Noto Serif SC',serif; font-size:15.5px; line-height:1.95; color:#5a6675; text-align:justify; }
+  .vgrid { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+  .vcard { background:#f4f7fa; border:1px solid #e1e9f1; border-radius:9px; padding:9px 12px; }
+  .vcard .w { font-family:Georgia,serif; font-weight:700; font-size:17px; color:#14202c; }
+  .vcard .ipa { font-family:Georgia,serif; font-size:12px; color:#8a97a6; margin-left:4px; }
+  .vcard .m { font-size:13px; color:#46566a; margin-top:2px; }
+  .vcard .m b{ color:#c0392b; font-weight:700; font-style:normal; margin-right:3px; }
+  .vcard.hot { background:#163a5c; border-color:#163a5c; }
+  .vcard.hot .w,.vcard.hot .m{ color:#fff; } .vcard.hot .ipa{ color:#aebfd0; } .vcard.hot .m b{ color:#ffd479; }
+  .footer { text-align:center; padding:22px; color:#8a97a6; font-size:13px; border-top:1px solid #eef0f3; }
+  .footer .brand { font-family:'Noto Serif SC',serif; font-weight:700; color:#163a5c; font-size:15px; margin-bottom:4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="logo">外刊</div>
+    <div class="htxt"><div class="t">高考外刊精读 · 抗生素耐药</div><div class="s">ENLIGHTENMENT EDUCATION · 原声跟读</div></div>
+  </div>
+
+  <div class="player">
+    <div class="ptitle">How Superbugs Outsmart Our Drugs</div>
+    <div class="controls">
+      <button class="playbtn" id="pb" aria-label="play"><svg id="ic" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+      <div class="pmeta">
+        <div class="pb"><i id="bar"></i></div>
+        <div class="pt"><span id="cur">0:00</span><span id="dur">1:35</span></div>
+      </div>
+    </div>
+    <div class="speeds" id="sp">
+      <button data-r="0.75">0.75×</button>
+      <button data-r="1" class="on">1.0×</button>
+      <button data-r="1.25">1.25×</button>
+      <span class="hint">▶ 念到哪句，哪句高亮</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="lbl">英 文 原 文 · 听 读</div>
+    <div class="eng" id="eng">
+      <span class="sent" data-s="0.1" data-e="8.82">In his Nobel lecture of 1945, Alexander Fleming, who had discovered penicillin, added a warning that few people noticed. </span>
+      <span class="sent" data-s="8.82" data-e="18.5">If the drug were used carelessly, he said, bacteria could learn to <ruby class="c1"><span class="b">survive</span><rt>存活</rt></ruby> it, and whoever underdosed himself would share the blame for the next death from a resistant <ruby class="c2"><span class="b">infection</span><rt>感染</rt></ruby>. </span>
+      <span class="sent" data-s="18.5" data-e="21.02">He was describing evolution. </span>
+      <span class="sent" data-s="21.02" data-e="27.6">Bacteria reproduce enormously fast, and every generation throws up small genetic differences. </span>
+      <span class="sent" data-s="27.6" data-e="37.0">When an antibiotic is used, the few bacteria that happen to carry a defence are the ones left alive; they multiply, and their <ruby class="c3"><span class="b">resistance</span><rt>耐药性</rt></ruby> becomes ordinary. </span>
+      <span class="sent" data-s="37.0" data-e="45.65">Worse, bacteria can pass such genes sideways to unrelated species, so a trait that can <ruby class="c4"><span class="b">evolve</span><rt>进化</rt></ruby> in one bacterium can <ruby class="c1"><span class="b">spread</span><rt>传播</rt></ruby> to another. </span>
+      <span class="sent" data-s="45.65" data-e="48.94">Every careless use hurries the process along. </span>
+      <span class="sent" data-s="48.94" data-e="55.39">Antibiotics are still handed out for colds, which are caused by viruses and cannot be touched by them. </span>
+      <span class="sent" data-s="55.39" data-e="59.09">Courses are abandoned the moment a patient feels better. </span>
+      <span class="sent" data-s="59.09" data-e="64.0">In many countries the drugs are given to healthy farm animals as a <ruby class="c2"><span class="b">routine</span><rt>常规的</rt></ruby> measure. </span>
+      <span class="sent" data-s="64.0" data-e="66.51">The cost is already measurable. </span>
+      <span class="sent" data-s="66.51" data-e="78.75">One large international study estimated that in 2019 about 1.27 million deaths worldwide were caused directly by bacteria that no longer answered to the drugs meant to kill them — more than malaria. </span>
+      <span class="sent" data-s="78.75" data-e="87.0">Operations we think of as safe depend on antibiotics working: without reliable <ruby class="c3"><span class="b">treatment</span><rt>治疗</rt></ruby>, a hip replacement becomes a serious gamble. </span>
+      <span class="sent" data-s="87.0" data-e="89.58">None of this is a distant <ruby class="c4"><span class="b">threat</span><rt>威胁</rt></ruby>. </span>
+      <span class="sent" data-s="89.58" data-e="95.59">Fleming saw it in 1945, in the very speech in which he was handed a prize for the cure. </span>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <div class="lbl">参 考 译 文</div>
+    <div class="zh">1945 年的诺贝尔演讲上，发现青霉素的亚历山大·弗莱明补了一句几乎没人在意的警告。他说，如果这种药被随便使用，细菌就可能学会存活下来；而下一个死于耐药感染的人，我们每个人都有份。他描述的其实是进化。细菌繁殖极快，每一代都会冒出细微的基因差异。当抗生素被使用时，恰好带有某种防御能力的那极少数成了活下来的一批；它们不断繁殖，于是它们的耐药性变成了寻常。细菌还能把这类基因横向传给毫不相干的物种——所以在某一种细菌身上进化出来的特性，可以传播到另一种身上。每一次随意使用都在加速这个过程：抗生素至今仍被拿来治感冒，可感冒由病毒引起，抗生素对它无能为力；疗程常常在病人一觉得好转时就被中断；在许多国家，这些药还被当作一种常规的措施喂给健康的农场动物。一项大型国际研究估计，2019 年全球约有 127 万人的死亡是由那些不再听命于药物的细菌直接造成的。一旦没有可靠的治疗手段，连一台常规手术都成了赌博。这一切都不是遥远的威胁。</div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <div class="lbl">核 心 词 汇</div>
+    <div class="vgrid">
+      <div class="vcard"><div class="w">survive<span class="ipa">/səˈvaɪv/</span></div><div class="m"><b>v.</b>存活；幸存；幸免于</div></div>
+      <div class="vcard"><div class="w">infection<span class="ipa">/ɪnˈfekʃn/</span></div><div class="m"><b>n.</b>感染；传染</div></div>
+      <div class="vcard"><div class="w">resistance<span class="ipa">/rɪˈzɪstəns/</span></div><div class="m"><b>n.</b>耐药性；抵抗；阻力</div></div>
+      <div class="vcard"><div class="w">evolve<span class="ipa">/iˈvɒlv/</span></div><div class="m"><b>v.</b>进化；逐渐演变</div></div>
+      <div class="vcard"><div class="w">spread<span class="ipa">/spred/</span></div><div class="m"><b>v.</b>传播；蔓延（过去式同形）</div></div>
+      <div class="vcard"><div class="w">routine<span class="ipa">/ruːˈtiːn/</span></div><div class="m"><b>adj./n.</b>常规的；例行的；常规</div></div>
+      <div class="vcard"><div class="w">treatment<span class="ipa">/ˈtriːtmənt/</span></div><div class="m"><b>n.</b>治疗；处理；对待</div></div>
+      <div class="vcard"><div class="w">threat<span class="ipa">/θret/</span></div><div class="m"><b>n.</b>威胁；恐吓</div></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="brand">Enlightenment Education · 高考外刊精读</div>
+    扫码即听 · 每日一篇 · 听读积累
+  </div>
+</div>
+
+<audio id="au" preload="metadata" src="waikan-antibiotics.mp3"></audio>
+<script>
+  const au=document.getElementById('au'), pb=document.getElementById('pb'), ic=document.getElementById('ic');
+  const bar=document.getElementById('bar'), cur=document.getElementById('cur'), durEl=document.getElementById('dur');
+  const sents=[...document.querySelectorAll('.sent')];
+  const PLAY='M8 5v14l11-7z', PAUSE='M6 5h4v14H6zm8 0h4v14h-4z';
+  const fmt=s=>{s=Math.max(0,s|0);return (s/60|0)+':'+String(s%60).padStart(2,'0');};
+  let active=-1;
+  pb.onclick=()=>{ au.paused?au.play():au.pause(); };
+  au.onplay=()=>ic.querySelector('path').setAttribute('d',PAUSE);
+  au.onpause=()=>ic.querySelector('path').setAttribute('d',PLAY);
+  au.onloadedmetadata=()=>{ if(isFinite(au.duration)) durEl.textContent=fmt(au.duration); };
+  au.ontimeupdate=()=>{
+    if(au.duration){ bar.style.width=(au.currentTime/au.duration*100)+'%'; cur.textContent=fmt(au.currentTime); }
+    const t=au.currentTime;
+    let idx=sents.findIndex(s=>t>=parseFloat(s.dataset.s)&&t<parseFloat(s.dataset.e));
+    if(idx!==active){
+      if(active>=0) sents[active].classList.remove('active');
+      active=idx;
+      if(idx>=0){ const el=sents[idx]; el.classList.add('active');
+        const r=el.getBoundingClientRect();
+        if(r.top<140||r.bottom>window.innerHeight-40) el.scrollIntoView({behavior:'smooth',block:'center'});
+      }
+    }
+  };
+  au.onended=()=>{ ic.querySelector('path').setAttribute('d',PLAY); bar.style.width='0%'; cur.textContent='0:00';
+    if(active>=0){sents[active].classList.remove('active');active=-1;} };
+  sents.forEach(s=>s.onclick=()=>{ au.currentTime=parseFloat(s.dataset.s)+0.02; if(au.paused)au.play(); });
+  document.getElementById('sp').onclick=e=>{ const b=e.target.closest('button'); if(!b)return;
+    au.playbackRate=parseFloat(b.dataset.r);
+    [...document.querySelectorAll('#sp button')].forEach(x=>x.classList.toggle('on',x===b)); };
+</script>
+</body>
+</html>
