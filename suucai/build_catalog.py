@@ -40,6 +40,46 @@ POSTED = {
     "初中外刊|1","初中外刊|2","初中外刊|3","初中外刊|4","初中外刊|5","初中外刊|6","初中外刊|7","初中外刊|8","初中外刊|9",
 }
 
+# ─────────────────────────────────────────────────────────────────────────────
+# 版本台账（Elaine 2026-08-02 02:0x 提的：「也可以放素材平台里…这样以后直接看平台记录
+# 是否网盘和在售是最新款」）。
+#
+# **为什么要这一栏**：08-02 凌晨她连问三次「我网盘里那份是不是最新的」，每次都要现查时间戳。
+# 而那晚真查出：高考外刊上篇有九篇扫码指向别的文章、下篇 12 篇一个码都没有 —— 她网盘里放的
+# 正是那两个坏版本，且**已经卖了不少**。⇒ 这不是洁癖，是会伤到买家的事。
+#
+# 🔴 **每一行必须带一条"她自己翻一页就能查"的判据**，⛔ 别只写版本号：
+#    版本号在文件名里，而文件名是可以被改掉的；页数在好几条线上**根本判不出版本**
+#    （作文三本 full/v2/v3/v4 全是同样页数；高考外刊 v9→v12 全是 182 页）。
+#
+# 状态取值：ok=已是最新 · old=还是旧版·要换 · unknown=还没查
+# 改法：换完/查完就把 pan（网盘）/ sale（在售）翻过来，跟 POSTED 一样手工维护。
+PRODUCTS = [
+    # (线, 产品, 最新文件, 页数, 出片时间(北京), pan, sale, 自查判据)
+    ("外刊", "高中外刊精读 · 上篇 No.01–18", "高中外刊精读-合订本上篇-1-18-v12.pdf", "182 页", "08-02 00:29",
+     "ok", "ok", "翻到 <b>第 104 页</b>（珊瑚白化）扫底下的码 → 落地页写「珊瑚白化」＝新版；写「睡眠与记忆」＝旧版"),
+    ("外刊", "高中外刊精读 · 下篇 No.19–30", "高中外刊精读-合订本下篇-19-30-v3.pdf", "134 页", "08-02 00:28",
+     "ok", "ok", "翻到 <b>第 3 页</b>（深蓝篇章封面）→ 下方有<b>白色扫码卡</b>＝新版；没有＝旧版。⛔ 别看第 4 页原文页，新版那页本来就没码"),
+    ("词汇", "初中英语 1876 词汇手册", "zhongkao-1876-full-v5-lite.pdf（13MB 那个）", "381 页", "07-28 16:04",
+     "ok", "ok", "翻到 <b>第 2 页</b>看释义列：写「人；人们；民族；种族」＝新版；写「<b>n.</b>人；人们…」＝旧版"),
+    ("词汇", "英语核心词汇手册 · 七上", "7shang-vocab-全册-v3-九上排版-31页.pdf", "31 页", "07-29 03:24",
+     "unknown", "unknown", "看总页数：<b>31 页</b>＝新版；34 页＝旧版"),
+    ("词汇", "英语核心词汇手册 · 八上", "8shang-vocab-全册-v3-九上排版-48页.pdf", "48 页", "07-29 03:24",
+     "unknown", "unknown", "看总页数：<b>48 页</b>＝新版；61 页＝旧版"),
+    ("词汇", "英语核心词汇手册 · 九上", "9shang-vocab-booklet-full.pdf", "38 页", "07-17 00:25",
+     "unknown", "unknown", "看总页数 <b>38 页</b>。盘上只有这一版，没有旧版可混"),
+    ("作文", "英语同步作文 · 七上", "7shang-essay-booklet-v4.pdf", "52 页", "07-29 09:34",
+     "unknown", "unknown", "⛔ <b>页数判不出</b>（四个版本全是 52 页）。翻到 <b>第 17 页</b>：写「收尾 · <b>署名</b>」、范文结尾是「Lucy」＝新版；写「收尾 · 落款」、结尾「Yours, Lucy」＝旧版"),
+    ("作文", "英语同步作文 · 八上", "8shang-essay-booklet-v3.pdf", "43 页", "07-29 09:13",
+     "unknown", "unknown", "⛔ <b>页数判不出</b>（全是 43 页）。翻到 <b>第 16 页</b>：范文里有「We met on the first day of Grade 7, when he lent me his eraser…」＝新版；没这句＝旧版"),
+    ("作文", "英语同步作文 · 九上", "9shang-essay-booklet-v3.pdf", "42 页", "07-29 09:13",
+     "unknown", "unknown", "⛔ <b>页数判不出</b>（全是 42 页）。翻到 <b>第 29 页</b>：第 8 题是「我想那是因为向太空看去…」＝新版；是「说实话，我不知道所有的原因」＝旧版"),
+    ("语法", "八下语法填空高频精练", "8xia-grammar-booklet-v6.pdf", "29 页", "07-29 14:29",
+     "unknown", "unknown", "看总页数：<b>29 页</b>＝v6 新版；28 页＝v5"),
+]
+
+PSTAT = {"ok": ("✅ 最新", "posted"), "old": ("🔴 要换", "ready"), "unknown": ("⏳ 没查", "todo")}
+
 SKIP_TINGLI = {"demo", "gaokao-sample"}
 
 # 听力 human labels
@@ -163,6 +203,29 @@ def section(title, key, emoji):
             f'<span class="cnt">🟢{done} 已发 · 🟡{rdy} 待发 · 共{len(lst)}</span></h2>'
             f'<div class="grid">{cards}</div></section>')
 
+def products_section():
+    rows = []
+    for line, name, fn, pages, when, pan, sale, how in PRODUCTS:
+        pt, pc = PSTAT[pan]
+        st, sc = PSTAT[sale]
+        # 「怎么查」放进产品格里、不单开一列 —— 手机上第 5 列会被挤出屏幕，
+        # 而那一列恰恰是全表唯一真正能判版本的东西（2026-08-02 截图实测发现）。
+        rows.append(
+            f'<tr><td class="pl">{esc(line)}</td>'
+            f'<td><div class="pn">{esc(name)}</div>'
+            f'<div class="pf">{esc(fn)} · {esc(pages)} · 出片 {esc(when)}</div>'
+            f'<div class="how"><b>怎么查：</b>{how}</div></td>'
+            f'<td class="c"><span class="b {pc}">{pt}</span></td>'
+            f'<td class="c"><span class="b {sc}">{st}</span></td></tr>')
+    todo = sum(1 for p in PRODUCTS if p[5] != "ok" or p[6] != "ok")
+    return (f'<section><h2>🗂 版本台账 · 网盘/在售是不是最新 '
+            f'<span class="cnt">共 {len(PRODUCTS)} 本 · {todo} 本待确认</span></h2>'
+            f'<p class="tip">⛔ <b>别只看版本号和页数</b> —— 文件名能改，而作文三本和高考外刊的所有版本'
+            f'<b>页数完全一样</b>。每一行右边那条「怎么查」才是能判的，翻一页就行。</p>'
+            f'<div class="ptbl"><table><thead><tr><th>线</th><th>产品 / 最新文件 / 怎么查</th>'
+            f'<th>网盘</th><th>在售</th></tr></thead>'
+            f'<tbody>{"".join(rows)}</tbody></table></div></section>')
+
 HTML = f"""<!doctype html><html lang="zh"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>素材总览 · 每日英语</title>
@@ -188,9 +251,20 @@ section{{margin:22px 0}}h2{{font-size:17px;border-left:4px solid var(--gold);pad
 .cp{{border:0;background:var(--navy);color:#fff;font-size:11px;padding:3px 10px;border-radius:6px;cursor:pointer}}.cp:active{{transform:scale(.95)}}
 pre{{margin:0;padding:9px 10px;white-space:pre-wrap;word-break:break-word;font:13px/1.55 -apple-system,"PingFang SC",sans-serif;max-height:180px;overflow:auto}}
 footer{{text-align:center;color:var(--mut);font-size:12px;padding:24px}}
+.tip{{margin:0 0 10px;font-size:13px;color:#7a5b00;background:#fff8e1;border:1px solid #f3e2a9;border-radius:8px;padding:8px 10px}}
+.ptbl{{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow-x:auto}}
+.ptbl table{{border-collapse:collapse;width:100%}}
+.ptbl th{{background:#f0ede6;color:var(--navy);font-size:12px;text-align:left;padding:8px 10px;white-space:nowrap}}
+.ptbl td{{border-top:1px solid var(--line);padding:9px 10px;vertical-align:top;font-size:13px}}
+.ptbl td.c{{text-align:center;white-space:nowrap}}
+.pl{{color:var(--mut);font-size:12px;white-space:nowrap}}
+.pn{{font-weight:600}}
+.pf{{color:var(--mut);font-size:11.5px;margin-top:2px;word-break:break-all}}
+.how{{color:#3d4a5c;line-height:1.5;margin-top:6px;background:#f5f8fc;border-left:3px solid #9fc0dc;border-radius:0 6px 6px 0;padding:6px 8px;font-size:12.5px}}
 </style></head><body>
 <header><h1>📚 素材总览 · 每日英语</h1><p>🟡 已做好·未发 = 随时能发｜挑一条跟 CC 说「推 No.X」拿整套 · 文案点「复制」直接用 · 发完标 🟢 · 页面随时更新</p></header>
 <main>
+{products_section()}
 {section("听力（中考/高考）","听力","🎧")}
 {section("高考外刊精读","高考外刊","📖")}
 {section("初中外刊精读","初中外刊","📖")}
