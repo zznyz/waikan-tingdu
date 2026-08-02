@@ -54,6 +54,16 @@ POSTED = {
 #
 # 状态取值：ok=已是最新 · old=还是旧版·要换 · unknown=还没查
 # 改法：换完/查完就把 pan（网盘）/ sale（在售）翻过来，跟 POSTED 一样手工维护。
+#
+# 🔴 **PAN_UPDATED ＝她换网盘的时间（北京时间），只有她能填**。
+#    「出片时间」是我生成 PDF 的时间，**⛔ 不等于买家拿到新版的时间** —— 这两个数
+#    2026-08-02 之前混在一起，她要的是后者（她原话：「最新版 bjt 时间 8.2 下午 15.25
+#    最新版已发，已更新最终审核版」）。⛔ 没有她一句确认，这里不许填。
+#    键＝上面 PRODUCTS 里的产品名，⚠️ 改产品名要同步改这里（下面有闸，对不上会报红）。
+PAN_UPDATED = {
+    "英语核心词汇手册 · 七上": "08-02 15:25 · 最终审核版",
+}
+
 PRODUCTS = [
     # (线, 产品, 最新文件, 页数, 出片时间(北京), pan, sale, 自查判据)
     ("外刊", "高中外刊精读 · 上篇 No.01–18", "高中外刊精读-合订本上篇-1-18-v12.pdf", "182 页", "08-02 00:29",
@@ -66,9 +76,14 @@ PRODUCTS = [
     # 已换成合并音频，并把全册音频从 AX 的服务器迁到自己的 GitHub。排版一字未动
     # ⇒ v3/v4 同为 31 页，**页数判不出**，判据只能看码。
     ("词汇", "英语核心词汇手册 · 七上", "7shang-vocab-全册-v4-31页-Starter音频修复.pdf", "31 页", "08-02 02:07",
-     "old", "old", "⛔ <b>页数判不出</b>（v3/v4 都是 31 页）。翻到 <b>第 3 页</b>扫「朗读」码，看下载的文件名：<b>7上-Starter-朗读.mp3</b>＝新版；<b>7上-U1-朗读.mp3</b>＝旧版（那节 15 个词没音频）。34 页＝更早的旧版"),
-    ("词汇", "英语核心词汇手册 · 八上", "8shang-vocab-全册-v3-九上排版-48页.pdf", "48 页", "07-29 03:24",
-     "unknown", "unknown", "看总页数：<b>48 页</b>＝新版；61 页＝旧版"),
+     "ok", "ok", "⛔ <b>页数判不出</b>（v3/v4 都是 31 页）。翻到 <b>第 3 页</b>扫「朗读」码，看下载的文件名：<b>7上-Starter-朗读.mp3</b>＝新版；<b>7上-U1-朗读.mp3</b>＝旧版（那节 15 个词没音频）。34 页＝更早的旧版。<br>🔴 <b>这一本老买家必须换</b>：老书的码指向 AX 服务器，而那台机器上<b>根本没有 Starter 的音频文件，扫出来 404</b>（2026-08-02 实测）"),
+    # 2026-08-02 v4：把 16 个码从 AX 服务器迁到她自己 GitHub。排版一字未动
+    # ⇒ v3/v4 同为 48 页，**页数判不出**（原来写「48 页＝新版」是错的，48 页只排除得掉 61 页那版）。
+    # 🔑 实测：八上/九上全部音频在 AX 服务器上与修好版逐个 md5 一致，且线上 URL 200、
+    #    下载实体 md5 也一致 ⇒ **老买家扫老码拿到的就是修好版，不用换书**；
+    #    换 v4 的目的是去掉对别人机器的依赖，不是救老买家。
+    ("词汇", "英语核心词汇手册 · 八上", "8shang-vocab-全册-v4-48页-音频修复.pdf", "48 页", "08-02 06:01",
+     "old", "old", "⛔ <b>页数判不出</b>（v3/v4 都是 48 页；61 页＝更早的旧版）。翻到 <b>第 35 页</b>（Unit 6 默写单）扫「听默」码，看下载地址：<b>zznyz.github.io</b>＝v4；<b>opencode.ax0x.ai</b>＝v3。<br>🔑 <b>听内容判音频对不对</b>：听到 <b>Number 8</b> 念 <b>essay</b>＝音频已修；念 <b>AI</b>＝旧音频（AI 是专有名词、不在默写单上，从这里起后面全错一位）。⛔ 别拿 Unit 2 判——那单元没有专有名词，新旧一样"),
     ("词汇", "英语核心词汇手册 · 九上", "9shang-vocab-booklet-full.pdf", "38 页", "07-17 00:25",
      "unknown", "unknown", "看总页数 <b>38 页</b>。盘上只有这一版，没有旧版可混"),
     ("作文", "英语同步作文 · 七上", "7shang-essay-booklet-v4.pdf", "52 页", "07-29 09:34",
@@ -207,10 +222,16 @@ def section(title, key, emoji):
             f'<div class="grid">{cards}</div></section>')
 
 def products_section():
+    # PAN_UPDATED 的键必须对得上产品名 —— 改名字忘了同步，那个时间戳会静默消失
+    # （静默消失比报错更糟：台账上看起来"她还没换网盘"）。
+    unknown = set(PAN_UPDATED) - {p[1] for p in PRODUCTS}
+    if unknown:
+        raise SystemExit(f"[台账] PAN_UPDATED 里有对不上产品名的键: {sorted(unknown)}")
     rows = []
     for line, name, fn, pages, when, pan, sale, how in PRODUCTS:
         pt, pc = PSTAT[pan]
         st, sc = PSTAT[sale]
+        upd = PAN_UPDATED.get(name, "")
         # 「怎么查」放进产品格里、不单开一列 —— 手机上第 5 列会被挤出屏幕，
         # 而那一列恰恰是全表唯一真正能判版本的东西（2026-08-02 截图实测发现）。
         rows.append(
@@ -218,7 +239,9 @@ def products_section():
             f'<td><div class="pn">{esc(name)}</div>'
             f'<div class="pf">{esc(fn)} · {esc(pages)} · 出片 {esc(when)}</div>'
             f'<div class="how"><b>怎么查：</b>{how}</div></td>'
-            f'<td class="c"><span class="b {pc}">{pt}</span></td>'
+            f'<td class="c"><span class="b {pc}">{pt}</span>'
+            + (f'<div class="upd">{esc(upd)}</div>' if upd else '') +
+            f'</td>'
             f'<td class="c"><span class="b {sc}">{st}</span></td></tr>')
     todo = sum(1 for p in PRODUCTS if p[5] != "ok" or p[6] != "ok")
     return (f'<section><h2>🗂 版本台账 · 网盘/在售是不是最新 '
@@ -264,6 +287,7 @@ footer{{text-align:center;color:var(--mut);font-size:12px;padding:24px}}
 .pn{{font-weight:600}}
 .pf{{color:var(--mut);font-size:11.5px;margin-top:2px;word-break:break-all}}
 .how{{color:#3d4a5c;line-height:1.5;margin-top:6px;background:#f5f8fc;border-left:3px solid #9fc0dc;border-radius:0 6px 6px 0;padding:6px 8px;font-size:12.5px}}
+.upd{{color:var(--mut);font-size:11px;margin-top:4px;line-height:1.35}}
 </style></head><body>
 <header><h1>📚 素材总览 · 每日英语</h1><p>🟡 已做好·未发 = 随时能发｜挑一条跟 CC 说「推 No.X」拿整套 · 文案点「复制」直接用 · 发完标 🟢 · 页面随时更新</p></header>
 <main>
