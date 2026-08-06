@@ -1,0 +1,48 @@
+# 本文件只在 GitHub Pages 的来源(Settings → Pages → Build and deployment → Source)
+# 被切换成 "GitHub Actions" 之后才生效。
+#
+# 为什么需要它：本站约 506 MiB / 6349 个文件（vocab/ 里 6050 个单词音频占 481M）。
+# GitHub 自动生成的 "pages build and deployment" 流程里，deploy 这一步用的是
+# actions/deploy-pages 的默认 timeout = 600000ms（10 分钟）。2026-08-06 连续两次
+# 部署都是 build 绿、deploy 卡在 deployment_queued 满 10 分钟被 action 主动取消。
+# 这里把 timeout 放到 30 分钟，让排队排得完。
+name: Deploy Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: .
+          # 站里有 .nojekyll 等隐藏文件，默认会被 tar 排除掉
+          include-hidden-files: true
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
+        with:
+          timeout: 1800000   # 30 分钟（默认 10 分钟，本站排队排不完）
+          error_count: 20
