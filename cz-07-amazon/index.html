@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="google" content="notranslate">
+<title>外刊精读 · 原声跟读 · 亚马逊雨林</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body { background:#e9edf2; font-family:'Noto Sans SC',sans-serif; color:#1c2430; }
+  .wrap { max-width:640px; margin:0 auto; min-height:100vh; background:#fff; }
+  .header { background:#163a5c; padding:18px 22px; display:flex; align-items:center; gap:14px; }
+  .logo { background:#fff; color:#163a5c; font-family:'Noto Serif SC',serif; font-weight:700; font-size:26px; letter-spacing:2px; padding:6px 12px; border-radius:6px; line-height:1; }
+  .htxt .t { color:#fff; font-family:'Noto Serif SC',serif; font-weight:700; font-size:19px; }
+  .htxt .s { color:#cdd9e6; font-size:12px; letter-spacing:2px; margin-top:4px; }
+  .vsec { background:#0d1b29; }
+  .vsec video { width:100%; height:auto; display:block; background:#000; }
+  .vcap { background:#0d1b29; color:#cdd9e6; font-size:13px; text-align:center; padding:10px 12px; letter-spacing:1px; }
+  .player { position:sticky; top:0; z-index:9; background:#eef3f8; border-bottom:2px solid #163a5c; padding:14px 22px 16px; }
+  .ptitle { font-family:'Noto Serif SC',serif; font-weight:700; font-size:18px; color:#10212f; line-height:1.3; margin-bottom:11px; }
+  .controls { display:flex; align-items:center; gap:13px; }
+  .playbtn { width:52px; height:52px; border-radius:50%; background:#163a5c; border:none; flex-shrink:0; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 3px 9px rgba(22,58,92,.3); transition:transform .1s; }
+  .playbtn:active { transform:scale(.93); }
+  .playbtn svg { width:22px; height:22px; fill:#fff; }
+  .pmeta { flex:1; }
+  .pmeta .pb { height:6px; background:#d3dee9; border-radius:3px; overflow:hidden; }
+  .pmeta .pb i { display:block; height:100%; width:0; background:#163a5c; border-radius:3px; transition:width .12s linear; }
+  .pmeta .pt { display:flex; justify-content:space-between; font-size:12px; color:#6a7886; margin-top:5px; }
+  .speeds { display:flex; gap:8px; margin-top:12px; align-items:center; }
+  .speeds button { font-size:13px; color:#46566a; background:#fff; border:1px solid #cdd9e6; border-radius:14px; padding:4px 12px; cursor:pointer; }
+  .speeds button.on { background:#163a5c; color:#fff; border-color:#163a5c; }
+  .speeds .hint { font-size:11px; color:#8a97a6; margin-left:auto; }
+  .section { padding:18px 22px; }
+  .lbl { font-family:'Noto Serif SC',serif; font-weight:700; color:#163a5c; font-size:15px; letter-spacing:2px; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid #e1e9f1; }
+  .eng { font-family:Georgia,'Times New Roman','Noto Serif SC',serif; font-size:19px; line-height:2.6; color:#14202c; }
+  .sent { transition:background .2s; border-radius:5px; padding:1px 2px; cursor:pointer; }
+  .sent.active { background:#fff4d6; box-shadow:0 0 0 4px #fff4d6; }
+  ruby { ruby-position:under; ruby-align:center; margin:0 2px; }
+  ruby rt { font-family:'Noto Sans SC',sans-serif; font-size:11px; font-weight:500; padding-top:2px; }
+  ruby .b { padding-bottom:2px; }
+  .c1 .b{ border-bottom:2.5px solid #1f9d6b; } .c1 rt{ color:#1f9d6b; }
+  .c2 .b{ border-bottom:2.5px solid #2f6fdb; } .c2 rt{ color:#2f6fdb; }
+  .c3 .b{ border-bottom:2.5px solid #e0567a; } .c3 rt{ color:#c43e62; }
+  .c4 .b{ border-bottom:2.5px solid #e8893a; } .c4 rt{ color:#cf7522; }
+  .zh { font-family:'Noto Serif SC',serif; font-size:15.5px; line-height:1.95; color:#5a6675; text-align:justify; }
+  .vgrid { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+  .vcard { background:#f4f7fa; border:1px solid #e1e9f1; border-radius:9px; padding:9px 12px; }
+  .vcard .w { font-family:Georgia,serif; font-weight:700; font-size:17px; color:#14202c; }
+  .vcard .ipa { font-family:Georgia,serif; font-size:12px; color:#8a97a6; margin-left:4px; }
+  .vcard .m { font-size:13px; color:#46566a; margin-top:2px; }
+  .vcard .m b{ color:#c0392b; font-weight:700; font-style:normal; margin-right:3px; }
+  .vcard.hot { background:#163a5c; border-color:#163a5c; }
+  .vcard.hot .w,.vcard.hot .m{ color:#fff; } .vcard.hot .ipa{ color:#aebfd0; } .vcard.hot .m b{ color:#ffd479; }
+  .footer { text-align:center; padding:22px; color:#8a97a6; font-size:13px; border-top:1px solid #eef0f3; }
+  .footer .brand { font-family:'Noto Serif SC',serif; font-weight:700; color:#163a5c; font-size:15px; margin-bottom:4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="logo">外刊</div>
+    <div class="htxt"><div class="t">高考外刊精读 · 亚马逊雨林</div><div class="s">ENLIGHTENMENT EDUCATION · 原声跟读</div></div>
+  </div>
+
+  <div class="player">
+    <div class="ptitle">The Amazon: Earth's Great Green Forest</div>
+    <div class="controls">
+      <button class="playbtn" id="pb" aria-label="play"><svg id="ic" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+      <div class="pmeta">
+        <div class="pb"><i id="bar"></i></div>
+        <div class="pt"><span id="cur">0:00</span><span id="dur">0:58</span></div>
+      </div>
+    </div>
+    <div class="speeds" id="sp">
+      <button data-r="0.75">0.75×</button>
+      <button data-r="1" class="on">1.0×</button>
+      <button data-r="1.25">1.25×</button>
+      <span class="hint">▶ 念到哪句，哪句高亮</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="lbl">英 文 原 文 · 听 读</div>
+    <div class="eng" id="eng">
+      <span class="sent" data-s="0.1" data-e="4.99">Deep in South America lies the Amazon, the largest <ruby class="c1"><span class="b">rainforest</span><rt>（热带）雨林</rt></ruby> on Earth. </span>
+      <span class="sent" data-s="4.99" data-e="8.81">It is so big that it <ruby class="c2"><span class="b">covers</span><rt>覆盖</rt></ruby> parts of nine countries. </span>
+      <span class="sent" data-s="8.81" data-e="13.21">Every day, warm rain falls on its millions of green trees. </span>
+      <span class="sent" data-s="13.21" data-e="19.09">People call the Amazon &quot;the <ruby class="c4"><span class="b">lungs</span><rt>肺</rt></ruby> of our planet,&quot; because its trees help make the fresh air we <ruby class="c3"><span class="b">breathe</span><rt>呼吸</rt></ruby>. </span>
+      <span class="sent" data-s="19.09" data-e="26.23">The great Amazon River winds through the forest like a brown road of water, carrying more water than any other river on Earth. </span>
+      <span class="sent" data-s="26.23" data-e="28.89">The rainforest is full of life. </span>
+      <span class="sent" data-s="28.89" data-e="33.25">More kinds of plants and animals live here than anywhere else on land. </span>
+      <span class="sent" data-s="33.25" data-e="39.52">Bright birds, tiny frogs, jaguars, and <ruby class="c2"><span class="b">countless</span><rt>无数的</rt></ruby> insects share this green world. </span>
+      <span class="sent" data-s="39.52" data-e="45.1">Scientists believe millions of <ruby class="c1"><span class="b">species</span><rt>物种（单复数同形）</rt></ruby> live in the Amazon, and some have not been named yet. </span>
+      <span class="sent" data-s="45.1" data-e="47.42">But the forest is in <ruby class="c3"><span class="b">danger</span><rt>危险</rt></ruby>. </span>
+      <span class="sent" data-s="47.42" data-e="52.09">Each year, people cut and burn many trees to make room for farms. </span>
+      <span class="sent" data-s="52.09" data-e="55.83">When the trees are gone, the animals lose their home. </span>
+      <span class="sent" data-s="55.83" data-e="58.7"><ruby class="c4"><span class="b">Protecting</span><rt>保护</rt></ruby> the Amazon protects us all. </span>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <div class="lbl">参 考 译 文</div>
+    <div class="zh">在南美洲的深处，坐落着亚马逊——地球上最大的热带雨林。它大得惊人，横跨九个国家的部分土地。每天，温暖的雨水落在它那数以百万计的绿树上。人们把亚马逊称作"地球之肺"，因为它的树木帮助制造我们呼吸的新鲜空气。宽阔的亚马逊河蜿蜒穿过森林，像一条棕色的水路，它的水量比世界上任何一条河都大。这片雨林里也充满了生命。这里生活的动植物种类，比陆地上任何地方都多。鲜艳的鸟儿、小小的青蛙、美洲豹，还有数不清的昆虫，共同分享着这个绿色的世界。科学家相信，亚马逊生活着数百万个物种，其中有些甚至还没有被命名。然而，这片森林正处于危险之中。每一年，人们砍伐、焚烧大量树木，为农田腾出空间。一旦树木消失，动物们就失去了家园。保护亚马逊，就是保护我们所有人。</div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <div class="lbl">核 心 词 汇</div>
+    <div class="vgrid">
+      <div class="vcard"><div class="w">rainforest<span class="ipa">/ˈreɪnfɒrɪst/</span></div><div class="m"><b>n.</b>（热带）雨林</div></div>
+      <div class="vcard"><div class="w">cover<span class="ipa">/ˈkʌvə(r)/</span></div><div class="m"><b>v.</b>覆盖；占（面积）</div></div>
+      <div class="vcard"><div class="w">breathe<span class="ipa">/briːð/</span></div><div class="m"><b>v.</b>呼吸</div></div>
+      <div class="vcard"><div class="w">lung<span class="ipa">/lʌŋ/</span></div><div class="m"><b>n.</b>肺</div></div>
+      <div class="vcard"><div class="w">species<span class="ipa">/ˈspiːʃiːz/</span></div><div class="m"><b>n.</b>物种（单复数同形）</div></div>
+      <div class="vcard"><div class="w">countless<span class="ipa">/ˈkaʊntləs/</span></div><div class="m"><b>adj.</b>无数的；数不清的</div></div>
+      <div class="vcard"><div class="w">danger<span class="ipa">/ˈdeɪndʒə(r)/</span></div><div class="m"><b>n.</b>危险</div></div>
+      <div class="vcard"><div class="w">protect<span class="ipa">/prəˈtekt/</span></div><div class="m"><b>v.</b>保护</div></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="brand">Enlightenment Education · 高考外刊精读</div>
+    扫码即听 · 每日一篇 · 听读积累
+  </div>
+</div>
+
+<audio id="au" preload="metadata" src="waikan-cz-07-amazon.mp3"></audio>
+<script>
+  const au=document.getElementById('au'), pb=document.getElementById('pb'), ic=document.getElementById('ic');
+  const bar=document.getElementById('bar'), cur=document.getElementById('cur'), durEl=document.getElementById('dur');
+  const sents=[...document.querySelectorAll('.sent')];
+  const PLAY='M8 5v14l11-7z', PAUSE='M6 5h4v14H6zm8 0h4v14h-4z';
+  const fmt=s=>{s=Math.max(0,s|0);return (s/60|0)+':'+String(s%60).padStart(2,'0');};
+  let active=-1;
+  pb.onclick=()=>{ au.paused?au.play():au.pause(); };
+  au.onplay=()=>ic.querySelector('path').setAttribute('d',PAUSE);
+  au.onpause=()=>ic.querySelector('path').setAttribute('d',PLAY);
+  au.onloadedmetadata=()=>{ if(isFinite(au.duration)) durEl.textContent=fmt(au.duration); };
+  au.ontimeupdate=()=>{
+    if(au.duration){ bar.style.width=(au.currentTime/au.duration*100)+'%'; cur.textContent=fmt(au.currentTime); }
+    const t=au.currentTime;
+    let idx=sents.findIndex(s=>t>=parseFloat(s.dataset.s)&&t<parseFloat(s.dataset.e));
+    if(idx!==active){
+      if(active>=0) sents[active].classList.remove('active');
+      active=idx;
+      if(idx>=0){ const el=sents[idx]; el.classList.add('active');
+        const r=el.getBoundingClientRect();
+        if(r.top<140||r.bottom>window.innerHeight-40) el.scrollIntoView({behavior:'smooth',block:'center'});
+      }
+    }
+  };
+  au.onended=()=>{ ic.querySelector('path').setAttribute('d',PLAY); bar.style.width='0%'; cur.textContent='0:00';
+    if(active>=0){sents[active].classList.remove('active');active=-1;} };
+  sents.forEach(s=>s.onclick=()=>{ au.currentTime=parseFloat(s.dataset.s)+0.02; if(au.paused)au.play(); });
+  document.getElementById('sp').onclick=e=>{ const b=e.target.closest('button'); if(!b)return;
+    au.playbackRate=parseFloat(b.dataset.r);
+    [...document.querySelectorAll('#sp button')].forEach(x=>x.classList.toggle('on',x===b)); };
+</script>
+</body>
+</html>
