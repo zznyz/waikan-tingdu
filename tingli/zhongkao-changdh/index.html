@@ -31,6 +31,15 @@
   .dh{color:var(--navy);font-weight:700;font-size:12.5px;margin:8px 0 3px;}
   .dl{margin:2px 0;} .spk{display:inline-block;min-width:18px;color:var(--gold);font-weight:700;}
   footer{text-align:center;color:#9aa1ab;font-size:12px;margin-top:26px;line-height:1.7;}
+
+/* 🔴 2026-08-25 加：原生 <audio> 在手机上**没有变速入口**，而中考听力练习最需要的就是
+   「先慢一档听懂，再回原速」。⛔ 别在文案里写"可以调速度"却不给功能 —— 那是虚假宣传。
+   成因＝她 08-25 说卖点该写「扫码听、可以调速度、还原中考难度」，我一查页面根本没有 ⇒ 先做出来。*/
+.spd{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap}
+.spd span{font-size:13px;color:#7d8b93}
+.spd button{font:inherit;font-size:13px;padding:4px 12px;border-radius:999px;cursor:pointer;
+  border:1px solid #c6d2d8;background:#fff;color:#26303f}
+.spd button.on{background:#16323f;border-color:#16323f;color:#fff}
 </style></head>
 <body><div class="wrap">
   <header>
@@ -43,7 +52,7 @@
     <div class="card" id="ep01">
       <div class="uhead"><span class="unum">第 01 期</span><span class="wc">长对话 · 2 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep01.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep01.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What does Mr. Black do? <span class="qz">Mr. Black 是做什么工作的？</span></div>
           <div class="opt"><b>A.</b> A doctor. <span class="oz">医生</span></div><div class="opt"><b>B.</b> A teacher. <span class="oz">老师</span></div><div class="opt"><b>C.</b> A driver. <span class="oz">司机</span></div>
@@ -71,7 +80,7 @@
     <div class="card" id="ep02">
       <div class="uhead"><span class="unum">第 02 期</span><span class="wc">长对话 · 2 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep02.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep02.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What are they going to do this afternoon? <span class="qz">他们今天下午要做什么？</span></div>
           <div class="opt"><b>A.</b> Play chess. <span class="oz">下棋</span></div><div class="opt"><b>B.</b> Watch a movie. <span class="oz">看电影</span></div><div class="opt"><b>C.</b> Go shopping. <span class="oz">购物</span></div>
@@ -97,7 +106,7 @@
     <div class="card" id="ep03">
       <div class="uhead"><span class="unum">第 03 期</span><span class="wc">长对话 · 2 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep03.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep03.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> How long can the girl keep the book? <span class="qz">女孩可以借这本书多久？</span></div>
           <div class="opt"><b>A.</b> For about thirty days. <span class="oz">大约三十天</span></div><div class="opt"><b>B.</b> For half a month. <span class="oz">半个月</span></div><div class="opt"><b>C.</b> For one year. <span class="oz">一年</span></div>
@@ -121,7 +130,7 @@
     <div class="card" id="ep04">
       <div class="uhead"><span class="unum">第 04 期</span><span class="wc">长对话 · 3 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep04.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep04.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What can Frank and Cindy do at the West Hill? <span class="qz">Frank 和 Cindy 在西山能做什么？</span></div>
           <div class="opt"><b>A.</b> Fish and camp. <span class="oz">钓鱼和露营</span></div><div class="opt"><b>B.</b> Shop and ride. <span class="oz">购物和骑车</span></div><div class="opt"><b>C.</b> Swim and surf. <span class="oz">游泳和冲浪</span></div>
@@ -160,7 +169,7 @@
     <div class="card" id="ep05">
       <div class="uhead"><span class="unum">第 05 期</span><span class="wc">长对话 · 3 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep05.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep05.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What are the speakers mainly talking about? <span class="qz">两位说话人主要在谈论什么？</span></div>
           <div class="opt"><b>A.</b> How to boil water. <span class="oz">怎样烧水</span></div><div class="opt"><b>B.</b> Different kinds of tea. <span class="oz">茶的不同种类</span></div><div class="opt"><b>C.</b> How to make tea. <span class="oz">怎样泡茶</span></div>
@@ -206,7 +215,7 @@
     <div class="card" id="ep06">
       <div class="uhead"><span class="unum">第 06 期</span><span class="wc">长对话 · 3 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep06.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep06.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What does the man advise Mary to do? <span class="qz">男士建议 Mary 做什么？</span></div>
           <div class="opt"><b>A.</b> Do more reading. <span class="oz">多读英语</span></div><div class="opt"><b>B.</b> Do more exercises. <span class="oz">多做练习</span></div><div class="opt"><b>C.</b> Join an English club. <span class="oz">参加英语俱乐部</span></div>
@@ -243,7 +252,7 @@
     <div class="card" id="ep07">
       <div class="uhead"><span class="unum">第 07 期</span><span class="wc">长对话 · 3 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep07.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep07.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> Where was the jacket found? <span class="qz">这件夹克是在哪里被发现的？</span></div>
           <div class="opt"><b>A.</b> In the classroom. <span class="oz">在教室里</span></div><div class="opt"><b>B.</b> Under the sofa. <span class="oz">在沙发下面</span></div><div class="opt"><b>C.</b> On the ground. <span class="oz">在地上</span></div>
@@ -285,7 +294,7 @@
     <div class="card" id="ep08">
       <div class="uhead"><span class="unum">第 08 期</span><span class="wc">长对话 · 3 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep08.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep08.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What does Peter play to reduce stress? <span class="qz">Peter 靠玩什么来减压？</span></div>
           <div class="opt"><b>A.</b> Basketball. <span class="oz">篮球</span></div><div class="opt"><b>B.</b> Chess. <span class="oz">国际象棋</span></div><div class="opt"><b>C.</b> Games. <span class="oz">电子游戏</span></div>
@@ -328,7 +337,7 @@
     <div class="card" id="ep09">
       <div class="uhead"><span class="unum">第 09 期</span><span class="wc">长对话 · 3 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep09.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep09.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What&#x27;s the probable relationship between the two speakers? <span class="qz">两位说话人最可能是什么关系？</span></div>
           <div class="opt"><b>A.</b> Strangers. <span class="oz">陌生人</span></div><div class="opt"><b>B.</b> Classmates. <span class="oz">同学</span></div><div class="opt"><b>C.</b> Workmates. <span class="oz">同事</span></div>
@@ -373,7 +382,7 @@
     <div class="card" id="ep10">
       <div class="uhead"><span class="unum">第 10 期</span><span class="wc">长对话 · 3 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep10.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep10.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What is Anna worried about? <span class="qz">Anna 在担心什么？</span></div>
           <div class="opt"><b>A.</b> Her game. <span class="oz">她的比赛</span></div><div class="opt"><b>B.</b> Her weight. <span class="oz">她的体重</span></div><div class="opt"><b>C.</b> Her schoolwork. <span class="oz">她的功课</span></div>
@@ -415,7 +424,7 @@
     <div class="card" id="ep11">
       <div class="uhead"><span class="unum">第 11 期</span><span class="wc">长对话 · 3 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep11.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep11.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What was Harry&#x27;s problem yesterday? <span class="qz">Harry 昨天遇到了什么麻烦？</span></div>
           <div class="opt"><b>A.</b> He lost his money. <span class="oz">他弄丢了钱</span></div><div class="opt"><b>B.</b> His brother lost his new bike. <span class="oz">弟弟把他的新自行车弄丢了</span></div><div class="opt"><b>C.</b> His brother broke his new bike. <span class="oz">弟弟把他的新自行车弄坏了</span></div>
@@ -460,7 +469,7 @@
     <div class="card" id="ep12">
       <div class="uhead"><span class="unum">第 12 期</span><span class="wc">长对话 · 3 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep12.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep12.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> Who went to the mountains on holiday? <span class="qz">谁假期去了山里？</span></div>
           <div class="opt"><b>A.</b> Helen. <span class="oz">Helen</span></div><div class="opt"><b>B.</b> Alice. <span class="oz">Alice</span></div><div class="opt"><b>C.</b> Pete. <span class="oz">Pete</span></div>
@@ -511,7 +520,7 @@
     <div class="card" id="ep13">
       <div class="uhead"><span class="unum">第 13 期</span><span class="wc">长对话 · 3 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep13.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep13.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> Who had the class about first aid? <span class="qz">谁上过急救课？</span></div>
           <div class="opt"><b>A.</b> The man. <span class="oz">这位男士</span></div><div class="opt"><b>B.</b> Betty. <span class="oz">Betty</span></div><div class="opt"><b>C.</b> Julie. <span class="oz">Julie</span></div>
@@ -562,7 +571,7 @@
     <div class="card" id="ep14">
       <div class="uhead"><span class="unum">第 14 期</span><span class="wc">长对话 · 3 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep14.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep14.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What is Anna’s dream? <span class="qz">Anna 的梦想是什么？</span></div>
           <div class="opt"><b>A.</b> To be a nurse. <span class="oz">当护士</span></div><div class="opt"><b>B.</b> To be a writer. <span class="oz">当作家</span></div><div class="opt"><b>C.</b> To be a fitness coach. <span class="oz">当健身教练</span></div>
@@ -604,7 +613,7 @@
     <div class="card" id="ep15">
       <div class="uhead"><span class="unum">第 15 期</span><span class="wc">长对话 · 3 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep15.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep15.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What are the speakers mainly discussing? <span class="qz">两位说话人主要在讨论什么？</span></div>
           <div class="opt"><b>A.</b> A school trip. <span class="oz">一次学校郊游</span></div><div class="opt"><b>B.</b> Clean-up Day. <span class="oz">清洁日</span></div><div class="opt"><b>C.</b> A birthday party. <span class="oz">一个生日派对</span></div>
@@ -652,7 +661,7 @@
     <div class="card" id="ep16">
       <div class="uhead"><span class="unum">第 16 期</span><span class="wc">长对话 · 3 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep16.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep16.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What is the girl’s first suggestion for solving the boy’s problem? <span class="qz">对于男生的烦恼，女生给出的第一个建议是什么？</span></div>
           <div class="opt"><b>A.</b> To call his friend. <span class="oz">给朋友打电话</span></div><div class="opt"><b>B.</b> To write a letter to his friend. <span class="oz">给朋友写封信</span></div><div class="opt"><b>C.</b> To go to his friend’s house. <span class="oz">去朋友家</span></div>
@@ -706,7 +715,7 @@
     <div class="card" id="ep17">
       <div class="uhead"><span class="unum">第 17 期</span><span class="wc">长对话 · 4 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep17.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep17.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> Where did Amy buy her new iPad? <span class="qz">Amy 的新 iPad 是在哪儿买的？</span></div>
           <div class="opt"><b>A.</b> In the shop. <span class="oz">在店里</span></div><div class="opt"><b>B.</b> On TV. <span class="oz">在电视上</span></div><div class="opt"><b>C.</b> On the Internet. <span class="oz">在网上</span></div>
@@ -752,7 +761,7 @@
     <div class="card" id="ep18">
       <div class="uhead"><span class="unum">第 18 期</span><span class="wc">长对话 · 4 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep18.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep18.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> Which part of David’s body needs to get an X-ray? <span class="qz">David 身体的哪个部位需要拍X光片？</span></div>
           <div class="opt"><b>A.</b> His face. <span class="oz">他的脸</span></div><div class="opt"><b>B.</b> His foot. <span class="oz">他的脚</span></div><div class="opt"><b>C.</b> His tooth. <span class="oz">他的牙齿</span></div>
@@ -796,7 +805,7 @@
     <div class="card" id="ep20">
       <div class="uhead"><span class="unum">第 20 期</span><span class="wc">长对话 · 2 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep20.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep20.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What does the boy want to do on Saturday? <span class="qz">这个男孩周六想做什么？</span></div>
           <div class="opt"><b>A.</b> Go shopping. <span class="oz">去购物</span></div><div class="opt"><b>B.</b> Invite friends to his party. <span class="oz">请朋友来参加他的聚会</span></div><div class="opt"><b>C.</b> Visit his grandparents. <span class="oz">看望祖父母</span></div>
@@ -824,7 +833,7 @@
     <div class="card" id="ep21">
       <div class="uhead"><span class="unum">第 21 期</span><span class="wc">长对话 · 2 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep21.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep21.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> How does Tim learn English? <span class="qz">Tim 是怎么学英语的？</span></div>
           <div class="opt"><b>A.</b> By taking online lessons. <span class="oz">通过上网课</span></div><div class="opt"><b>B.</b> By going to a language school. <span class="oz">通过去语言学校</span></div><div class="opt"><b>C.</b> By listening to English songs on CDs. <span class="oz">通过听英文歌CD</span></div>
@@ -848,7 +857,7 @@
     <div class="card" id="ep22">
       <div class="uhead"><span class="unum">第 22 期</span><span class="wc">长对话 · 2 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep22.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep22.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> Why didn’t the boy get enough sleep? <span class="qz">这个男孩为什么没睡够？</span></div>
           <div class="opt"><b>A.</b> Because he did his homework until late last night. <span class="oz">因为他昨晚写作业写到很晚</span></div><div class="opt"><b>B.</b> Because he watched TV for 2 hours last night. <span class="oz">因为他昨晚看了两小时电视</span></div><div class="opt"><b>C.</b> Because he hung out with his friends last night. <span class="oz">因为他昨晚和朋友出去玩了</span></div>
@@ -876,7 +885,7 @@
     <div class="card" id="ep23">
       <div class="uhead"><span class="unum">第 23 期</span><span class="wc">长对话 · 2 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep23.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep23.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What kind of music is Amy listening to? <span class="qz">Amy 在听哪一类音乐？</span></div>
           <div class="opt"><b>A.</b> Folk music. <span class="oz">民乐</span></div><div class="opt"><b>B.</b> Pop music. <span class="oz">流行音乐</span></div><div class="opt"><b>C.</b> Rock music. <span class="oz">摇滚乐</span></div>
@@ -906,7 +915,7 @@
     <div class="card" id="ep25">
       <div class="uhead"><span class="unum">第 25 期</span><span class="wc">长对话 · 2 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep25.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep25.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What sport is Linna good at? <span class="qz">Linna 擅长什么运动？</span></div>
           <div class="opt"><b>A.</b> Tennis. <span class="oz">网球</span></div><div class="opt"><b>B.</b> Volleyball. <span class="oz">排球</span></div><div class="opt"><b>C.</b> Basketball. <span class="oz">篮球</span></div>
@@ -930,7 +939,7 @@
     <div class="card" id="ep26">
       <div class="uhead"><span class="unum">第 26 期</span><span class="wc">长对话 · 3 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep26.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep26.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> When is the English exam? <span class="qz">英语考试在什么时候？</span></div>
           <div class="opt"><b>A.</b> This Monday. <span class="oz">本周一</span></div><div class="opt"><b>B.</b> Next Tuesday. <span class="oz">下周二</span></div><div class="opt"><b>C.</b> This Wednesday. <span class="oz">本周三</span></div>
@@ -975,7 +984,7 @@
     <div class="card" id="ep27">
       <div class="uhead"><span class="unum">第 27 期</span><span class="wc">长对话 · 2 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep27.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep27.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> Why did Lily have a headache? <span class="qz">Lily 为什么头疼？</span></div>
           <div class="opt"><b>A.</b> She fell off the chair. <span class="oz">她从椅子上摔下来了</span></div><div class="opt"><b>B.</b> She studied for a long time. <span class="oz">她学习了很长时间</span></div><div class="opt"><b>C.</b> She didn’t sleep well last night. <span class="oz">她昨晚没睡好</span></div>
@@ -1003,7 +1012,7 @@
     <div class="card" id="ep28">
       <div class="uhead"><span class="unum">第 28 期</span><span class="wc">长对话 · 2 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep28.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep28.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What’s the possible relationship between the two speakers? <span class="qz">两位说话人最可能是什么关系？</span></div>
           <div class="opt"><b>A.</b> Sister and brother. <span class="oz">姐弟</span></div><div class="opt"><b>B.</b> Mother and son. <span class="oz">母子</span></div><div class="opt"><b>C.</b> Teacher and student. <span class="oz">师生</span></div>
@@ -1035,7 +1044,7 @@
     <div class="card" id="ep29">
       <div class="uhead"><span class="unum">第 29 期</span><span class="wc">长对话 · 2 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep29.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep29.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> Why does the boy want to sell the baseball bat? <span class="qz">男孩为什么要卖掉这根棒球棒？</span></div>
           <div class="opt"><b>A.</b> Because he has little time to play baseball. <span class="oz">因为他没什么时间打棒球了</span></div><div class="opt"><b>B.</b> Because he wants to help the old. <span class="oz">因为他想帮助老人</span></div><div class="opt"><b>C.</b> Because he is going to finish high school soon. <span class="oz">因为他快高中毕业了</span></div>
@@ -1063,7 +1072,7 @@
     <div class="card" id="ep30">
       <div class="uhead"><span class="unum">第 30 期</span><span class="wc">长对话 · 2 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep30.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep30.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What problem does Bob have? <span class="qz">Bob 遇到了什么问题？</span></div>
           <div class="opt"><b>A.</b> Having too much housework. <span class="oz">家务太多</span></div><div class="opt"><b>B.</b> Getting poor grades. <span class="oz">成绩不好</span></div><div class="opt"><b>C.</b> Not having enough free time. <span class="oz">空闲时间不够</span></div>
@@ -1087,7 +1096,7 @@
 <div class="card" id="ep31">
       <div class="uhead"><span class="unum">第 31 期</span><span class="wc">长对话 · 2 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep31.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep31.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What is Kevin doing? <span class="qz">Kevin 正在做什么？</span></div>
           <div class="opt"><b>A.</b> Washing the dishes. <span class="oz">洗碗</span></div><div class="opt"><b>B.</b> Playing the game. <span class="oz">打游戏</span></div><div class="opt"><b>C.</b> Sweeping the floor. <span class="oz">扫地</span></div>
@@ -1106,7 +1115,7 @@
     <div class="card" id="ep32">
       <div class="uhead"><span class="unum">第 32 期</span><span class="wc">短对话 · 3 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep32.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep32.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What kind of musical instrument can Alice play well? <span class="qz">Alice 哪种乐器拉/弹得好？</span></div>
           <div class="opt"><b>A.</b> The violin. <span class="oz">小提琴</span></div><div class="opt"><b>B.</b> The piano. <span class="oz">钢琴</span></div><div class="opt"><b>C.</b> The guitar. <span class="oz">吉他</span></div>
@@ -1133,7 +1142,7 @@
     <div class="card" id="ep33">
       <div class="uhead"><span class="unum">第 33 期</span><span class="wc">短对话 · 3 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep33.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep33.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> How much did Betty pay for her books? <span class="qz">Betty 买书一共花了多少钱？</span></div>
           <div class="opt"><b>A.</b> Thirty yuan. <span class="oz">三十元</span></div><div class="opt"><b>B.</b> Forty yuan. <span class="oz">四十元</span></div><div class="opt"><b>C.</b> Ten yuan. <span class="oz">十元</span></div>
@@ -1160,7 +1169,7 @@
     <div class="card" id="ep34">
       <div class="uhead"><span class="unum">第 34 期</span><span class="wc">短对话 · 3 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep34.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep34.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What does the boy want to be in the future? <span class="qz">这个男孩将来想做什么？</span></div>
           <div class="opt"><b>A.</b> A teacher. <span class="oz">老师</span></div><div class="opt"><b>B.</b> An astronaut. <span class="oz">宇航员</span></div><div class="opt"><b>C.</b> A scientist. <span class="oz">科学家</span></div>
@@ -1187,7 +1196,7 @@
     <div class="card" id="ep35">
       <div class="uhead"><span class="unum">第 35 期</span><span class="wc">短对话 · 3 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep35.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep35.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> How did Jack go to school today? <span class="qz">Jack 今天怎么去上学的？</span></div>
           <div class="opt"><b>A.</b> By bus. <span class="oz">坐公交</span></div><div class="opt"><b>B.</b> By car. <span class="oz">坐小汽车</span></div><div class="opt"><b>C.</b> On foot. <span class="oz">步行</span></div>
@@ -1214,7 +1223,7 @@
     <div class="card" id="ep36">
       <div class="uhead"><span class="unum">第 36 期</span><span class="wc">短对话 · 3 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep36.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep36.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What’s the weather like now? <span class="qz">现在天气怎么样？</span></div>
           <div class="opt"><b>A.</b> Sunny. <span class="oz">晴</span></div><div class="opt"><b>B.</b> Rainy. <span class="oz">雨</span></div><div class="opt"><b>C.</b> Cloudy. <span class="oz">多云</span></div>
@@ -1241,7 +1250,7 @@
     <div class="card" id="ep37">
       <div class="uhead"><span class="unum">第 37 期</span><span class="wc">短对话 · 3 题</span></div>
       <div class="track"><div class="tlabel">🎧 听力音频 <span class="sub">先听音频做题，再对答案 · 反复磨耳</span></div>
-        <audio controls preload="none" src="audio/ep37.mp3"></audio></div>
+        <audio controls preload="none" src="audio/ep37.mp3"></audio><div class="spd"><span>语速</span><button type="button" data-r="0.75">0.75×</button><button type="button" data-r="1" class='on'>原速</button><button type="button" data-r="1.25">1.25×</button></div></div>
       <div class="qwrap"><div class="q">
           <div class="qh"><span class="qn">1.</span> What color does the woman prefer? <span class="qz">这位女士更喜欢什么颜色？</span></div>
           <div class="opt"><b>A.</b> Pink. <span class="oz">粉色</span></div><div class="opt"><b>B.</b> White. <span class="oz">白色</span></div><div class="opt"><b>C.</b> Blue. <span class="oz">蓝色</span></div>
@@ -1267,4 +1276,19 @@
     </div>
     
   <footer>中考听力精选 · 长对话＋短对话合集<br>每日更新 · 一次买断更新到齐 · 配套打卡表</footer>
-</div></body></html>
+</div>
+<script>
+/* 每张卡各自独立控速；⛔ 别做成全局，学生可能一页里对不同期用不同速度。 */
+document.querySelectorAll('.spd').forEach(function(box){
+  var a = box.previousElementSibling;
+  if(!a || a.tagName!=='AUDIO') return;
+  box.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click', function(){
+      a.playbackRate = parseFloat(b.dataset.r);
+      box.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+      b.classList.add('on');
+    });
+  });
+});
+</script>
+</body></html>
