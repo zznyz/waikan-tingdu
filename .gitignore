@@ -1,0 +1,5 @@
+# 2026-08-25：仓库原本没有 .gitignore，`suucai/__pycache__/` 一直挂在未跟踪列表里，
+# 每次 git status 都要人肉分辨"哪些是该提交的、哪些是垃圾"——这正是漏提交/误提交的温床。
+__pycache__/
+*.pyc
+.DS_Store
