@@ -79,9 +79,9 @@ POSTED = {
     #     与 No.10/No.12 那种「只确认了一个平台」的情况不同。
     #     ⚠️ 这一期贴图 08-08 因字体缺陷重出过（Google Fonts + display=swap 抢跑，出成黑体）；
     #       **她发的是重出后那版**（17:3x 她验收「这个对了」）。
-    #   ⇒ 初中外刊已发 = No.1–13；下一个该发 No.14 珍·古道尔。
-    #   ⚠️ **发到 No.15 中秋要跳过**（Elaine 07-09 拍板留到 9 月中秋前，封面另换嫦娥版）
-    #     ⇒ 顺序 13 → 14 → 跳过 15 → 16。
+    # No.15 Mid-Autumn: Elaine confirmed Xiaohongshu publication on 2026-09-18.
+    # Other platforms remain unconfirmed; do not infer publication of No.14.
+    "初中外刊|15",
     "初中外刊|1","初中外刊|2","初中外刊|3","初中外刊|4","初中外刊|5","初中外刊|6","初中外刊|7","初中外刊|8","初中外刊|9","初中外刊|10","初中外刊|11","初中外刊|12","初中外刊|13",
 }
 
@@ -255,7 +255,9 @@ scan_waikan(CHUZHONG, "初中外刊")
 def esc(s): return html.escape(s or "")
 
 def card(it):
-    if it["posted"]:
+    if it['id'] == 'day15-zhongqiu' and it['posted']:
+        badge = '<span class="b posted">🟢 小红书已发 · 2026-09-18</span>'
+    elif it["posted"]:
         badge = '<span class="b posted">🟢 已发</span>'
     elif it.get("ready"):
         badge = '<span class="b ready">🟡 已做好·未发</span>'
