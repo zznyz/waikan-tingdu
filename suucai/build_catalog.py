@@ -79,8 +79,9 @@ POSTED = {
     #     与 No.10/No.12 那种「只确认了一个平台」的情况不同。
     #     ⚠️ 这一期贴图 08-08 因字体缺陷重出过（Google Fonts + display=swap 抢跑，出成黑体）；
     #       **她发的是重出后那版**（17:3x 她验收「这个对了」）。
-    # No.15 Mid-Autumn: Elaine confirmed Xiaohongshu publication on 2026-09-18.
-    # Other platforms remain unconfirmed; do not infer publication of No.14.
+    # No.15 Mid-Autumn: Xiaohongshu publication confirmed on 2026-09-18;
+    # WeChat Channels and the image-post account confirmed on 2026-09-19.
+    # All three are published; do not infer publication of No.14.
     "初中外刊|15",
     "初中外刊|1","初中外刊|2","初中外刊|3","初中外刊|4","初中外刊|5","初中外刊|6","初中外刊|7","初中外刊|8","初中外刊|9","初中外刊|10","初中外刊|11","初中外刊|12","初中外刊|13",
 }
@@ -256,7 +257,7 @@ def esc(s): return html.escape(s or "")
 
 def card(it):
     if it['id'] == 'day15-zhongqiu' and it['posted']:
-        badge = '<span class="b posted">🟢 小红书已发 · 2026-09-18</span>'
+        badge = '<span class="b posted">🟢 小红书已发 · 2026-09-18</span><span class="b posted">🟢 视频号已发</span><span class="b posted">🟢 贴图号已发</span>'
     elif it["posted"]:
         badge = '<span class="b posted">🟢 已发</span>'
     elif it.get("ready"):
