@@ -46,7 +46,10 @@ POSTED = {
     #                ⇒ ~~「只发了小红书图文；视频号那版未发」已作废~~，⛔ 别再当待补。
     #                （素材＝`users/user-elaine/no12-marshmallow-send/No12-棉花糖-跟读视频.mp4`
     #                 + `day12-marshmallow/wenan-marshmallow-No12.md` 的「## 视频号」节。）
-    "高考外刊|1","高考外刊|2","高考外刊|3","高考外刊|4","高考外刊|5","高考外刊|6","高考外刊|7","高考外刊|8","高考外刊|9","高考外刊|10","高考外刊|11","高考外刊|12",
+    #            No.13 西西弗斯 2026-09-26 Elaine 原话「小红书视频号贴图号都已发，备注素材总览」⇒ 三个平台齐。
+    #              当天视频 hero 换成提香《西西弗斯》（旧壁画主角其实是坦塔罗斯、正面裸体），并补了 feed 首图。
+    #            ⚠️ 这不代表 No.14 起也发了 —— 她跳着发，只认逐条确认。
+    "高考外刊|1","高考外刊|2","高考外刊|3","高考外刊|4","高考外刊|5","高考外刊|6","高考外刊|7","高考外刊|8","高考外刊|9","高考外刊|10","高考外刊|11","高考外刊|12","高考外刊|13",
     # 初中外刊 — No.09 韦布望远镜 07-23 Elaine 确认已发。
     #   🔴 No.10 二十四节气 2026-08-04 结案：Elaine 原话「**24节气翻了小红书，已经发了**」⇒ 标已发。
     #     成因值得记：这条在 07-23~08-04 之间一直是**两份真源打架** ——
@@ -292,9 +295,16 @@ def singles_section():
 # --- emit HTML ---
 def esc(s): return html.escape(s or "")
 
+# Per-platform badges for issues Elaine confirmed platform by platform (keyed by day-folder id).
+PLATFORM_BADGES = {
+    "day15-zhongqiu": ["小红书已发 · 2026-09-18", "视频号已发", "贴图号已发"],
+    "day13-sisyphus": ["小红书已发 · 2026-09-26", "视频号已发", "贴图号已发"],
+}
+
 def card(it):
-    if it['id'] == 'day15-zhongqiu' and it['posted']:
-        badge = '<span class="b posted">🟢 小红书已发 · 2026-09-18</span><span class="b posted">🟢 视频号已发</span><span class="b posted">🟢 贴图号已发</span>'
+    plats = PLATFORM_BADGES.get(it['id'])
+    if plats and it['posted']:
+        badge = "".join(f'<span class="b posted">🟢 {esc(x)}</span>' for x in plats)
     elif it["posted"]:
         badge = '<span class="b posted">🟢 已发</span>'
     elif it.get("ready"):
