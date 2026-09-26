@@ -6,7 +6,7 @@ extracts 小红书/视频号 文案, and emits suucai/index.html — a single br
 page with ✅已发 / ⬜未发 badges. Re-run to refresh. Posted status is the
 hand-maintained POSTED set below (flip when Elaine says 发了X).
 """
-import os, re, json, shutil, html, glob
+import os, re, json, shutil, html, glob, hashlib
 
 HOME = os.path.expanduser("~")
 WS = f"{HOME}/zylos/workspace"
@@ -252,6 +252,43 @@ def scan_waikan(root, line):
 scan_waikan(GAOKAO, "高考外刊")
 scan_waikan(CHUZHONG, "初中外刊")
 
+# --- 单篇笔记（不在三条系列线里的单独选题）---
+# Elaine 2026-09-26「你素材总览里面也记录一下」: standalone posts were only tracked in
+# chat/memory, so "发过没有" got re-asked (09-26 a posted 外刊 was recommended again).
+# Hand-maintained like POSTED: add a row only on her own confirmation, dated.
+# (确认日期, 标题, 形式, 发布状态原话/平台, 她给的反馈, 封面路径 or None)
+UE = f"{WS}/users/user-elaine"
+SINGLES = [
+    ("2026-09-25", "中秋节由来｜初中英语听力", "听力视频 · 原版 + 月亮开场版",
+     "两个版本都发了（09-25，平台未说明）", "反响不错（09-26「昨天的就很不错」）",
+     f"{UE}/mid-autumn-poster-20260925/listening-tie-in/中秋节由来-听力首图-3比4.png"),
+    ("2026-09-26", "外刊推断题｜Learning in your sleep（eLife 全文批注）", "9 图 + 配文",
+     "已发（09-26「这个发过了」）", "流量一般",
+     f"{UE}/waikan-full-20260921/v2/images/01.png"),
+    ("2026-09-24", "2027 届读后续写备考趋势", "11 图 + 配文",
+     "已发（09-24 确认）", "流量一般",
+     f"{UE}/2027-writing-trends-20260921/v2/cover-final.png"),
+    ("2026-09-21", "saw / seen 用法", "图文",
+     "已发（09-21 确认，发的是哪一版未核）", "", None),
+]
+
+def single_card(date, title, form, status, feedback, cover):
+    cov = '<div class="noimg">📝</div>'
+    if cover and os.path.exists(cover):
+        dst = f"single-{date}-{hashlib.md5(title.encode()).hexdigest()[:6]}.png"
+        shutil.copy(cover, os.path.join(COVERS, dst))
+        cov = f'<img loading="lazy" src="covers/{dst}" alt="">'
+    fb = f'<div class="fb">反馈：{esc(feedback)}</div>' if feedback else ""
+    return (f'<div class="card done"><div class="top">{cov}<div class="meta">'
+            f'<div class="no">{esc(date)} <span class="b posted">🟢 {esc(status)}</span></div>'
+            f'<div class="tp">{esc(title)}</div><div class="fm">{esc(form)}</div>{fb}'
+            f'</div></div></div>')
+
+def singles_section():
+    cards = "".join(single_card(*s) for s in sorted(SINGLES, reverse=True))
+    return (f'<section><h2>📝 单篇笔记（系列之外） <span class="cnt">🟢{len(SINGLES)} 已发</span></h2>'
+            f'<div class="grid">{cards}</div></section>')
+
 # --- emit HTML ---
 def esc(s): return html.escape(s or "")
 
@@ -354,6 +391,7 @@ footer{{text-align:center;color:var(--mut);font-size:12px;padding:24px}}
 .pf{{color:var(--mut);font-size:11.5px;margin-top:2px;word-break:break-all}}
 .how{{color:#3d4a5c;line-height:1.5;margin-top:6px;background:#f5f8fc;border-left:3px solid #9fc0dc;border-radius:0 6px 6px 0;padding:6px 8px;font-size:12.5px}}
 .upd{{color:var(--mut);font-size:11px;margin-top:4px;line-height:1.35}}
+.fm{{color:var(--mut);font-size:12px;margin-top:2px}}.fb{{font-size:12px;color:#3d4a5c;margin-top:4px}}
 </style></head><body>
 <header><h1>📚 素材总览 · 每日英语</h1><p>🟡 已做好·未发 = 随时能发｜挑一条跟 CC 说「推 No.X」拿整套 · 文案点「复制」直接用 · 发完标 🟢 · 页面随时更新</p></header>
 <main>
@@ -361,6 +399,7 @@ footer{{text-align:center;color:var(--mut);font-size:12px;padding:24px}}
 {section("听力（中考/高考）","听力","🎧")}
 {section("高考外刊精读","高考外刊","📖")}
 {section("初中外刊精读","初中外刊","📖")}
+{singles_section()}
 </main>
 <footer>CC 维护 · 视频找 CC 发（发完自动标已发）</footer>
 <script>
