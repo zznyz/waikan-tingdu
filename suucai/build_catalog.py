@@ -38,6 +38,10 @@ POSTED = {
     "听力|mokao-06","听力|mokao-07","听力|mokao-08","听力|changdh-01","听力|changdh-02",
     "听力|changdh-03","听力|changdh-04","听力|changdh-05","听力|changdh-06","听力|changdh-07","听力|changdh-08","听力|changdh-09","听力|changdh-10","听力|changdh-11","听力|chuzhong-01","听力|zhenti-01","听力|jinjie-01",
     "听力|gaokao-d1","听力|gaokao-d2","听力|gaokao-zibian01",
+    #        🆕 2026-09-28 Elaine 原话「听力今天已发两个平台」→ 问是哪条 → 「命题规律这个」
+    #           ⇒ `gaokao-guilv03`（命题规律 03「答案会换个说法」，叮咚版）小红书 + 视频号已发。
+    #           ⚠️ 同日 d4（2023 浙江卷 1 月）也交付了，但她**没说发没发** ⇒ 留在 POSTED 之外，⛔ 别推断。
+    "听力|gaokao-guilv03",
     # 高考外刊 — No.08 威尼斯 07-15 已发；No.09 睡眠 07-17 Elaine 确认已发；No.10 一人一药/基因编辑 07-20 两平台视频已发；
     #            No.11 珊瑚白化 07-31 Elaine 确认「珊瑚已发」（视频号/贴图号/公众号 + 朋友圈）
     #            No.12 棉花糖 08-02 23:4x Elaine 原话「棉花糖已经图文已发小红书」⇒ 标已发。
@@ -302,6 +306,7 @@ def esc(s): return html.escape(s or "")
 PLATFORM_BADGES = {
     "day15-zhongqiu": ["小红书已发 · 2026-09-18", "视频号已发", "贴图号已发"],
     "day13-sisyphus": ["小红书已发 · 2026-09-26", "视频号已发", "贴图号已发"],
+    "gaokao-guilv03": ["小红书已发 · 2026-09-28", "视频号已发"],
 }
 
 def card(it):
