@@ -266,6 +266,9 @@ scan_waikan(CHUZHONG, "初中外刊")
 # (确认日期, 标题, 形式, 发布状态原话/平台, 她给的反馈, 封面路径 or None)
 UE = f"{WS}/users/user-elaine"
 SINGLES = [
+    ("2026-10-02", "高考读后续写｜写开心的3个短语", "跟读视频 61 秒 · face lights up / grin from ear to ear / throw one's arms around sb",
+     "已发（10-02「快破1000了」，平台未说明，发布日期未核）", "读后续写短语第二篇，播放快破1000",
+     None),
     ("2026-10-02", "高考读后续写｜写害怕别再只会 I was scared", "6 图 + 配文 · 3 组短语 + 平淡vs升级 + 提醒，手册只在第 6 张挂一次",
      "小红书 + 贴图号已发（10-02 确认）", "引流笔记新形式：教学在前、商品挂最后（按视频号思路）",
      f"{UE}/duhou-phrasebook-20261001/tietu-v2-20261002/01-首图.png"),
