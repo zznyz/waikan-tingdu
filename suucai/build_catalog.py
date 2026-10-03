@@ -266,6 +266,9 @@ scan_waikan(CHUZHONG, "初中外刊")
 # (确认日期, 标题, 形式, 发布状态原话/平台, 她给的反馈, 封面路径 or None)
 UE = f"{WS}/users/user-elaine"
 SINGLES = [
+    ("2026-10-03", "看图学英语 No.01｜常用表达这么学才行（跟读视频）", "跟读视频 72 秒 · break / break down / break up + break down 三义例句",
+     "小红书已发（10-03 她主页截图可见，6 小时 122 播放；发的是含“2025全国二卷”字样的旧版）", "6 小时 122 播放 3 赞，不及高考系列",
+     f"{UE}/yitu-break-video-20261003/qc-0.png"),
     ("2026-10-03", "高考英语一词多义｜account 不只是“账户”", "跟读视频 66 秒 · 五义全部高考真题原句 · 末张“account for 看后面接什么”",
      "小红书已发（10-03「小红书已发」）", "",
      f"{UE}/gaokao-yicionyi-account-20261003/qc-0.png"),
