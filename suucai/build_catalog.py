@@ -266,6 +266,9 @@ scan_waikan(CHUZHONG, "初中外刊")
 # (确认日期, 标题, 形式, 发布状态原话/平台, 她给的反馈, 封面路径 or None)
 UE = f"{WS}/users/user-elaine"
 SINGLES = [
+    ("2026-10-07", "高考读后续写｜高分开头，你写的 VS 我写的（图文）", "图文 4 张 · 首图（高考读后续写/高分开头，雨夜对比句）→上下对比→4个句式→换场景套用",
+     "已发（10-07 她「发了」，平台/时间未细说）", "她说「貌似没啥响动」，待 24 小时数据",
+     f"{UE}/weichangjing-20261002/01-kaitou-v2/01-首图.png"),
     ("2026-10-06", "高考作文读后续写｜别再写 I felt relaxed", "跟读视频 61 秒 · breathe a sigh of relief / all one's worries melt away / sink back into one's chair（新封面第2期，顶行大字“高考读后续写”）",
      "小红书 + 视频号已发（10-06 她「视频号和小红书已发」；小红书约 20:55 发）", "31 分钟 112 播放 5 赞；约 20 小时 330 播放 20 赞（点赞率约 6%，系列最高）",
      f"{UE}/duanyu-relief-20261006/_gaokao-big/cover-gaokao.png"),
