@@ -267,7 +267,7 @@ scan_waikan(CHUZHONG, "初中外刊")
 UE = f"{WS}/users/user-elaine"
 SINGLES = [
     ("2026-10-06", "高考作文读后续写｜别再写 I felt relaxed", "跟读视频 61 秒 · breathe a sigh of relief / all one's worries melt away / sink back into one's chair（新封面第2期，顶行大字“高考读后续写”）",
-     "小红书 + 视频号已发（10-06 她「视频号和小红书已发」；小红书约 20:55 发）", "31 分钟 112 播放 5 赞",
+     "小红书 + 视频号已发（10-06 她「视频号和小红书已发」；小红书约 20:55 发）", "31 分钟 112 播放 5 赞；约 20 小时 330 播放 20 赞（点赞率约 6%，系列最高）",
      f"{UE}/duanyu-relief-20261006/_gaokao-big/cover-gaokao.png"),
     ("2026-10-06", "读后续写｜写着急，别再写 I was worried", "跟读视频 59 秒 · can't sit still / check one's watch again and again / one's stomach is in knots（新封面首期：大字主题+你写的→我写的）",
      "小红书已发（10-06 00:27 她主页截图可见，10-05 23:58 发）", "约 30 分钟 118 播放 7 赞（半夜发）；18 小时 399 播放 19 赞（同时段点赞系列最高）",
