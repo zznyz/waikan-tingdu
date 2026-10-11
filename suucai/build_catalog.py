@@ -266,6 +266,12 @@ scan_waikan(CHUZHONG, "初中外刊")
 # (确认日期, 标题, 形式, 发布状态原话/平台, 她给的反馈, 封面路径 or None)
 UE = f"{WS}/users/user-elaine"
 SINGLES = [
+    ("2026-10-11", "高考英语读后续写｜写失望，90%的人只会…（首次用爆款词库标题）", "跟读视频 57 秒 · one's face falls / one's heart sinks / one's hopes are dashed（新封面第6期，手册第3节）",
+     "小红书已发（10-11 约 12:12 发，12:21 她主页截图可见）", "9 分钟 137 浏览 6 赞（她：「好牛！！！」）",
+     f"{UE}/duanyu-disappointed-20261011/cover-new.png"),
+    ("2026-10-10", "高考英语读后续写｜写生气的高分短语", "跟读视频 64 秒 · one's face turns red with anger / raise one's voice / slam the door（新封面第5期，手册第6节）",
+     "小红书已发（10-10 10:04，10-11 她主页截图可见）", "约 26 小时 497 浏览 24 赞",
+     f"{UE}/duanyu-angry-20261010/cover-new.png"),
     ("2026-10-09", "2027届高考英语读后续写｜写后悔愧疚，别再写 I felt sorry", "跟读视频 57 秒 · feel a pang of guilt / hang one's head in shame / own up to something（新封面第4期，手册第21节）",
      "小红书 + 视频号已发（10-09 北京约 11:09 小红书、11:15 她「视频号小红书都已发」，上午发）", "8 小时 330 浏览 19 赞 16 收藏 2 转发（19:07 她截图；收藏率约 5%，新封面最好起步）",
      f"{UE}/duanyu-guilt-20261009/cover-new.png"),
