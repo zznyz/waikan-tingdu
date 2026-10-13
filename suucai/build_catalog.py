@@ -266,6 +266,9 @@ scan_waikan(CHUZHONG, "初中外刊")
 # (确认日期, 标题, 形式, 发布状态原话/平台, 她给的反馈, 封面路径 or None)
 UE = f"{WS}/users/user-elaine"
 SINGLES = [
+    ("2026-10-13", "高考英语读后续写｜写累，90%的人都只会…（新封面主发第2期）", "跟读视频 63 秒 · gasp for breath / one's legs feel like lead / collapse onto the sofa（手册第10节；10-12起定连发≥5期不动）",
+     "小红书已发（10-13 北京约 12:29 她「小红书已发」）", "暂无",
+     f"{UE}/duanyu-tired-20261013/cover-new.png"),
     ("2026-10-12", "高考英语读后续写｜写尴尬，90%的人都只会…（晚间补发，写失望同款新封面）", "跟读视频 62 秒 · one's cheeks burn / rub the back of one's neck / wish the ground would swallow one up（新封面第7期，手册第7节；10-12起定连发≥5期不动）",
      "小红书已发（10-12 北京约 18:16 发，18:28 她主页截图可见）", "12 分钟 50 浏览 2 赞",
      f"{UE}/duanyu-embarrassed-20261012/cover-new.png"),
